@@ -1,0 +1,18 @@
+# Terraform state files (Sensitive Information)
+*.tfstate
+*.tfstate.backup
+
+# Terraform cache
+*/.terraform/
+*/.terraform.lock.hcl
+
+# Ignore logs and temp files
+*.log
+*.bak
+
+# IDE configuration
+.idea
+
+# Temporary files and others to ignore
+temp
+.DS_Store
