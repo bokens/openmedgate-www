@@ -4,7 +4,7 @@
 <section id="hero" class="relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
     <div class="text-center max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+      <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-pulse mb-6">
         {{ .Title | default (i18n "hero_title") }}
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
@@ -23,9 +23,10 @@
   
   <!-- Background decoration -->
   <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900/30 rounded-full blur-3xl opacity-50"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 dark:bg-accent-900/30 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900/30 rounded-full blur-3xl opacity-50 animate-float-blob"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 dark:bg-accent-900/30 rounded-full blur-3xl opacity-50 animate-float-blob" style="animation-delay: 2s;"></div>
   </div>
+
 </section>
 
 <!-- Countdown (if enabled) -->
@@ -78,7 +79,7 @@
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       <!-- QuantumMed -->
       <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
-         class="group p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all">
+         class="group p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all card-hover">
         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
           QuantumMed
         </h3>

@@ -114,6 +114,47 @@
   .lang-dropdown {
     position: relative;
   }
+  
+  /* Floating animation for blobs */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(180deg); }
+  }
+  
+  .animate-float-blob {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  /* Gradient text animation */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button glow effect */
+  @keyframes button-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(22, 163, 74, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(22, 163, 74, 0.8); }
+  }
+  
+  .btn-glow:hover {
+    animation: button-glow 2s ease-in-out;
+  }
 </style>
 
 <!-- Dark mode init (prevent flash) -->
