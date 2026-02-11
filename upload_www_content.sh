@@ -1,4 +1,4 @@
-./#!/bin/bash
+#!/bin/bash
 
 # Set your bucket name (either hardcoded or from Terraform output)
 PROFILE="quantummed-www-editor"
@@ -13,8 +13,12 @@ else
   echo "🔓 AWS SSO session active. Continuing..."
 fi
 
-# Sync local www/ folder to S3 bucket root
-aws s3 sync ./www s3://$BUCKET_NAME \
+# Build Hugo site first
+echo "🔨 Building Hugo site..."
+hugo --minify
+
+# Sync Hugo output (public/) folder to S3 bucket root
+aws s3 sync ./public s3://$BUCKET_NAME \
   --delete \
   --cache-control "max-age=3600" \
   --exclude ".DS_Store" \
