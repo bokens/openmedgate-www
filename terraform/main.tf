@@ -6,7 +6,6 @@ variable "domain_name" {
   default = "openmedgate.com"
 }
 
-
 terraform {
   backend "s3" {
     bucket         = "quantummed-terraform-state-bucket"
@@ -17,12 +16,12 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-central-1" # Default provider
+  region = "eu-central-1"
 }
 
 provider "aws" {
   alias  = "us-east-1"
-  region = "us-east-1"     # For ACM cert only
+  region = "us-east-1"
 }
 
 resource "aws_s3_bucket" "site_bucket" {
@@ -93,6 +92,7 @@ resource "aws_cloudfront_origin_access_control" "oac" {
 resource "aws_cloudfront_distribution" "cdn" {
   enabled             = true
   default_root_object = "index.html"
+  is_ipv6_enabled     = true
 
   origin {
     domain_name = aws_s3_bucket.site_bucket.bucket_regional_domain_name
@@ -102,11 +102,48 @@ resource "aws_cloudfront_distribution" "cdn" {
   }
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD"]
+    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = "s3-origin"
 
     viewer_protocol_policy = "redirect-to-https"
+    compress               = true
+
+    forwarded_values {
+      query_string = false
+
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  cache_behavior {
+    path_pattern     = "/pl*"
+    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+    cached_methods   = ["GET", "HEAD"]
+    target_origin_id = "s3-origin"
+
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = true
+
+    forwarded_values {
+      query_string = false
+
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  cache_behavior {
+    path_pattern     = "/de*"
+    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+    cached_methods   = ["GET", "HEAD"]
+    target_origin_id = "s3-origin"
+
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = true
 
     forwarded_values {
       query_string = false
@@ -130,6 +167,20 @@ resource "aws_cloudfront_distribution" "cdn" {
   }
 
   aliases = [var.domain_name, "www.${var.domain_name}"]
+
+  custom_error_response {
+    error_code            = 403
+    response_code         = 200
+    response_page_path    = "/index.html"
+    error_caching_min_ttl = 0
+  }
+
+  custom_error_response {
+    error_code            = 404
+    response_code         = 200
+    response_page_path    = "/index.html"
+    error_caching_min_ttl = 0
+  }
 }
 
 resource "aws_s3_bucket_policy" "allow_cloudfront_access" {
@@ -155,7 +206,6 @@ resource "aws_s3_bucket_policy" "allow_cloudfront_access" {
   })
 }
 
-# Root domain record (quantummed.eu)
 resource "aws_route53_record" "root_alias" {
   zone_id = var.hosted_zone_id
   name    = var.domain_name
@@ -168,7 +218,6 @@ resource "aws_route53_record" "root_alias" {
   }
 }
 
-# www subdomain record (www.quantummed.eu)
 resource "aws_route53_record" "www_alias" {
   zone_id = var.hosted_zone_id
   name    = "www.${var.domain_name}"
