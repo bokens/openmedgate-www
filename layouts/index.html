@@ -1,0 +1,189 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section id="hero" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+    <div class="text-center max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+        {{ .Title | default (i18n "hero_title") }}
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+        {{ .Description | default (i18n "hero_subtitle") }}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+          {{ i18n "hero_cta" }}
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium rounded-lg transition-colors">
+          {{ i18n "learn_more" }}
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Background decoration -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900/30 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 dark:bg-accent-900/30 rounded-full blur-3xl opacity-50"></div>
+  </div>
+</section>
+
+<!-- Countdown (if enabled) -->
+{{ partial "countdown.html" . }}
+
+<!-- Manifest Section -->
+<section id="manifest" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8">
+        {{ i18n "section_manifest" }}
+      </h2>
+      <!-- Content from markdown -->
+      <div class="prose prose-lg dark:prose-invert mx-auto">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="how-it-works" class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+      {{ i18n "section_how_it_works" }}
+    </h2>
+    
+    <!-- Placeholder: FHIR/HL7/DICOM gateway diagram -->
+    <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 md:p-12 text-center">
+      <p class="text-gray-500 dark:text-gray-400">
+        [Gateway architecture diagram placeholder]
+      </p>
+      <p class="text-sm text-gray-400 dark:text-gray-500 mt-4">
+        FHIR • HL7 • DICOM
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-4">
+      {{ i18n "section_products" }}
+    </h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+      {{ i18n "powered_by" }}
+    </p>
+    
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- QuantumMed -->
+      <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
+         class="group p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+          QuantumMed
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          AI Integration Platform for Radiology
+        </p>
+        <span class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium">
+          {{ i18n "learn_more" }}
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+      </a>
+      
+      <!-- MedicoAI -->
+      <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          MedicoAI
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Coming soon
+        </p>
+        <span class="inline-flex items-center text-gray-400 font-medium">
+          Stay tuned
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partner Section (Segment Picker) -->
+<section id="partners" class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+      {{ i18n "section_partners" }}
+    </h2>
+    
+    <div class="max-w-3xl mx-auto">
+      {{ partial "segment-picker.html" . }}
+    </div>
+  </div>
+</section>
+
+<!-- Status Section -->
+<section id="status" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+      {{ i18n "section_status" }}
+    </h2>
+    
+    <!-- Placeholder: Status/roadmap -->
+    <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+      <p class="text-gray-500 dark:text-gray-400 text-center">
+        [Status/roadmap placeholder - transparent updates about current phase]
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section id="newsletter" class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        {{ i18n "newsletter_title" }}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        Get updates on open-sourcing progress and new features.
+      </p>
+      
+      <!-- HubSpot newsletter form placeholder -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8">
+        <p class="text-gray-500 dark:text-gray-400">
+          [HubSpot newsletter form embed]
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+      {{ i18n "section_contact" }}
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <!-- HubSpot Form -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+          Send a message
+        </h3>
+        {{ partial "hubspot-form.html" (dict "Page" .) }}
+      </div>
+      
+      <!-- Calendly -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+          {{ i18n "book_meeting" }}
+        </h3>
+        {{ partial "calendly.html" (dict "height" "500") }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

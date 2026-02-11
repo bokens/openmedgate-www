@@ -1,0 +1,129 @@
+# Navigation
+[nav_home]
+other = "Start"
+
+[nav_about]
+other = "O nas"
+
+[nav_contact]
+other = "Kontakt"
+
+# Hero
+[hero_title]
+other = "Open Medical Gateway"
+
+[hero_subtitle]
+other = "Otwarta infrastruktura interoperacyjności AI w ochronie zdrowia"
+
+[hero_cta]
+other = "Rozpocznij"
+
+# Sections
+[section_manifest]
+other = "Manifest"
+
+[section_how_it_works]
+other = "Jak to działa"
+
+[section_products]
+other = "Produkty"
+
+[section_partners]
+other = "Współpraca"
+
+[section_status]
+other = "Status"
+
+[section_contact]
+other = "Kontakt"
+
+# Segment picker
+[segment_hospital]
+other = "Szpital"
+
+[segment_ai_vendor]
+other = "Dostawca AI"
+
+[segment_developer]
+other = "Developer"
+
+[segment_public_sector]
+other = "Sektor publiczny"
+
+[segment_question]
+other = "Jestem:"
+
+# Countdown
+[countdown_title]
+other = "Open-source za"
+
+[countdown_days]
+other = "dni"
+
+[countdown_hours]
+other = "godzin"
+
+[countdown_minutes]
+other = "minut"
+
+[countdown_seconds]
+other = "sekund"
+
+# Newsletter
+[newsletter_title]
+other = "Otrzymuj powiadomienia"
+
+[newsletter_placeholder]
+other = "Twój email"
+
+[newsletter_button]
+other = "Zapisz się"
+
+# Contact form
+[contact_name]
+other = "Imię i nazwisko"
+
+[contact_email]
+other = "Email"
+
+[contact_company]
+other = "Firma"
+
+[contact_message]
+other = "Wiadomość"
+
+[contact_submit]
+other = "Wyślij"
+
+# Cookie consent
+[cookie_message]
+other = "Używamy plików cookie, aby poprawić Twoje doświadczenia. Kontynuując, zgadzasz się na ich użycie."
+
+[cookie_accept]
+other = "Akceptuję"
+
+[cookie_decline]
+other = "Odrzucam"
+
+[cookie_settings]
+other = "Ustawienia"
+
+# Footer
+[footer_privacy]
+other = "Polityka prywatności"
+
+[footer_terms]
+other = "Regulamin"
+
+[footer_imprint]
+other = "Impressum"
+
+# Misc
+[powered_by]
+other = "Powered by OpenMedGate"
+
+[book_meeting]
+other = "Umów spotkanie"
+
+[learn_more]
+other = "Dowiedz się więcej"

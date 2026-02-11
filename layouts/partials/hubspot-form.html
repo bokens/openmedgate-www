@@ -1,0 +1,35 @@
+<!-- HubSpot Form Embed -->
+
+{{ $portalId := site.Params.hubspotPortalId }}
+{{ $formId := site.Params.hubspotFormId }}
+{{ $target := "hubspot-form" }}
+{{ $page := .Page | default . }}
+
+<div id="{{ $target }}" class="hubspot-form-container"></div>
+
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "eu1",
+    portalId: "{{ $portalId }}",
+    formId: "{{ $formId }}",
+    target: "#{{ $target }}",
+    onFormReady: function(form) {
+      var langField = form.querySelector('input[name="language"]');
+      if (langField) {
+        langField.value = "{{ $page.Language.Lang }}";
+      }
+      var sourceField = form.querySelector('input[name="source_page"]');
+      if (sourceField) {
+        sourceField.value = "openmedgate";
+      }
+    }
+  });
+</script>
+
+<noscript>
+  <p class="text-gray-600 dark:text-gray-400">
+    Please enable JavaScript to use the contact form, or email us directly at 
+    <a href="mailto:contact@openmedgate.com" class="text-primary-600 hover:underline">contact@openmedgate.com</a>
+  </p>
+</noscript>

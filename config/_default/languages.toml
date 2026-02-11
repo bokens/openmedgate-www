@@ -1,0 +1,20 @@
+[en]
+  languageName = "English"
+  weight = 1
+  contentDir = "content/en"
+  [en.params]
+    description = "Open infrastructure for healthcare AI interoperability"
+
+[pl]
+  languageName = "Polski"
+  weight = 2
+  contentDir = "content/pl"
+  [pl.params]
+    description = "Otwarta infrastruktura interoperacyjności AI w ochronie zdrowia"
+
+[de]
+  languageName = "Deutsch"
+  weight = 3
+  contentDir = "content/de"
+  [de.params]
+    description = "Offene Infrastruktur für KI-Interoperabilität im Gesundheitswesen"

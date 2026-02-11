@@ -1,0 +1,129 @@
+# Navigation
+[nav_home]
+other = "Home"
+
+[nav_about]
+other = "About"
+
+[nav_contact]
+other = "Contact"
+
+# Hero
+[hero_title]
+other = "Open Medical Gateway"
+
+[hero_subtitle]
+other = "Open infrastructure for healthcare AI interoperability"
+
+[hero_cta]
+other = "Get Started"
+
+# Sections
+[section_manifest]
+other = "Manifest"
+
+[section_how_it_works]
+other = "How It Works"
+
+[section_products]
+other = "Products"
+
+[section_partners]
+other = "Partner With Us"
+
+[section_status]
+other = "Where We Are"
+
+[section_contact]
+other = "Contact"
+
+# Segment picker
+[segment_hospital]
+other = "Hospital"
+
+[segment_ai_vendor]
+other = "AI Vendor"
+
+[segment_developer]
+other = "Developer"
+
+[segment_public_sector]
+other = "Public Sector"
+
+[segment_question]
+other = "I am a:"
+
+# Countdown
+[countdown_title]
+other = "Open-sourcing in"
+
+[countdown_days]
+other = "days"
+
+[countdown_hours]
+other = "hours"
+
+[countdown_minutes]
+other = "minutes"
+
+[countdown_seconds]
+other = "seconds"
+
+# Newsletter
+[newsletter_title]
+other = "Get Notified"
+
+[newsletter_placeholder]
+other = "Your email"
+
+[newsletter_button]
+other = "Subscribe"
+
+# Contact form
+[contact_name]
+other = "Name"
+
+[contact_email]
+other = "Email"
+
+[contact_company]
+other = "Company"
+
+[contact_message]
+other = "Message"
+
+[contact_submit]
+other = "Send Message"
+
+# Cookie consent
+[cookie_message]
+other = "We use cookies to improve your experience. By continuing, you agree to our use of cookies."
+
+[cookie_accept]
+other = "Accept"
+
+[cookie_decline]
+other = "Decline"
+
+[cookie_settings]
+other = "Settings"
+
+# Footer
+[footer_privacy]
+other = "Privacy Policy"
+
+[footer_terms]
+other = "Terms of Service"
+
+[footer_imprint]
+other = "Imprint"
+
+# Misc
+[powered_by]
+other = "Powered by OpenMedGate"
+
+[book_meeting]
+other = "Book a Meeting"
+
+[learn_more]
+other = "Learn More"

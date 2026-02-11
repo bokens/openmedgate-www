@@ -1,0 +1,104 @@
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" x-data="{ mobileMenuOpen: false }">
+    <div class="flex justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="{{ site.Home.RelPermalink }}" class="flex items-center space-x-2">
+          {{ with site.Params.nav.logo }}
+            <img src="{{ . }}" alt="{{ site.Title }}" class="h-8 w-auto">
+          {{ else }}
+            <span class="text-xl font-bold text-primary-600 dark:text-primary-400">OpenMedGate</span>
+          {{ end }}
+        </a>
+      </div>
+      
+      <!-- Desktop nav -->
+      <div class="hidden md:flex md:items-center md:space-x-8">
+        <!-- Nav links -->
+        <a href="#manifest" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_manifest" }}
+        </a>
+        <a href="#how-it-works" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_how_it_works" }}
+        </a>
+        <a href="#products" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_products" }}
+        </a>
+        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_contact" }}
+        </a>
+        
+        <!-- Language switcher -->
+        <div class="relative" x-data="{ open: false }">
+          <button @click="open = !open" @click.outside="open = false" 
+                  class="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <span class="uppercase text-sm font-medium">{{ .Language.Lang }}</span>
+            <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-cloak x-transition
+               class="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1">
+            {{ range site.Home.AllTranslations }}
+              <a href="{{ .RelPermalink }}" 
+                 class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 {{ if eq $.Language.Lang .Language.Lang }}bg-gray-100 dark:bg-gray-700{{ end }}">
+                {{ .Language.LanguageName }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+        
+        <!-- Dark mode toggle -->
+        {{ if site.Params.darkModeEnabled }}
+        <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
+                class="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+          <svg x-show="!darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+          <svg x-show="darkMode" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </button>
+        {{ end }}
+        
+        <!-- CTA Button -->
+        <a href="#contact" class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+          {{ i18n "hero_cta" }}
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <div class="flex items-center md:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 text-gray-600 dark:text-gray-300">
+          <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg x-show="mobileMenuOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        <a href="#manifest" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_manifest" }}</a>
+        <a href="#how-it-works" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_how_it_works" }}</a>
+        <a href="#products" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_products" }}</a>
+        <a href="#contact" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_contact" }}</a>
+        
+        <!-- Mobile language switcher -->
+        <div class="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+          {{ range site.Home.AllTranslations }}
+            <a href="{{ .RelPermalink }}" 
+               class="text-sm font-medium {{ if eq $.Language.Lang .Language.Lang }}text-primary-600 dark:text-primary-400{{ else }}text-gray-600 dark:text-gray-300{{ end }}">
+              {{ .Language.Lang | upper }}
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

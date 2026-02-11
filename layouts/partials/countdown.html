@@ -1,0 +1,87 @@
+<!-- Countdown Timer (Open-sourcing campaign) -->
+{{ if site.Params.countdownEnabled }}
+<div x-data="countdown('{{ site.Params.countdownTargetDate }}')" 
+     class="bg-gradient-to-r from-primary-600 to-accent-600 text-white py-8 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h3 class="text-lg md:text-xl font-medium mb-6">{{ i18n "countdown_title" }}</h3>
+    
+    <div class="flex justify-center items-center gap-4 md:gap-8">
+      <!-- Days -->
+      <div class="flex flex-col items-center">
+        <span x-text="days" class="text-4xl md:text-6xl font-bold tabular-nums">--</span>
+        <span class="text-sm md:text-base opacity-80 mt-1">{{ i18n "countdown_days" }}</span>
+      </div>
+      
+      <span class="text-3xl md:text-5xl font-light opacity-50">:</span>
+      
+      <!-- Hours -->
+      <div class="flex flex-col items-center">
+        <span x-text="hours" class="text-4xl md:text-6xl font-bold tabular-nums">--</span>
+        <span class="text-sm md:text-base opacity-80 mt-1">{{ i18n "countdown_hours" }}</span>
+      </div>
+      
+      <span class="text-3xl md:text-5xl font-light opacity-50">:</span>
+      
+      <!-- Minutes -->
+      <div class="flex flex-col items-center">
+        <span x-text="minutes" class="text-4xl md:text-6xl font-bold tabular-nums">--</span>
+        <span class="text-sm md:text-base opacity-80 mt-1">{{ i18n "countdown_minutes" }}</span>
+      </div>
+      
+      <span class="text-3xl md:text-5xl font-light opacity-50 hidden sm:block">:</span>
+      
+      <!-- Seconds -->
+      <div class="flex-col items-center hidden sm:flex">
+        <span x-text="seconds" class="text-4xl md:text-6xl font-bold tabular-nums">--</span>
+        <span class="text-sm md:text-base opacity-80 mt-1">{{ i18n "countdown_seconds" }}</span>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="mt-8">
+      <a href="#newsletter" 
+         class="inline-flex items-center px-6 py-3 bg-white text-primary-700 font-medium rounded-lg hover:bg-gray-100 transition-colors">
+        {{ i18n "newsletter_title" }}
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function countdown(targetDate) {
+    return {
+      days: '--',
+      hours: '--',
+      minutes: '--',
+      seconds: '--',
+      targetTime: new Date(targetDate).getTime(),
+      
+      init() {
+        this.updateCountdown();
+        setInterval(() => this.updateCountdown(), 1000);
+      },
+      
+      updateCountdown() {
+        const now = new Date().getTime();
+        const distance = this.targetTime - now;
+        
+        if (distance < 0) {
+          this.days = '0';
+          this.hours = '0';
+          this.minutes = '0';
+          this.seconds = '0';
+          return;
+        }
+        
+        this.days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+        this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+        this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+        this.seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+      }
+    }
+  }
+</script>
+{{ end }}

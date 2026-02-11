@@ -1,18 +1,22 @@
-# Terraform state files (Sensitive Information)
-*.tfstate
-*.tfstate.backup
+# Hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
 
-# Terraform cache
-*/.terraform/
-*/.terraform.lock.hcl
+# Node (if using Tailwind build)
+node_modules/
+package-lock.json
 
-# Ignore logs and temp files
-*.log
-*.bak
-
-# IDE configuration
-.idea
-
-# Temporary files and others to ignore
-temp
+# OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local

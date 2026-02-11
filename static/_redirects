@@ -1,0 +1,9 @@
+# Cloudflare Pages Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Language redirects (handled by Hugo, but fallback)
+/en/*  /:splat  302
+/en    /        302
+
+# Old URLs (add as needed)
+# /old-page  /new-page  301

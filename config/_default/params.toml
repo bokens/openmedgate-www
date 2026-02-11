@@ -1,0 +1,38 @@
+# Site params
+[params]
+  author = "OpenMedGate"
+  description = "Open infrastructure for healthcare AI interoperability"
+  
+  # Social / OG
+  ogImage = "/images/og-image.png"
+  twitterHandle = "@openmedgate"
+  
+  # External links
+  quantummedURL = "https://quantummed.eu"
+  medicoaiURL = "https://medicoai.eu"
+  
+  # HubSpot
+  hubspotPortalId = "YOUR_PORTAL_ID"
+  hubspotFormId = "YOUR_FORM_ID"
+  
+  # Calendly
+  calendlyURL = "https://calendly.com/openmedgate"
+  
+  # Countdown (Open-sourcing campaign)
+  countdownEnabled = true
+  countdownTargetDate = "2026-08-01T00:00:00Z"  # 180 days from launch
+  
+  # Cookie consent
+  cookieConsentEnabled = true
+  
+  # Dark mode
+  darkModeEnabled = true
+  darkModeDefault = "light"  # "light", "dark", or "system"
+
+# Navigation
+[params.nav]
+  logo = "/images/logo.svg"
+  
+# Footer
+[params.footer]
+  copyright = "OpenMedGate"
