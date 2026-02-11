@@ -12,8 +12,8 @@
   medicoaiURL = "https://medicoai.eu"
   
   # HubSpot
-  hubspotPortalId = "YOUR_PORTAL_ID"
-  hubspotFormId = "YOUR_FORM_ID"
+  hubspotPortalId = "146629432"
+  hubspotFormId = "aeadca76-4128-4c72-a7c6-260b461c8a75"
   
   # Calendly
   calendlyURL = "https://calendly.com/openmedgate"

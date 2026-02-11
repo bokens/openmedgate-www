@@ -5,13 +5,9 @@ description: "Otwarta infrastruktura interoperacyjności AI w ochronie zdrowia"
 
 <!-- Treść manifestu tutaj -->
 
-Ochrona zdrowia nie powinna być zamknięta za własnościowymi murami.
+### Wierzymy, że:
 
-**OpenMedGate** to ruch na rzecz otwartej infrastruktury medycznej — umożliwiający interoperacyjność, autonomię danych i innowacje bez uzależnienia od dostawców.
-
-Wierzymy, że:
-- **Lekarze zasługują na wolność** wyboru narzędzi
-- **Szpitale zasługują na kontrolę** nad swoimi danymi
-- **Pacjenci zasługują na lepszą opiekę** dzięki otwartym innowacjom
-
-Dołącz do nas w budowaniu przyszłości ochrony zdrowia.
+1. **Dane pacjenta podlegają jego prawom.** Szpital jest ich administratorem. Dostawca systemu ma służyć, nie blokować dostęp.
+2. **Szpital wybiera najlepsze narzędzia dla pacjenta.** Nie dostawca. Nie przetarg sprzed dekady. Szpital.
+3. **Otwarte standardy wygrywają.** FHIR, HL7, DICOM istnieją od lat. Czas, wykorzystać ich pełen potencjał.
+4. **Razem zbudujemy więcej niż osobno.** Open source to nie ideologia, to najszybsza droga do bezpiecznej, interoperacyjnej ochrony zdrowia.
