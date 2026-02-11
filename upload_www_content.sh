@@ -1,4 +1,4 @@
-#!/bin/bash
+./#!/bin/bash
 
 # Set your bucket name (either hardcoded or from Terraform output)
 PROFILE="quantummed-www-editor"
