@@ -1,8 +1,8 @@
 {{ define "main" }}
 
 <!-- Hero Section -->
-<section id="hero" class="relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+<section id="hero" class="relative overflow-hidden bg-white dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
     <div class="text-center max-w-4xl mx-auto">
       <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-pulse mb-6">
         {{ .Title | default (i18n "hero_title") }}
@@ -21,66 +21,33 @@
     </div>
   </div>
   
-  <!-- Background decoration with animated blobs -->
+  <!-- Animated Background: Grid + Subtle Floating Orbs -->
   <div class="absolute inset-0 -z-10 overflow-hidden">
-    <!-- Blob #1 - TOP RIGHT - GREEN - ROTATING -->
-    <div style="
-      position: absolute;
-      top: -160px;
-      right: -160px;
-      width: 384px;
-      height: 384px;
-      background: rgb(220, 252, 231);
-      border-radius: 9999px;
-      filter: blur(60px);
-      opacity: 0.5;
-      animation: float 12s ease-in-out infinite;
-    "></div>
+    <!-- Base gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-900/95 dark:to-gray-900"></div>
     
-    <!-- Blob #2 - BOTTOM LEFT - BLUE - ROTATING (delayed) -->
-    <div style="
-      position: absolute;
-      bottom: -160px;
-      left: -160px;
-      width: 320px;
-      height: 320px;
-      background: rgb(219, 234, 254);
-      border-radius: 9999px;
-      filter: blur(60px);
-      opacity: 0.5;
-      animation: float 12s ease-in-out infinite 3s;
-    "></div>
+    <!-- Subtle grid -->
+    <svg class="absolute inset-0 w-full h-full opacity-5 dark:opacity-10" preserveAspectRatio="none">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
     
-    <!-- Blob #3 - CENTER - GREEN - BREATHING -->
-    <div style="
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 288px;
-      height: 288px;
-      background: rgb(187, 247, 208);
-      border-radius: 9999px;
-      filter: blur(60px);
-      opacity: 0.3;
-      animation: breathing 6s ease-in-out infinite 1s;
-    "></div>
+    <!-- Floating orb #1 - top right (GREEN) -->
+    <div class="absolute -top-48 -right-48 w-96 h-96 rounded-full blur-3xl animate-float-slow"
+         style="background: radial-gradient(circle, rgba(22, 163, 74, 0.25) 0%, transparent 70%); opacity: 0.6;"></div>
     
-    <!-- Blob #4 - RIGHT CENTER - BLUE - PULSING -->
-    <div style="
-      position: absolute;
-      top: 33.333%;
-      right: 25%;
-      width: 256px;
-      height: 256px;
-      background: rgb(219, 234, 254);
-      border-radius: 9999px;
-      filter: blur(60px);
-      opacity: 0.2;
-      animation: blob-pulse 5s ease-in-out infinite 2s;
-    "></div>
+    <!-- Floating orb #2 - bottom left (BLUE) -->
+    <div class="absolute -bottom-48 -left-48 w-80 h-80 rounded-full blur-3xl animate-float-slow"
+         style="background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); opacity: 0.4; animation-delay: 4s;"></div>
+    
+    <!-- Center subtle glow - PULSING -->
+    <div class="absolute top-1/3 right-1/3 w-96 h-96 rounded-full blur-3xl animate-pulse-subtle"
+         style="background: radial-gradient(circle, rgba(22, 163, 74, 0.12) 0%, transparent 70%); opacity: 0.5; animation-delay: 2s;"></div>
   </div>
-
 </section>
 
 <!-- Countdown (if enabled) -->
