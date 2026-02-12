@@ -1,35 +1,41 @@
-<!-- HubSpot Form Embed -->
+<!-- HUBSPOT_PARTIAL_MARKER: {{ now.Unix }} -->
+<!-- HUBSPOT_PARAMS: portal={{ .Site.Params.hubspotPortalId }} form={{ .Site.Params.hubspotFormId }} -->
 
-{{ $portalId := site.Params.hubspotPortalId }}
-{{ $formId := site.Params.hubspotFormId }}
+
+{{ $portalId := .Site.Params.hubspotPortalId  }}
+{{ $formId := .Site.Params.hubspotFormId  }}
 {{ $target := "hubspot-form" }}
-{{ $page := .Page | default . }}
+{{ $lang := .Site.Language.Lang }}
+
 
 <div id="{{ $target }}" class="hubspot-form-container"></div>
 
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js" defer></script>
 <script>
-  hbspt.forms.create({
-    region: "eu1",
-    portalId: "{{ $portalId }}",
-    formId: "{{ $formId }}",
-    target: "#{{ $target }}",
-    onFormReady: function(form) {
-      var langField = form.querySelector('input[name="language"]');
-      if (langField) {
-        langField.value = "{{ $page.Language.Lang }}";
-      }
-      var sourceField = form.querySelector('input[name="source_page"]');
-      if (sourceField) {
-        sourceField.value = "openmedgate";
-      }
+  (function initHubspotForm() {
+    if (!window.hbspt || !window.hbspt.forms || !window.hbspt.forms.create) {
+      setTimeout(initHubspotForm, 50);
+      return;
     }
-  });
+
+    window.hbspt.forms.create({
+      region: "eu1",
+      portalId: "{{ $portalId }}",
+      formId: "{{ $formId }}",
+      target: "#{{ $target }}",
+      onFormReady: function($form) {
+        try {
+          var formEl = $form && $form[0] ? $form[0] : $form;
+          if (!formEl) return;
+
+          var langField = formEl.querySelector('input[name="language"]');
+          if (langField) langField.value = "{{ $lang }}";
+
+          var sourceField = formEl.querySelector('input[name="source_page"]');
+          if (sourceField) sourceField.value = "openmedgate";
+        } catch (e) {}
+      }
+    });
+  })();
 </script>
 
-<noscript>
-  <p class="text-gray-600 dark:text-gray-400">
-    Please enable JavaScript to use the contact form, or email us directly at 
-    <a href="mailto:contact@openmedgate.com" class="text-primary-600 hover:underline">contact@openmedgate.com</a>
-  </p>
-</noscript>

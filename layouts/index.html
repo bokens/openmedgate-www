@@ -173,7 +173,7 @@
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
           Send a message
         </h3>
-        {{ partial "hubspot-form.html" (dict "Page" .) }}
+        {{ partial "hubspot-form.html" . }}
       </div>
       
       <!-- Calendly -->
@@ -181,7 +181,8 @@
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
           {{ i18n "book_meeting" }}
         </h3>
-        {{ partial "calendly.html" (dict "height" "500") }}
+        {{ partial "calendly.html" (dict "height" "500" "Page" . "Site" .Site) }}
+
       </div>
     </div>
   </div>
