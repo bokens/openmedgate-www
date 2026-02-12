@@ -34,20 +34,6 @@
     >
   </div>
   
-  <!-- Company -->
-  <div>
-    <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-      {{ i18n "contact_company" }}
-    </label>
-    <input 
-      type="text"
-      id="company"
-      x-model="formData.company"
-      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-      placeholder="{{ i18n "contact_company" }}"
-    >
-  </div>
-  
   <!-- Message -->
   <div>
     <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -109,7 +95,6 @@
             fields: [
               { name: 'firstname', value: this.formData.firstname },
               { name: 'email', value: this.formData.email },
-              { name: 'company', value: this.formData.company },
               { name: 'message', value: this.formData.message },
               { name: 'language', value: lang },
               { name: 'source_page', value: 'openmedgate' }
@@ -137,7 +122,6 @@
           this.formData = {
             firstname: '',
             email: '',
-            company: '',
             message: ''
           };
           
