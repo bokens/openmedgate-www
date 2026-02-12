@@ -79,6 +79,18 @@ other = "Your email"
 [newsletter_button]
 other = "Subscribe"
 
+[newsletter_submit]
+other = "Subscribe"
+
+[newsletter_submitting]
+other = "Subscribing..."
+
+[newsletter_success]
+other = "Thanks — you’re subscribed."
+
+[newsletter_error_required]
+other = "Please fill in all required fields."
+
 # Contact form
 [contact_name]
 other = "Name"

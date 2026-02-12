@@ -79,6 +79,19 @@ other = "Twój email"
 [newsletter_button]
 other = "Zapisz się"
 
+[newsletter_submit]
+other = "Zapisz się"
+
+[newsletter_submitting]
+other = "Zapisywanie..."
+
+[newsletter_success]
+other = "Dziękujemy — zapis został przyjęty."
+
+[newsletter_error_required]
+other = "Uzupełnij wymagane pola."
+
+
 # Contact form
 [contact_name]
 other = "Imię i nazwisko"

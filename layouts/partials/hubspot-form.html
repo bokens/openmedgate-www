@@ -1,70 +1,57 @@
-<!-- Custom Contact Form (submits to HubSpot) -->
+<!-- Custom Contact Form (submits directly to HubSpot - no backend) -->
 {{ $portalId := .Site.Params.hubspotPortalId }}
-{{ $lang := .Site.Language.Lang }}
+{{ $formGuid := .Site.Params.hubspotFormId }}
 
-<form x-data="contactForm('{{ $portalId }}', '{{ $lang }}')" @submit.prevent="submitForm()" class="space-y-4">
-  
-  <!-- Name -->
-  <div>
-    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-      {{ i18n "contact_name" }}
-    </label>
-    <input 
-      type="text"
-      id="name"
-      x-model="formData.firstname"
-      required
-      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-      placeholder="{{ i18n "contact_name" }}"
-    >
-  </div>
-  
+<form x-data="contactForm('{{ $portalId }}', '{{ $formGuid }}')" @submit.prevent="submitForm()" class="space-y-4">
   <!-- Email -->
   <div>
     <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
       {{ i18n "contact_email" }}
     </label>
-    <input 
+    <input
       type="email"
       id="email"
-      x-model="formData.email"
+      x-model.trim="formData.email"
       required
       class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
       placeholder="{{ i18n "contact_email" }}"
+      autocomplete="email"
     >
   </div>
-  
+
   <!-- Message -->
   <div>
     <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
       {{ i18n "contact_message" }}
     </label>
-    <textarea 
+    <textarea
       id="message"
-      x-model="formData.message"
+      x-model.trim="formData.message"
       rows="4"
+      required
       class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
       placeholder="{{ i18n "contact_message" }}"
+      autocomplete="off"
     ></textarea>
   </div>
-  
+
   <!-- Submit Button -->
   <div>
-    <button 
+    <button
       type="submit"
       :disabled="isLoading"
       class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-medium rounded-lg transition-colors"
     >
       <span x-show="!isLoading">{{ i18n "contact_submit" }}</span>
-      <span x-show="isLoading" x-cloak>{{ i18n "contact_submit" }}...</span>
+      <span x-show="isLoading" x-cloak>Sending...</span>
     </button>
   </div>
-  
+
   <!-- Success Message -->
   <div x-show="successMessage" x-cloak class="p-3 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg text-sm">
     Thank you! We'll be in touch soon.
   </div>
-  
+
   <!-- Error Message -->
   <div x-show="errorMessage" x-cloak class="p-3 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg text-sm">
     <span x-text="errorMessage"></span>
@@ -72,69 +59,77 @@
 </form>
 
 <script>
-  function contactForm(portalId, lang) {
+  function contactForm(portalId, formGuid) {
     return {
       formData: {
-        firstname: '',
         email: '',
-        company: '',
         message: ''
       },
       isLoading: false,
       successMessage: false,
       errorMessage: '',
-      
+
+      // HubSpot tracking cookie (helps associate submission with visitor)
+      getHubspotUtk() {
+        const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+        return m ? decodeURIComponent(m[1]) : null;
+      },
+
       async submitForm() {
-        this.isLoading = true;
         this.errorMessage = '';
         this.successMessage = false;
-        
-        try {
-          // Build HubSpot API payload
-          const payload = {
-            fields: [
-              { name: 'firstname', value: this.formData.firstname },
-              { name: 'email', value: this.formData.email },
-              { name: 'message', value: this.formData.message },
-              { name: 'language', value: lang },
-              { name: 'source_page', value: 'openmedgate' }
-            ],
-            context: {
-              pageUri: window.location.href,
-              pageName: document.title
-            }
-          };
-          
-          // Submit to your backend endpoint (NOT direct to HubSpot)
-          const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-          });
-          
-          if (!response.ok) {
-            throw new Error('Submission failed');
+
+        // Basic front-end validation (HubSpot will validate again)
+        if (!this.formData.firstname || !this.formData.email || !this.formData.message) {
+          this.errorMessage = 'Please fill in all required fields.';
+          return;
+        }
+
+        this.isLoading = true;
+
+        const payload = {
+          fields: [
+            { name: "email", value: this.formData.email },
+
+            // UWAGA: "message" musi odpowiadać *internal name* pola w HubSpot form.
+            // Jeśli u Was to pole ma inny internal name, podmień "message" na właściwy.
+            { name: "message", value: this.formData.message }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title,
+            hutk: this.getHubspotUtk()
           }
-          
-          // Reset form
-          this.formData = {
-            firstname: '',
-            email: '',
-            message: ''
-          };
-          
+        };
+
+        try {
+          const res = await fetch(
+            `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload)
+            }
+          );
+
+          // HubSpot potrafi zwracać błąd walidacji jako JSON
+          const data = await res.json().catch(() => ({}));
+
+          if (!res.ok) {
+            // Najczęściej tu wpada: brak wymaganego pola, zły internal name pola, wymagana zgoda RODO itp.
+            const msg =
+              (data && data.message) ||
+              'Submission failed. Please try again or contact us directly.';
+            throw new Error(msg);
+          }
+
           this.successMessage = true;
-          
-          // Hide success message after 5s
-          setTimeout(() => {
-            this.successMessage = false;
-          }, 5000);
-          
-        } catch (error) {
-          console.error('Form submission error:', error);
-          this.errorMessage = 'An error occurred. Please try again.';
+          this.formData.firstname = '';
+          this.formData.email = '';
+          this.formData.message = '';
+        } catch (err) {
+          this.errorMessage = (err && err.message) ? err.message : 'Something went wrong.';
+          console.error('HubSpot submission error:', err);
         } finally {
           this.isLoading = false;
         }
