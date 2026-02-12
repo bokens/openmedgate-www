@@ -21,10 +21,64 @@
     </div>
   </div>
   
-  <!-- Background decoration -->
+  <!-- Background decoration with animated blobs -->
   <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900/30 rounded-full blur-3xl opacity-50 animate-float-blob"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 dark:bg-accent-900/30 rounded-full blur-3xl opacity-50 animate-float-blob" style="animation-delay: 2s;"></div>
+    <!-- Blob #1 - TOP RIGHT - GREEN - ROTATING -->
+    <div style="
+      position: absolute;
+      top: -160px;
+      right: -160px;
+      width: 384px;
+      height: 384px;
+      background: rgb(220, 252, 231);
+      border-radius: 9999px;
+      filter: blur(60px);
+      opacity: 0.5;
+      animation: float 12s ease-in-out infinite;
+    "></div>
+    
+    <!-- Blob #2 - BOTTOM LEFT - BLUE - ROTATING (delayed) -->
+    <div style="
+      position: absolute;
+      bottom: -160px;
+      left: -160px;
+      width: 320px;
+      height: 320px;
+      background: rgb(219, 234, 254);
+      border-radius: 9999px;
+      filter: blur(60px);
+      opacity: 0.5;
+      animation: float 12s ease-in-out infinite 3s;
+    "></div>
+    
+    <!-- Blob #3 - CENTER - GREEN - BREATHING -->
+    <div style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 288px;
+      height: 288px;
+      background: rgb(187, 247, 208);
+      border-radius: 9999px;
+      filter: blur(60px);
+      opacity: 0.3;
+      animation: breathing 6s ease-in-out infinite 1s;
+    "></div>
+    
+    <!-- Blob #4 - RIGHT CENTER - BLUE - PULSING -->
+    <div style="
+      position: absolute;
+      top: 33.333%;
+      right: 25%;
+      width: 256px;
+      height: 256px;
+      background: rgb(219, 234, 254);
+      border-radius: 9999px;
+      filter: blur(60px);
+      opacity: 0.2;
+      animation: blob-pulse 5s ease-in-out infinite 2s;
+    "></div>
   </div>
 
 </section>
@@ -43,6 +97,8 @@
       <div class="prose prose-lg dark:prose-invert mx-auto">
         {{ .Content }}
       </div>
+
+
     </div>
   </div>
 </section>

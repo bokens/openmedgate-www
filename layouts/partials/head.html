@@ -115,14 +115,59 @@
     position: relative;
   }
   
-  /* Floating animation for blobs */
+  /* Floating animation for blobs - ROTATING + MOVING */
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(180deg); }
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) rotate(0deg); 
+    }
+    25% { 
+      transform: translateY(-40px) translateX(-20px) rotate(90deg); 
+    }
+    50% { 
+      transform: translateY(-60px) translateX(20px) rotate(180deg); 
+    }
+    75% { 
+      transform: translateY(-30px) translateX(-30px) rotate(270deg); 
+    }
+    100% { 
+      transform: translateY(0px) translateX(0px) rotate(360deg); 
+    }
   }
   
   .animate-float-blob {
-    animation: float 8s ease-in-out infinite;
+    animation: float 12s ease-in-out infinite;
+  }
+  
+  /* Breathing animation - SCALE + OPACITY */
+  @keyframes breathing {
+    0%, 100% { 
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.7;
+      transform: scale(1.15);
+    }
+  }
+  
+  .animate-breathing {
+    animation: breathing 6s ease-in-out infinite;
+  }
+  
+  /* Blob pulse - BLUR + OPACITY */
+  @keyframes blob-pulse {
+    0%, 100% {
+      filter: blur(60px);
+      opacity: 0.2;
+    }
+    50% {
+      filter: blur(40px);
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-blob-pulse {
+    animation: blob-pulse 5s ease-in-out infinite;
   }
   
   /* Gradient text animation */
@@ -164,3 +209,4 @@
     document.documentElement.classList.add('dark');
   }
 </script>
+
