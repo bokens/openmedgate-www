@@ -1,10 +1,11 @@
 {{ define "main" }}
 
+
 <!-- Hero Section -->
 <section id="hero" class="relative overflow-hidden bg-white dark:bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
     <div class="text-center max-w-4xl mx-auto">
-      <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-pulse mb-6">
+      <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-gradient-pulse mb-6">
         {{ .Title | default (i18n "hero_title") }}
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
@@ -57,7 +58,7 @@
 <section id="manifest" class="py-20 bg-gray-50 dark:bg-gray-800/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8">
+      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent mb-8">
         {{ i18n "section_manifest" }}
       </h2>
       <!-- Content from markdown -->
@@ -73,7 +74,7 @@
 <!-- How It Works Section -->
 <section id="how-it-works" class="py-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16">
       {{ i18n "section_how_it_works" }}
     </h2>
     
@@ -90,11 +91,12 @@
 </section>
 
 <!-- Products Section -->
-<section id="products" class="py-20 bg-gray-50 dark:bg-gray-800/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-4">
-      {{ i18n "section_products" }}
-    </h2>
+<section id="products" class="py-20">
+  <div class="bg-gray-50 dark:bg-gray-800/50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
+        {{ i18n "section_products" }}
+      </h2>
     <p class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
       {{ i18n "powered_by" }}
     </p>
@@ -102,7 +104,7 @@
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       <!-- QuantumMed -->
       <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
-         class="group p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all card-hover">
+   class="group p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all transform hover:scale-105 hover:-translate-y-2">
         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
           QuantumMed
         </h3>
@@ -116,6 +118,7 @@
           </svg>
         </span>
       </a>
+      
       
       <!-- MedicoAI -->
       <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60 card-hover">
@@ -136,7 +139,7 @@
 <!-- Partner Section (Segment Picker) -->
 <section id="partners" class="py-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
       {{ i18n "section_partners" }}
     </h2>
     
@@ -149,7 +152,7 @@
 <!-- Status Section -->
 <section id="status" class="py-20 bg-gray-50 dark:bg-gray-800/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
       {{ i18n "section_status" }}
     </h2>
     
@@ -166,7 +169,7 @@
 <section id="newsletter" class="py-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
         {{ i18n "newsletter_title" }}
       </h2>
       <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
@@ -185,7 +188,7 @@
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
       {{ i18n "section_contact" }}
     </h2>
     

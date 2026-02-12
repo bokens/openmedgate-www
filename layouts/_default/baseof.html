@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" :class="{ 'dark': darkMode }">
+  <html lang="{{ .Site.Language.Lang }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && '{{ site.Params.darkModeDefault }}' === 'dark') }" :class="{ 'dark': darkMode }"></html>
 <head>
   {{- partial "head.html" . -}}
 </head>
