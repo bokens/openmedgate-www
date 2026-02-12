@@ -6,7 +6,8 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
 
 <!-- Description -->
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
 
 <!-- Author -->
 <meta name="author" content="{{ site.Params.author }}">
@@ -16,16 +17,17 @@
 
 <!-- Language alternates (hreflang) -->
 {{ if .IsTranslated }}
-  {{ range .Translations }}
-    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
-  {{ end }}
-  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
 {{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ site.BaseURL }}">
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta property="og:description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ site.Title }}">
@@ -41,7 +43,8 @@
 <meta name="twitter:creator" content="{{ . }}">
 {{ end }}
 <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="twitter:description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
 {{ with site.Params.ogImage }}
 <meta name="twitter:image" content="{{ . | absURL }}">
 {{ end }}
@@ -103,79 +106,100 @@
 
 <!-- Custom styles -->
 <style>
-  [x-cloak] { display: none !important; }
-  
+  [x-cloak] {
+    display: none !important;
+  }
+
   /* Smooth scroll */
   html {
     scroll-behavior: smooth;
   }
-  
+
   /* Language switcher dropdown */
   .lang-dropdown {
     position: relative;
   }
-  
+
   /* Floating animation for blobs - ROTATING + MOVING */
   @keyframes float {
-    0%, 100% { 
-      transform: translateY(0px) translateX(0px) rotate(0deg); 
+
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
     }
-    25% { 
-      transform: translateY(-40px) translateX(-20px) rotate(90deg); 
+
+    25% {
+      transform: translateY(-40px) translateX(-20px) rotate(90deg);
     }
-    50% { 
-      transform: translateY(-60px) translateX(20px) rotate(180deg); 
+
+    50% {
+      transform: translateY(-60px) translateX(20px) rotate(180deg);
     }
-    75% { 
-      transform: translateY(-30px) translateX(-30px) rotate(270deg); 
+
+    75% {
+      transform: translateY(-30px) translateX(-30px) rotate(270deg);
     }
-    100% { 
-      transform: translateY(0px) translateX(0px) rotate(360deg); 
+
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(360deg);
     }
   }
-  
+
   .animate-float-blob {
     animation: float 12s ease-in-out infinite;
   }
-  
+
   /* Breathing animation - SCALE + OPACITY */
   @keyframes breathing {
-    0%, 100% { 
+
+    0%,
+    100% {
       opacity: 0.3;
       transform: scale(1);
     }
-    50% { 
+
+    50% {
       opacity: 0.7;
       transform: scale(1.15);
     }
   }
-  
+
   .animate-breathing {
     animation: breathing 6s ease-in-out infinite;
   }
-  
+
   /* Blob pulse - BLUR + OPACITY */
   @keyframes blob-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
       filter: blur(60px);
       opacity: 0.2;
     }
+
     50% {
       filter: blur(40px);
       opacity: 0.5;
     }
   }
-  
+
   .animate-blob-pulse {
     animation: blob-pulse 5s ease-in-out infinite;
   }
-  
+
   /* Gradient text animation */
   @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
   }
-  
+
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
@@ -185,26 +209,40 @@
   .card-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Button glow effect */
   @keyframes button-glow {
-    0%, 100% { box-shadow: 0 0 10px rgba(22, 163, 74, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(22, 163, 74, 0.8); }
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(22, 163, 74, 0.5);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(22, 163, 74, 0.8);
+    }
   }
-  
+
   .btn-glow:hover {
     animation: button-glow 2s ease-in-out;
   }
 
   /* Floating animation for blobs */
   @keyframes float-slow {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(180deg); }
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-30px) rotate(180deg);
+    }
   }
 
   .animate-float-slow {
@@ -213,21 +251,84 @@
 
   /* Pulse gradient on hero title */
   @keyframes gradient-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.7;
+    }
   }
 
   .animate-gradient-pulse {
     animation: gradient-pulse 3s ease-in-out infinite;
   }
 
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-on-scroll {
+    opacity: 0;
+  }
+
+  .fade-in-on-scroll.visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .text-reveal {
+    display: inline-block;
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .text-reveal:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .text-reveal:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .text-reveal:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .text-reveal:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+
+  .text-reveal:nth-child(5) {
+    animation-delay: 0.4s;
+  }
 </style>
 
 <!-- Dark mode init (prevent flash) -->
 <script>
-  if (localStorage.getItem('darkMode') === 'true' || 
-      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (localStorage.getItem('darkMode') === 'true' ||
+    (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
   }
 </script>
-

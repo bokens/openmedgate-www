@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-  <html lang="{{ .Site.Language.Lang }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && '{{ site.Params.darkModeDefault }}' === 'dark') }" :class="{ 'dark': darkMode }"></html>
+<html lang="{{ .Site.Language.Lang }}"
+  x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && '{{ site.Params.darkModeDefault }}' === 'dark') }"
+  :class="{ 'dark': darkMode }">
+
+</html>
+
 <head>
   {{- partial "head.html" . -}}
 </head>
+
 <body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
   {{- partial "header.html" . -}}
-  
+
   <main>
     {{- block "main" . }}{{- end }}
   </main>
-  
+
   {{- partial "footer.html" . -}}
-  
+
   {{- if site.Params.cookieConsentEnabled }}
-    {{- partial "cookie-consent.html" . -}}
+  {{- partial "cookie-consent.html" . -}}
   {{- end }}
-  
+
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
   <!-- Custom scripts -->
   {{- block "scripts" . }}{{- end }}
+
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
 </body>
+
 </html>
