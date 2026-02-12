@@ -102,3 +102,14 @@
     </div>
   </nav>
 </header>
+
+<script>
+  const darkModeDefault = "{{ site.Params.darkModeDefault }}"; // "dark" or "light"
+  const stored = localStorage.getItem('darkMode');
+  
+  if (stored !== null) {
+    if (stored === 'true') document.documentElement.classList.add('dark');
+  } else if (darkModeDefault === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.classList.add('dark');
+  }
+</script>
