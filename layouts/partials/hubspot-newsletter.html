@@ -5,9 +5,6 @@
 <form x-data="newsletterForm('{{ $portalId }}', '{{ $formGuid }}')" @submit.prevent="submitForm()" class="space-y-4">
   <!-- Email -->
   <div>
-    <label for="newsletter_email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-      {{ i18n "contact_email" }}
-    </label>
     <input
       type="email"
       id="newsletter_email"

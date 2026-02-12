@@ -5,9 +5,6 @@
 <form x-data="contactForm('{{ $portalId }}', '{{ $formGuid }}')" @submit.prevent="submitForm()" class="space-y-4">
   <!-- Email -->
   <div>
-    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-      {{ i18n "contact_email" }}
-    </label>
     <input
       type="email"
       id="email"
@@ -21,9 +18,6 @@
 
   <!-- Message -->
   <div>
-    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-      {{ i18n "contact_message" }}
-    </label>
     <textarea
       id="message"
       x-model.trim="formData.message"
