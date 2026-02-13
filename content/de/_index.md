@@ -1,17 +1,17 @@
----
-title: "Open Medical Gateway"
-description: "Offene Infrastruktur für KI-Interoperabilität im Gesundheitswesen"
----
+## Wir verbinden Systeme. Wir machen Daten frei. Wir beseitigen Vendor Lock-in.
 
-<!-- Manifest-Inhalt hier -->
+Das Gesundheitswesen sollte nicht in technologischen Silos eingeschlossen sein. OpenMedGate ist eine offene Integrationsschicht, die medizinische Systeme verbindet und einen sicheren Datenaustausch auf Grundlage internationaler Interoperabilitätsstandards ermöglicht.
 
-Das Gesundheitswesen sollte nicht hinter proprietären Mauern verschlossen sein.
+## Wir glauben, dass:
 
-**OpenMedGate** ist eine Bewegung für offene Gesundheitsinfrastruktur — die Interoperabilität, Datenautonomie und Innovation ohne Vendor Lock-in ermöglicht.
+- **Patientendaten unterliegen den Rechten des Patienten.**  
+  Das Krankenhaus ist ihr Administrator. Der Systemanbieter soll dienen, nicht den Zugang blockieren.
 
-Wir glauben:
-- **Ärzte verdienen Freiheit** bei der Wahl ihrer Werkzeuge
-- **Krankenhäuser verdienen Kontrolle** über ihre Daten
-- **Patienten verdienen bessere Versorgung** durch offene Innovation
+- **Das Krankenhaus wählt die besten Werkzeuge für den Patienten.**  
+  Nicht der Anbieter. Nicht veraltete Verträge. Die Entscheidung liegt bei der medizinischen Einrichtung.
 
-Schließen Sie sich uns an beim Aufbau der Zukunft des Gesundheitswesens.
+- **Offene Standards gewinnen.**  
+  FHIR, HL7 und DICOM gibt es seit Jahren; es ist Zeit, ihr volles Potenzial zu nutzen.
+
+- **Gemeinsam bauen wir mehr als allein.**  
+  Open Source ist keine Ideologie. Es ist der schnellste Weg zu einer interoperablen, sicheren und innovativen Gesundheitsversorgung.

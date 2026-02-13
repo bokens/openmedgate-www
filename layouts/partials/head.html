@@ -1,4 +1,4 @@
-<meta charset="UTF-8">
+﻿<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -108,6 +108,16 @@
 <style>
   [x-cloak] {
     display: none !important;
+  }
+
+  /* Global button color override (logo color instead of green) */
+  a.bg-primary-600,
+  button.bg-primary-600{
+    background-color:#47CAAE !important; /* accent-600 */
+  }
+  a.bg-primary-600:hover,
+  button.bg-primary-600:hover{
+    background-color:#1d4ed8 !important; /* accent-700 */
   }
 
   /* Smooth scroll */
@@ -265,6 +275,11 @@
   .animate-gradient-pulse {
     animation: gradient-pulse 3s ease-in-out infinite;
   }
+  /* Fix hero gradient text clipping */
+    #hero h1{
+    line-height: 1.2;
+    padding-bottom: 0.2em;
+  }
 
   /* Fade-in animation */
   @keyframes fadeInUp {
@@ -331,4 +346,179 @@
     (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
   }
+</script>
+
+<style>
+/* --- Scroll reveal (Themefisher-like) --- */
+[data-reveal]{
+  opacity:0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+[data-reveal].reveal-in{
+  opacity:1;
+  transform: translateY(0);
+}
+.reveal-card{
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.reveal-card:hover{
+  transform: translateY(-6px);
+}
+
+/* Section title underline motion */
+.section-title{position:relative;}
+.section-title::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-14px;
+  width:120px;
+  height:3px;
+  transform:translateX(-50%);
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-accent-500), var(--color-primary-600));
+  background-size:200% 200%;
+  animation: gradient-shift 3.2s ease infinite;
+  opacity:.9;
+}
+  /* --- Manifest: modern cards instead of arrows --- */
+:root{
+  --primary-600:#16a34a;
+  --accent-300:#93c5fd;
+  --accent-500:#3b82f6;
+  --accent-700:#3984EC;
+}
+
+/* Disable prose width limitation only for manifest */
+#manifest .prose{ max-width:none !important; }
+
+/* One width for intro + cards */
+#manifest .manifest-text{
+  max-width:56rem;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:1.125rem;
+  line-height:1.9;
+}
+
+/* Make the first H2 from Markdown (## ...) use the same gradient as section titles */
+#manifest .manifest-text > h2{
+  margin: 0 auto 1rem auto;
+  text-align:center;
+  font-weight:800;
+  line-height:1.15;
+font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+
+  background: linear-gradient(90deg, var(--primary-600), var(--accent-500), var(--primary-600));
+  background-size: 200% 200%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+  animation: gradient-shift 3.2s ease infinite;
+}
+
+/* Subtitle paragraph under the H2 (the first paragraph) */
+#manifest .manifest-text > p{
+  margin: .9rem auto;
+}
+
+/* Default strong (outside cards) */
+#manifest .manifest-text strong{
+  color: var(--primary-600);
+}
+
+/* Cards grid */
+#manifest .manifest-text ul{
+  margin-top:1.25rem;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+@media (min-width:768px){
+  #manifest .manifest-text ul{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Card container */
+#manifest .manifest-text li{
+  list-style:none;
+  padding:14px 16px;
+  border:1px solid rgba(148,163,184,.35);
+  border-radius:14px;
+  background: rgba(255,255,255,.6);
+}
+.dark #manifest .manifest-text li{
+  background: rgba(17,24,39,.55);
+  border-color: rgba(148,163,184,.2);
+}
+
+/* Card title (bold line) - forced color (prose can override) */
+#manifest .prose .manifest-text ul li strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:1.05rem;
+  color: var(--accent-300) !important; /* dark default */
+}
+html:not(.dark) #manifest .prose .manifest-text ul li strong{
+  color: var(--accent-700) !important;
+}
+
+/* Body text inside cards */
+#manifest .prose .manifest-text ul li{
+  color: rgba(229,231,235,0.92) !important; /* dark */
+}
+html:not(.dark) #manifest .prose .manifest-text ul li{
+  color: rgba(55,65,81,0.95) !important; /* light */
+}
+
+/* Optional: blockquote styling (if you ever add one) */
+#manifest .manifest-text blockquote{
+  margin:1.3rem 0;
+  padding:14px 16px;
+  border-left:4px solid var(--accent-500);
+  background: rgba(59,130,246,.08);
+  border-radius:14px;
+}
+
+/* Center intro paragraphs */
+#manifest .manifest-text > p{
+  text-align:center;
+}
+
+/* Center text inside cards */
+#manifest .manifest-text ul li{
+  text-align:center;
+}
+
+</style>
+
+<script>
+  // Scroll reveal for sections + staggered children
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".fade-in-on-scroll");
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+
+        // reveal whole section
+        e.target.classList.add("visible");
+
+        // reveal children with delays
+        const revealEls = e.target.querySelectorAll("[data-reveal]");
+        revealEls.forEach((el) => {
+          const d = Number(el.getAttribute("data-delay") || "0");
+          el.style.transitionDelay = `${d}ms`;
+          el.classList.add("reveal-in");
+        });
+
+        io.unobserve(e.target);
+      }
+    }, { threshold: 0.18 });
+
+    sections.forEach(s => io.observe(s));
+  });
 </script>

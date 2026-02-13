@@ -52,7 +52,8 @@
   </div>
   
   <!-- Dynamic CTA based on segment -->
-  <div x-show="segment" x-cloak class="mt-8" x-transition>
+  <div x-show="segment" x-cloak class="mt-8 flex justify-center text-center" x-transition>
+
     <template x-if="segment === 'hospital'">
       <a href="{{ site.Params.quantummedURL }}" 
          class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">

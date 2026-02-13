@@ -65,39 +65,27 @@
 <section id="manifest" class="py-20 relative overflow-hidden fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent">
+      <h2
+        class="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent section-title"
+        data-reveal data-delay="0">
         {{ i18n "section_manifest" }}
       </h2>
-      
-      <!-- Prose content with better styling -->
+
+      <!-- Prose content -->
       <div class="prose prose-lg dark:prose-invert mx-auto max-w-none">
-        <style>
-          .manifest-text strong {
-            color: var(--color-primary-600);
-          }
-          .manifest-text li {
-            list-style: none;
-            padding-left: 1.5rem;
-            position: relative;
-          }
-          .manifest-text li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--color-primary-500);
-            font-weight: bold;
-          }
-        </style>
-        <div class="manifest-text text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+        <div data-reveal data-delay="120" class="manifest-text">
           {{ .Content }}
         </div>
       </div>
     </div>
   </div>
-  
+
   <!-- Background accent -->
-  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl opacity-30 -z-10"></div>
+  <div
+    class="absolute -bottom-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl opacity-30 -z-10">
+  </div>
 </section>
+
 
 <!-- How It Works Section -->
 <section id="how-it-works" class="py-20 fade-in-on-scroll">
@@ -124,14 +112,16 @@
   <div class="bg-gray-50 dark:bg-gray-800/50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2
-        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
+        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title"
+        data-reveal data-delay="0">
         {{ i18n "section_products" }}
       </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+      <p data-reveal data-delay="120"
+        class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
         {{ i18n "powered_by" }}
       </p>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-reveal data-delay="0">
         <!-- QuantumMed -->
         <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
           class="group p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all transform hover:scale-105 hover:-translate-y-2">
@@ -153,7 +143,8 @@
 
         <!-- MedicoAI -->
         <div
-          class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60 card-hover">
+          class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60 card-hover"
+          data-reveal data-delay="0">
           <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             MedicoAI
           </h3>
@@ -171,17 +162,21 @@
 
 <!-- Partner Section (Segment Picker) -->
 <section id="partners" class="py-20 fade-in-on-scroll">
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
-      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
+      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center m-0 mb-10 section-title"
+      data-reveal data-delay="0">
       {{ i18n "section_partners" }}
     </h2>
 
     <div class="max-w-3xl mx-auto">
       {{ partial "segment-picker.html" . }}
     </div>
+
   </div>
 </section>
+
 
 <!-- Status Section -->
 <section id="status" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">

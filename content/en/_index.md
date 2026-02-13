@@ -1,17 +1,17 @@
----
-title: "Open Medical Gateway"
-description: "Open infrastructure for healthcare AI interoperability"
----
+## We connect systems. We unlock data. We eliminate vendor lock-in.
 
-<!-- Manifest content goes here -->
+Healthcare should not be locked in technological silos. OpenMedGate is an open integration layer that connects medical systems and enables secure data exchange based on international interoperability standards.
 
-Healthcare shouldn't be locked behind proprietary walls.
+## We believe that:
 
-**OpenMedGate** is a movement for open healthcare infrastructure — enabling interoperability, data autonomy, and innovation without vendor lock-in.
+- **Patient data is subject to the patient’s rights.**  
+  The hospital is its administrator. The system vendor is meant to serve, not block access.
 
-We believe:
-- **Doctors deserve freedom** to choose their tools
-- **Hospitals deserve control** over their data
-- **Patients deserve better care** through open innovation
+- **The hospital chooses the best tools for the patient.**  
+  Not the vendor. Not outdated contracts. The decision belongs to the medical institution.
 
-Join us in building the future of healthcare.
+- **Open standards win.**  
+  FHIR, HL7, and DICOM have existed for years; it’s time to use their full potential.
+
+- **Together we build more than alone.**  
+  Open source is not an ideology. It is the fastest path to interoperable, secure, and innovative healthcare.
