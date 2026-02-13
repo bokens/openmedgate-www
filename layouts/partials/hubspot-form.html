@@ -2,40 +2,40 @@
 {{ $portalId := .Site.Params.hubspotPortalId }}
 {{ $formGuid := .Site.Params.hubspotFormId }}
 
-<form x-data="contactForm('{{ $portalId }}', '{{ $formGuid }}')" @submit.prevent="submitForm()" class="space-y-4">
+<form x-data="contactForm('{{ $portalId }}', '{{ $formGuid }}')" @submit.prevent="submitForm()" class="space-y-4 w-full">
   <!-- Email -->
-  <div>
+  <div class="w-full overflow-hidden">
     <input type="email" id="email" x-model.trim="formData.email" required
-      class="w-full min-w-0 px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+      style="width: 100%;"
+      class="px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
       placeholder="{{ i18n "contact_email" }}" autocomplete="email">
   </div>
 
   <!-- Message -->
-  <div>
+  <div class="w-full overflow-hidden">
     <textarea id="message" x-model.trim="formData.message" rows="4" required
-      class="w-full min-w-0 px-3 py-2 sm:px-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
+      style="width: 100%;"
+      class="px-3 py-2 sm:px-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
       placeholder="{{ i18n "contact_message" }}" autocomplete="off"></textarea>
   </div>
 
   <!-- Submit Button -->
-  <div>
+  <div class="w-full overflow-hidden">
     <button type="submit" :disabled="isLoading"
-      class="w-full min-w-0 px-4 py-3 sm:px-6 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-medium rounded-lg transition-colors">
+      style="width: 100%;"
+      class="px-4 py-3 sm:px-6 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-medium rounded-lg transition-colors">
       <span x-show="!isLoading">{{ i18n "contact_submit" }}</span>
       <span x-show="isLoading" x-cloak>Sending...</span>
     </button>
   </div>
-</form>
 
   <!-- Success Message -->
-  <div x-show="successMessage" x-cloak
-    class="p-3 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg text-sm">
+  <div x-show="successMessage" x-cloak class="p-3 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg text-sm">
     Thank you! We'll be in touch soon.
   </div>
 
   <!-- Error Message -->
-  <div x-show="errorMessage" x-cloak
-    class="p-3 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg text-sm">
+  <div x-show="errorMessage" x-cloak class="p-3 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg text-sm">
     <span x-text="errorMessage"></span>
   </div>
 </form>
@@ -51,7 +51,6 @@
       successMessage: false,
       errorMessage: '',
 
-      // HubSpot tracking cookie (helps associate submission with visitor)
       getHubspotUtk() {
         const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
         return m ? decodeURIComponent(m[1]) : null;
@@ -61,7 +60,6 @@
         this.errorMessage = '';
         this.successMessage = false;
 
-        // Basic front-end validation (HubSpot will validate again)
         if (!this.formData.email || !this.formData.message) {
           this.errorMessage = 'Please fill in all required fields.';
           return;
@@ -72,9 +70,6 @@
         const payload = {
           fields: [
             { name: "email", value: this.formData.email },
-
-            // UWAGA: "message" musi odpowiadać *internal name* pola w HubSpot form.
-            // Jeśli u Was to pole ma inny internal name, podmień "message" na właściwy.
             { name: "message", value: this.formData.message }
           ],
           context: {
@@ -94,11 +89,9 @@
             }
           );
 
-          // HubSpot potrafi zwracać błąd walidacji jako JSON
           const data = await res.json().catch(() => ({}));
 
           if (!res.ok) {
-            // Najczęściej tu wpada: brak wymaganego pola, zły internal name pola, wymagana zgoda RODO itp.
             const msg =
               (data && data.message) ||
               'Submission failed. Please try again or contact us directly.';
@@ -106,7 +99,6 @@
           }
 
           this.successMessage = true;
-          this.formData.firstname = '';
           this.formData.email = '';
           this.formData.message = '';
         } catch (err) {

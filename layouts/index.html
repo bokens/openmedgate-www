@@ -221,26 +221,26 @@
 <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
-      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
+      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16">
       {{ i18n "section_contact" }}
     </h2>
 
-    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-      <!-- HubSpot Form -->
-      <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+    <div class="grid md:grid-cols-2 gap-4 sm:gap-12 max-w-5xl mx-auto">
+      <!-- Form -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
           Send a message
         </h3>
         {{ partial "hubspot-form.html" . }}
       </div>
+      
 
       <!-- Calendly -->
-      <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
           {{ i18n "book_meeting" }}
         </h3>
         {{ partial "calendly.html" (dict "height" "500" "Page" . "Site" .Site) }}
-
       </div>
     </div>
   </div>
