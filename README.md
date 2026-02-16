@@ -81,7 +81,6 @@ hubspotFormId = "YOUR_FORM_ID"
 2. Update `config/_default/params.toml`:
 
 ```toml
-calendlyURL = "https://calendly.com/your-link"
 ```
 
 ### Countdown Campaign

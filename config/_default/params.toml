@@ -11,7 +11,6 @@ hubspotPortalId = "146629432"
 hubspotFormId = "aeadca76-4128-4c72-a7c6-260b461c8a75"
 newsletterFormGuid = "e4bcb230-3e96-439e-b9bb-7fc0a40974ff"
 
-calendlyURL = "https://calendly.com/sylwester-cyrwus-quantummed/30min"
 
 countdownEnabled = true
 countdownTargetDate = "2026-08-01T00:00:00Z"

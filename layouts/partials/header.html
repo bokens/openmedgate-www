@@ -11,12 +11,12 @@
           {{ end }}
         </a>
       </div>
-      
+
       <!-- Desktop nav -->
       <div class="hidden md:flex md:items-center md:space-x-8">
         <!-- Nav links -->
-        <a href="#manifest" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section_manifest" }}
+        <a href="#problem" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_problem_nav" }}
         </a>
         <a href="#how-it-works" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
           {{ i18n "section_how_it_works" }}
@@ -27,10 +27,10 @@
         <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
           {{ i18n "section_contact" }}
         </a>
-        
+
         <!-- Language switcher -->
         <div class="relative" x-data="{ open: false }">
-          <button @click="open = !open" @click.outside="open = false" 
+          <button @click="open = !open" @click.outside="open = false"
                   class="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
             <span class="uppercase text-sm font-medium">{{ .Language.Lang }}</span>
             <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,14 +40,14 @@
           <div x-show="open" x-cloak x-transition
                class="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1">
             {{ range site.Home.AllTranslations }}
-              <a href="{{ .RelPermalink }}" 
+              <a href="{{ .RelPermalink }}"
                  class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 {{ if eq $.Language.Lang .Language.Lang }}bg-gray-100 dark:bg-gray-700{{ end }}">
                 {{ .Language.LanguageName }}
               </a>
             {{ end }}
           </div>
         </div>
-        
+
         <!-- Dark mode toggle -->
         {{ if site.Params.darkModeEnabled }}
         <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
@@ -61,13 +61,13 @@
           </svg>
         </button>
         {{ end }}
-        
+
         <!-- CTA Button -->
         <a href="#contact" class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
           {{ i18n "hero_cta" }}
         </a>
       </div>
-      
+
       <!-- Mobile menu button -->
       <div class="flex items-center md:hidden">
         <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 text-gray-600 dark:text-gray-300">
@@ -80,19 +80,19 @@
         </button>
       </div>
     </div>
-    
+
     <!-- Mobile menu -->
     <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden pb-4">
       <div class="flex flex-col space-y-4">
-        <a href="#manifest" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_manifest" }}</a>
+        <a href="#problem" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_problem_nav" }}</a>
         <a href="#how-it-works" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_how_it_works" }}</a>
         <a href="#products" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_products" }}</a>
         <a href="#contact" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_contact" }}</a>
-        
+
         <!-- Mobile language switcher -->
         <div class="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
           {{ range site.Home.AllTranslations }}
-            <a href="{{ .RelPermalink }}" 
+            <a href="{{ .RelPermalink }}"
                class="text-sm font-medium {{ if eq $.Language.Lang .Language.Lang }}text-primary-600 dark:text-primary-400{{ else }}text-gray-600 dark:text-gray-300{{ end }}">
               {{ .Language.Lang | upper }}
             </a>
@@ -106,7 +106,7 @@
 <script>
   const darkModeDefault = "{{ site.Params.darkModeDefault }}"; // "dark" or "light"
   const stored = localStorage.getItem('darkMode');
-  
+
   if (stored !== null) {
     if (stored === 'true') document.documentElement.classList.add('dark');
   } else if (darkModeDefault === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {

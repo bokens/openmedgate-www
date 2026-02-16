@@ -10,23 +10,38 @@ other = "Contact"
 
 # Hero
 [hero_title]
-other = "Open Medical Gateway"
+other = "Your hospital data. Your choice of AI. No vendor lock-in."
 
 [hero_subtitle]
-other = "Open infrastructure for healthcare AI interoperability"
+other = "OpenMedGate is an open integration platform that connects healthcare systems and enables secure AI adoption — based on FHIR, HL7 & DICOM standards."
 
 [hero_cta]
-other = "Get Started"
+other = "Book a Call"
+
+[hero_cta_secondary]
+other = "See How It Works"
 
 # Sections
 [section_manifest]
 other = "Manifest"
 
+[section_problem]
+other = "Healthcare data is trapped. And it's costing you."
+
+[section_problem_nav]
+other = "The Problem"
+
 [section_how_it_works]
 other = "How It Works"
 
+[section_guide]
+other = "We've seen the problem from the inside"
+
 [section_products]
 other = "Products"
+
+[section_success]
+other = "What changes when your data is free"
 
 [section_partners]
 other = "Partner With Us"
@@ -35,7 +50,133 @@ other = "Partner With Us"
 other = "Where We Are"
 
 [section_contact]
-other = "Contact"
+other = "Let's talk"
+
+# Problem
+[problem_external_title]
+other = "Integration costs millions"
+
+[problem_external_desc]
+other = "Every new tool requires a separate contract, integration project, and vendor negotiation. You pay for access to your own data."
+
+[problem_internal_title]
+other = "You feel locked in"
+
+[problem_internal_desc]
+other = "Switching vendors takes years. Your data is in proprietary formats. Innovation depends on the vendor's roadmap, not yours."
+
+[problem_philosophical_title]
+other = "This shouldn't be normal"
+
+[problem_philosophical_desc]
+other = "Patient data belongs to patients. Hospitals should choose the best tools — not be held hostage by legacy contracts."
+
+[problem_stakes]
+other = "Without change: rising costs, blocked innovation, and falling behind hospitals that already embrace open standards."
+
+# How it works
+[hiw_step1_title]
+other = "Connect"
+
+[hiw_step1_desc]
+other = "We plug into your existing systems (HIS, PACS, RIS) through standard protocols — no replacing what works."
+
+[hiw_step2_title]
+other = "Integrate"
+
+[hiw_step2_desc]
+other = "Add AI tools, analytics, or new modules through one open gateway — instead of five separate vendor deals."
+
+[hiw_step3_title]
+other = "Control"
+
+[hiw_step3_desc]
+other = "You own your data, choose your tools, and switch providers anytime — without million-euro migration projects."
+
+[hiw_cta]
+other = "Book a Call to Discuss Your Setup"
+
+# Guide
+[guide_intro]
+other = "OpenMedGate was born from frustration with closed systems — after years working inside healthcare IT. We're not building another silo. We're building the exit."
+
+[guide_sc_role]
+other = "CEO & Co-founder"
+
+[guide_sc_bio]
+other = "10+ years leading healthcare IT projects. Executive MBA."
+
+[guide_kb_role]
+other = "CTO & Co-founder"
+
+[guide_kb_bio]
+other = "17+ years enterprise integration. Former technical lead at Roche."
+
+[guide_stats]
+other = "24 AI technology partners · 15 NDAs signed · 4 active integrations"
+
+# Products
+[products_subtitle]
+other = "Products built on open standards"
+
+[qm_tagline]
+other = "AI Integration Platform for Radiology"
+
+[qm_desc]
+other = "One contract. One point of contact. Access to the best AI diagnostic models — without vendor lock-in."
+
+[qm_feature_1]
+other = "Integrates with your PACS/RIS"
+
+[qm_feature_2]
+other = "Multiple AI models (InferVision, Radiobotics, AZMED...)"
+
+[qm_feature_3]
+other = "Cloud or on-premise · GDPR & NIS2 compliant"
+
+[qm_cta]
+other = "Request a Pilot"
+
+[medicoai_desc]
+other = "AI-powered clinical decision support beyond radiology."
+
+[medicoai_notify]
+other = "Get Notified"
+
+# Success
+[success_ownership_title]
+other = "True data ownership"
+
+[success_ownership_desc]
+other = "Export, migrate, and use your data in any standard format. No more paying for access."
+
+[success_ai_title]
+other = "Best-in-class AI"
+
+[success_ai_desc]
+other = "Choose from dozens of AI tools — not just what your vendor offers. Switch anytime."
+
+[success_speed_title]
+other = "Faster innovation"
+
+[success_speed_desc]
+other = "Deploy new tools in weeks, not years. Your roadmap, not your vendor's."
+
+[success_cost_title]
+other = "Lower total cost"
+
+[success_cost_desc]
+other = "One integration layer instead of dozens of custom connectors. Predictable costs."
+
+# Lead magnet
+[lead_magnet_title]
+other = "Free Guide: How to Escape Vendor Lock-in"
+
+[lead_magnet_desc]
+other = "A practical guide for hospital leaders ready to take control of their data and AI strategy."
+
+[lead_magnet_cta]
+other = "Coming Soon — Get Notified"
 
 # Segment picker
 [segment_hospital]
@@ -52,6 +193,34 @@ other = "Public Sector"
 
 [segment_question]
 other = "I am a:"
+
+[segment_hospital_value]
+other = "Gain control over your infrastructure and scale AI adoption on your terms."
+
+[segment_ai_vendor_value]
+other = "Reach hospitals faster through one integration layer instead of custom projects."
+
+[segment_developer_value]
+other = "Build on open standards and connect to healthcare systems without vendor lock-in."
+
+[segment_public_value]
+other = "Accelerate digitalization with interoperable infrastructure built for public healthcare."
+
+[segment_hospital_cta]
+other = "Book a Call"
+
+[segment_ai_vendor_cta]
+other = "Become a Partner"
+
+[segment_developer_cta]
+other = "View GitHub"
+
+[segment_public_cta]
+other = "Schedule a Call"
+
+# Status
+[status_subtitle]
+other = "Transparent product maturity across our core integration components"
 
 # Countdown
 [countdown_title]
@@ -73,6 +242,9 @@ other = "seconds"
 [newsletter_title]
 other = "Get Notified"
 
+[newsletter_desc]
+other = "Get updates on open-sourcing progress and new features."
+
 [newsletter_placeholder]
 other = "Your email"
 
@@ -86,12 +258,15 @@ other = "Subscribe"
 other = "Subscribing..."
 
 [newsletter_success]
-other = "Thanks — you’re subscribed."
+other = "Thanks — you're subscribed."
 
 [newsletter_error_required]
 other = "Please fill in all required fields."
 
 # Contact form
+[contact_form_title]
+other = "Send a message"
+
 [contact_name]
 other = "Name"
 

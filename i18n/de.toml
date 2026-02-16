@@ -10,23 +10,38 @@ other = "Kontakt"
 
 # Hero
 [hero_title]
-other = "Open Medical Gateway"
+other = "Ihre Krankenhausdaten. Ihre Wahl der KI. Kein Vendor Lock-in."
 
 [hero_subtitle]
-other = "Offene Infrastruktur für KI-Interoperabilität im Gesundheitswesen"
+other = "OpenMedGate ist eine offene Integrationsplattform, die Gesundheitssysteme verbindet und eine sichere KI-Einführung ermöglicht — basierend auf FHIR-, HL7- und DICOM-Standards."
 
 [hero_cta]
-other = "Jetzt starten"
+other = "Termin vereinbaren"
+
+[hero_cta_secondary]
+other = "So funktioniert es"
 
 # Sections
 [section_manifest]
 other = "Manifest"
 
+[section_problem]
+other = "Gesundheitsdaten sind eingesperrt. Und das kostet Sie."
+
+[section_problem_nav]
+other = "Das Problem"
+
 [section_how_it_works]
 other = "So funktioniert es"
 
+[section_guide]
+other = "Wir haben das Problem von innen gesehen"
+
 [section_products]
 other = "Produkte"
+
+[section_success]
+other = "Was sich ändert, wenn Ihre Daten frei sind"
 
 [section_partners]
 other = "Partnerschaft"
@@ -35,7 +50,133 @@ other = "Partnerschaft"
 other = "Status"
 
 [section_contact]
-other = "Kontakt"
+other = "Lassen Sie uns sprechen"
+
+# Problem
+[problem_external_title]
+other = "Integration kostet Millionen"
+
+[problem_external_desc]
+other = "Jedes neue Tool erfordert einen separaten Vertrag, ein Integrationsprojekt und Verhandlungen mit dem Anbieter. Sie zahlen für den Zugang zu Ihren eigenen Daten."
+
+[problem_internal_title]
+other = "Sie fühlen sich eingesperrt"
+
+[problem_internal_desc]
+other = "Der Anbieterwechsel dauert Jahre. Ihre Daten liegen in proprietären Formaten vor. Innovation hängt von der Roadmap des Anbieters ab, nicht von Ihrer."
+
+[problem_philosophical_title]
+other = "Das sollte nicht normal sein"
+
+[problem_philosophical_desc]
+other = "Patientendaten gehören den Patienten. Krankenhäuser sollten die besten Tools wählen — nicht Geiseln alter Verträge sein."
+
+[problem_stakes]
+other = "Ohne Veränderung: steigende Kosten, blockierte Innovation und der Rückstand gegenüber Krankenhäusern, die bereits auf offene Standards setzen."
+
+# How it works
+[hiw_step1_title]
+other = "Verbinden"
+
+[hiw_step1_desc]
+other = "Wir verbinden uns mit Ihren bestehenden Systemen (KIS, PACS, RIS) über Standardprotokolle — ohne zu ersetzen, was funktioniert."
+
+[hiw_step2_title]
+other = "Integrieren"
+
+[hiw_step2_desc]
+other = "Fügen Sie KI-Tools, Analysen oder neue Module über ein offenes Gateway hinzu — statt fünf separater Anbieterverträge."
+
+[hiw_step3_title]
+other = "Kontrollieren"
+
+[hiw_step3_desc]
+other = "Sie besitzen Ihre Daten, wählen Ihre Tools und wechseln Anbieter jederzeit — ohne millionenschwere Migrationsprojekte."
+
+[hiw_cta]
+other = "Vereinbaren Sie ein Gespräch über Ihre Infrastruktur"
+
+# Guide
+[guide_intro]
+other = "OpenMedGate entstand aus der Frustration über geschlossene Systeme — nach Jahren der Arbeit in der Gesundheits-IT. Wir bauen kein weiteres Silo. Wir bauen den Ausweg."
+
+[guide_sc_role]
+other = "CEO & Co-founder"
+
+[guide_sc_bio]
+other = "10+ Jahre Leitung von Gesundheits-IT-Projekten. Executive MBA."
+
+[guide_kb_role]
+other = "CTO & Co-founder"
+
+[guide_kb_bio]
+other = "17+ Jahre Enterprise-Integration. Ehemaliger Technical Lead bei Roche."
+
+[guide_stats]
+other = "24 KI-Technologiepartner · 15 unterzeichnete NDAs · 4 aktive Integrationen"
+
+# Products
+[products_subtitle]
+other = "Produkte auf Basis offener Standards"
+
+[qm_tagline]
+other = "KI-Integrationsplattform für Radiologie"
+
+[qm_desc]
+other = "Ein Vertrag. Ein Ansprechpartner. Zugang zu den besten KI-Diagnosemodellen — ohne Vendor Lock-in."
+
+[qm_feature_1]
+other = "Integration mit Ihrem PACS/RIS"
+
+[qm_feature_2]
+other = "Mehrere KI-Modelle (InferVision, Radiobotics, AZMED...)"
+
+[qm_feature_3]
+other = "Cloud oder On-Premise · DSGVO- und NIS2-konform"
+
+[qm_cta]
+other = "Pilotprojekt anfragen"
+
+[medicoai_desc]
+other = "KI-gestützte klinische Entscheidungsunterstützung über die Radiologie hinaus."
+
+[medicoai_notify]
+other = "Benachrichtigung erhalten"
+
+# Success
+[success_ownership_title]
+other = "Echte Datenhoheit"
+
+[success_ownership_desc]
+other = "Exportieren, migrieren und nutzen Sie Ihre Daten in jedem Standardformat. Kein Bezahlen mehr für den Zugang."
+
+[success_ai_title]
+other = "Erstklassige KI"
+
+[success_ai_desc]
+other = "Wählen Sie aus Dutzenden von KI-Tools — nicht nur das, was Ihr Anbieter bietet. Jederzeit wechseln."
+
+[success_speed_title]
+other = "Schnellere Innovation"
+
+[success_speed_desc]
+other = "Neue Tools in Wochen, nicht Jahren. Ihre Roadmap, nicht die des Anbieters."
+
+[success_cost_title]
+other = "Niedrigere Gesamtkosten"
+
+[success_cost_desc]
+other = "Eine Integrationsschicht statt Dutzender kundenspezifischer Konnektoren. Kalkulierbare Kosten."
+
+# Lead magnet
+[lead_magnet_title]
+other = "Kostenloser Leitfaden: Wie Sie Vendor Lock-in entkommen"
+
+[lead_magnet_desc]
+other = "Ein praktischer Leitfaden für Krankenhausleiter, die die Kontrolle über ihre Daten- und KI-Strategie übernehmen möchten."
+
+[lead_magnet_cta]
+other = "Demnächst — Benachrichtigung erhalten"
 
 # Segment picker
 [segment_hospital]
@@ -52,6 +193,34 @@ other = "Öffentlicher Sektor"
 
 [segment_question]
 other = "Ich bin:"
+
+[segment_hospital_value]
+other = "Gewinnen Sie die Kontrolle über Ihre Infrastruktur und skalieren Sie KI-Einführung zu Ihren Bedingungen."
+
+[segment_ai_vendor_value]
+other = "Erreichen Sie Krankenhäuser schneller über eine Integrationsschicht statt individueller Projekte."
+
+[segment_developer_value]
+other = "Bauen Sie auf offenen Standards und verbinden Sie sich mit Gesundheitssystemen ohne Vendor Lock-in."
+
+[segment_public_value]
+other = "Beschleunigen Sie die Digitalisierung mit interoperabler Infrastruktur für das öffentliche Gesundheitswesen."
+
+[segment_hospital_cta]
+other = "Termin vereinbaren"
+
+[segment_ai_vendor_cta]
+other = "Partner werden"
+
+[segment_developer_cta]
+other = "GitHub ansehen"
+
+[segment_public_cta]
+other = "Gespräch vereinbaren"
+
+# Status
+[status_subtitle]
+other = "Transparente Produktreife über unsere zentralen Integrationskomponenten"
 
 # Countdown
 [countdown_title]
@@ -73,13 +242,31 @@ other = "Sekunden"
 [newsletter_title]
 other = "Benachrichtigt werden"
 
+[newsletter_desc]
+other = "Erhalten Sie Updates zum Open-Source-Fortschritt und zu neuen Funktionen."
+
 [newsletter_placeholder]
 other = "Ihre E-Mail"
 
 [newsletter_button]
 other = "Abonnieren"
 
+[newsletter_submit]
+other = "Abonnieren"
+
+[newsletter_submitting]
+other = "Wird abonniert..."
+
+[newsletter_success]
+other = "Danke — Sie sind angemeldet."
+
+[newsletter_error_required]
+other = "Bitte füllen Sie alle Pflichtfelder aus."
+
 # Contact form
+[contact_form_title]
+other = "Nachricht senden"
+
 [contact_name]
 other = "Name"
 

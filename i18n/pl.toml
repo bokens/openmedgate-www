@@ -10,23 +10,38 @@ other = "Kontakt"
 
 # Hero
 [hero_title]
-other = "Open Medical Gateway"
+other = "Twoje dane szpitalne. Twój wybór AI. Bez vendor lock-in."
 
 [hero_subtitle]
-other = "Otwarta infrastruktura interoperacyjności AI w ochronie zdrowia"
+other = "OpenMedGate to otwarta platforma integracyjna, która łączy systemy medyczne i umożliwia bezpieczne wdrażanie AI — w oparciu o standardy FHIR, HL7 i DICOM."
 
 [hero_cta]
-other = "Rozpocznij"
+other = "Umów rozmowę"
+
+[hero_cta_secondary]
+other = "Zobacz jak to działa"
 
 # Sections
 [section_manifest]
 other = "Manifest"
 
+[section_problem]
+other = "Dane medyczne są uwięzione. I to Cię kosztuje."
+
+[section_problem_nav]
+other = "Problem"
+
 [section_how_it_works]
 other = "Jak to działa"
 
+[section_guide]
+other = "Widzieliśmy ten problem od środka"
+
 [section_products]
 other = "Produkty"
+
+[section_success]
+other = "Co się zmienia, gdy Twoje dane są wolne"
 
 [section_partners]
 other = "Współpraca"
@@ -35,7 +50,133 @@ other = "Współpraca"
 other = "Status"
 
 [section_contact]
-other = "Kontakt"
+other = "Porozmawiajmy"
+
+# Problem
+[problem_external_title]
+other = "Integracja kosztuje miliony"
+
+[problem_external_desc]
+other = "Każde nowe narzędzie wymaga osobnej umowy, projektu integracyjnego i negocjacji z dostawcą. Płacisz za dostęp do własnych danych."
+
+[problem_internal_title]
+other = "Czujesz się zamknięty"
+
+[problem_internal_desc]
+other = "Zmiana dostawcy trwa latami. Twoje dane są w zamkniętych formatach. Innowacja zależy od roadmapy dostawcy, nie Twojej."
+
+[problem_philosophical_title]
+other = "To nie powinno być normą"
+
+[problem_philosophical_desc]
+other = "Dane pacjenta należą do pacjenta. Szpitale powinny wybierać najlepsze narzędzia — nie być zakładnikami starych kontraktów."
+
+[problem_stakes]
+other = "Bez zmian: rosnące koszty, zablokowana innowacja i pozostawanie w tyle za szpitalami, które już wdrożyły otwarte standardy."
+
+# How it works
+[hiw_step1_title]
+other = "Połącz"
+
+[hiw_step1_desc]
+other = "Podłączamy się do Twoich istniejących systemów (HIS, PACS, RIS) przez standardowe protokoły — bez wymiany tego, co działa."
+
+[hiw_step2_title]
+other = "Integruj"
+
+[hiw_step2_desc]
+other = "Dodaj narzędzia AI, analitykę lub nowe moduły przez jedną otwartą bramkę — zamiast pięciu osobnych umów z dostawcami."
+
+[hiw_step3_title]
+other = "Kontroluj"
+
+[hiw_step3_desc]
+other = "Jesteś właścicielem swoich danych, wybierasz narzędzia i zmieniasz dostawców w dowolnym momencie — bez milionowych projektów migracyjnych."
+
+[hiw_cta]
+other = "Umów rozmowę o Twoim środowisku"
+
+# Guide
+[guide_intro]
+other = "OpenMedGate powstał z frustracji zamkniętymi systemami — po latach pracy wewnątrz IT w ochronie zdrowia. Nie budujemy kolejnego silosu. Budujemy wyjście."
+
+[guide_sc_role]
+other = "CEO & Co-founder"
+
+[guide_sc_bio]
+other = "10+ lat kierowania projektami IT w ochronie zdrowia. Executive MBA."
+
+[guide_kb_role]
+other = "CTO & Co-founder"
+
+[guide_kb_bio]
+other = "17+ lat integracji systemów enterprise. Były lider techniczny w Roche."
+
+[guide_stats]
+other = "24 partnerów technologicznych AI · 15 podpisanych NDA · 4 aktywne integracje"
+
+# Products
+[products_subtitle]
+other = "Produkty zbudowane na otwartych standardach"
+
+[qm_tagline]
+other = "Platforma integracji AI dla radiologii"
+
+[qm_desc]
+other = "Jedna umowa. Jeden punkt kontaktu. Dostęp do najlepszych modeli diagnostycznych AI — bez vendor lock-in."
+
+[qm_feature_1]
+other = "Integruje się z Twoim PACS/RIS"
+
+[qm_feature_2]
+other = "Wiele modeli AI (InferVision, Radiobotics, AZMED...)"
+
+[qm_feature_3]
+other = "Chmura lub on-premise · Zgodność z RODO i NIS2"
+
+[qm_cta]
+other = "Zamów pilotaż"
+
+[medicoai_desc]
+other = "Wsparcie decyzji klinicznych AI wykraczające poza radiologię."
+
+[medicoai_notify]
+other = "Powiadom mnie"
+
+# Success
+[success_ownership_title]
+other = "Prawdziwa własność danych"
+
+[success_ownership_desc]
+other = "Eksportuj, migruj i używaj swoich danych w dowolnym standardowym formacie. Koniec z płaceniem za dostęp."
+
+[success_ai_title]
+other = "Najlepsze AI w swojej klasie"
+
+[success_ai_desc]
+other = "Wybieraj spośród dziesiątek narzędzi AI — nie tylko to, co oferuje Twój dostawca. Zmień w każdej chwili."
+
+[success_speed_title]
+other = "Szybsza innowacja"
+
+[success_speed_desc]
+other = "Wdrażaj nowe narzędzia w tygodnie, nie lata. Twoja roadmapa, nie dostawcy."
+
+[success_cost_title]
+other = "Niższy koszt całkowity"
+
+[success_cost_desc]
+other = "Jedna warstwa integracyjna zamiast dziesiątek niestandardowych konektorów. Przewidywalne koszty."
+
+# Lead magnet
+[lead_magnet_title]
+other = "Darmowy poradnik: Jak uwolnić się od vendor lock-in"
+
+[lead_magnet_desc]
+other = "Praktyczny poradnik dla liderów szpitali gotowych przejąć kontrolę nad danymi i strategią AI."
+
+[lead_magnet_cta]
+other = "Wkrótce — Zapisz się"
 
 # Segment picker
 [segment_hospital]
@@ -52,6 +193,34 @@ other = "Sektor publiczny"
 
 [segment_question]
 other = "Jestem:"
+
+[segment_hospital_value]
+other = "Przejmij kontrolę nad infrastrukturą i skaluj wdrożenia AI na własnych zasadach."
+
+[segment_ai_vendor_value]
+other = "Docieraj do szpitali szybciej dzięki jednej warstwie integracyjnej zamiast projektów szytych na miarę."
+
+[segment_developer_value]
+other = "Buduj na otwartych standardach i łącz się z systemami ochrony zdrowia bez vendor lock-in."
+
+[segment_public_value]
+other = "Przyspiesz cyfryzację dzięki interoperacyjnej infrastrukturze dla publicznej ochrony zdrowia."
+
+[segment_hospital_cta]
+other = "Umów rozmowę"
+
+[segment_ai_vendor_cta]
+other = "Zostań partnerem"
+
+[segment_developer_cta]
+other = "Zobacz GitHub"
+
+[segment_public_cta]
+other = "Umów rozmowę"
+
+# Status
+[status_subtitle]
+other = "Transparentna dojrzałość produktu w naszych kluczowych komponentach integracyjnych"
 
 # Countdown
 [countdown_title]
@@ -73,6 +242,9 @@ other = "sekund"
 [newsletter_title]
 other = "Otrzymuj powiadomienia"
 
+[newsletter_desc]
+other = "Otrzymuj aktualizacje o postępach open-source i nowych funkcjach."
+
 [newsletter_placeholder]
 other = "Twój email"
 
@@ -91,8 +263,10 @@ other = "Dziękujemy — zapis został przyjęty."
 [newsletter_error_required]
 other = "Uzupełnij wymagane pola."
 
-
 # Contact form
+[contact_form_title]
+other = "Wyślij wiadomość"
+
 [contact_name]
 other = "Imię i nazwisko"
 

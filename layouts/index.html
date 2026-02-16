@@ -1,16 +1,15 @@
 {{ define "main" }}
 
-
 <!-- Hero Section -->
 <section id="hero" class="relative overflow-hidden bg-white dark:bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
     <div class="text-center max-w-4xl mx-auto">
       <h1
-        class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-gradient-pulse mb-6">
-        {{ .Title | default (i18n "hero_title") }}
+        class="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-gradient-pulse mb-6 leading-tight">
+        {{ i18n "hero_title" }}
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-        {{ .Description | default (i18n "hero_subtitle") }}
+        {{ i18n "hero_subtitle" }}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#contact"
@@ -19,7 +18,7 @@
         </a>
         <a href="#how-it-works"
           class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium rounded-lg transition-colors">
-          {{ i18n "learn_more" }}
+          {{ i18n "hero_cta_secondary" }}
         </a>
       </div>
     </div>
@@ -61,8 +60,287 @@
 <!-- Countdown (if enabled) -->
 {{ partial "countdown.html" . }}
 
+<!-- Problem / Stakes Section -->
+<section id="problem" class="py-20 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
+      {{ i18n "section_problem" }}
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-reveal data-delay="120">
+      <!-- External Problem -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+          <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "problem_external_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_external_desc" }}</p>
+      </div>
+
+      <!-- Internal Problem -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+          <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "problem_internal_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_internal_desc" }}</p>
+      </div>
+
+      <!-- Philosophical Problem -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+          <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "problem_philosophical_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_philosophical_desc" }}</p>
+      </div>
+    </div>
+
+    <!-- Stakes -->
+    <div class="mt-12 max-w-3xl mx-auto text-center" data-reveal data-delay="240">
+      <p class="text-gray-500 dark:text-gray-400 italic">
+        {{ i18n "problem_stakes" }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Guide / Team Section -->
+<section id="guide" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
+      {{ i18n "section_guide" }}
+    </h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto" data-reveal data-delay="120">
+      {{ i18n "guide_intro" }}
+    </p>
+
+    <!-- Team Cards -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12" data-reveal data-delay="180">
+      <!-- Sylwester -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">SC</span>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Sylwester Cyrwus</h3>
+        <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">{{ i18n "guide_sc_role" }}</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "guide_sc_bio" }}</p>
+      </div>
+
+      <!-- Krzysztof -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-accent-600 dark:text-accent-400">KB</span>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Krzysztof Bokiej</h3>
+        <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">{{ i18n "guide_kb_role" }}</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "guide_kb_bio" }}</p>
+      </div>
+    </div>
+
+    <!-- Authority Stats -->
+    <div class="text-center" data-reveal data-delay="240">
+      <p class="text-sm text-gray-500 dark:text-gray-400 tracking-wide">
+        {{ i18n "guide_stats" }}
+      </p>
+      <p class="mt-2 text-xs text-gray-400 dark:text-gray-500 tracking-widest uppercase">
+        FHIR Â· HL7 Â· DICOM
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section (3-step Plan) -->
+<section id="how-it-works" class="py-20 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
+      {{ i18n "section_how_it_works" }}
+    </h2>
+
+    <!-- 3 Steps -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-reveal data-delay="120">
+      <!-- Step 1 -->
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">1</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step1_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step1_desc" }}</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-accent-600 dark:text-accent-400">2</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step2_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step2_desc" }}</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">3</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step3_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step3_desc" }}</p>
+      </div>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="mt-12 max-w-3xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-center" data-reveal data-delay="240">
+      <div class="font-mono text-sm text-gray-600 dark:text-gray-300 space-y-2">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+          <div class="flex flex-col gap-1 text-right">
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">HIS</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">PACS</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">RIS</span>
+          </div>
+          <div class="text-2xl text-primary-500">â‡„</div>
+          <div class="px-4 py-3 bg-primary-600 text-white rounded-xl font-bold text-center">
+            OpenMedGate<br>
+            <span class="text-xs font-normal opacity-80">FHIR Â· HL7 Â· DICOM</span>
+          </div>
+          <div class="text-2xl text-primary-500">â‡„</div>
+          <div class="flex flex-col gap-1 text-left">
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">AI Tools</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Analytics</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Gov Platforms</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8 text-center" data-reveal data-delay="300">
+      <a href="#contact"
+        class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+        {{ i18n "hiw_cta" }}
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Products Section -->
+<section id="products" class="py-20 fade-in-on-scroll">
+  <div class="bg-gray-50 dark:bg-gray-800/50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
+        {{ i18n "section_products" }}
+      </h2>
+      <p data-reveal data-delay="120" class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+        {{ i18n "products_subtitle" }}
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-reveal data-delay="0">
+        <!-- QuantumMed -->
+        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">QuantumMed</h3>
+          <p class="text-primary-600 dark:text-primary-400 font-medium mb-4">{{ i18n "qm_tagline" }}</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{{ i18n "qm_desc" }}</p>
+          <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              {{ i18n "qm_feature_1" }}
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              {{ i18n "qm_feature_2" }}
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              {{ i18n "qm_feature_3" }}
+            </li>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
+              class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium rounded-lg transition-colors text-sm">
+              {{ i18n "learn_more" }} â†’
+            </a>
+            <a href="#contact"
+              class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors text-sm">
+              {{ i18n "qm_cta" }}
+            </a>
+          </div>
+        </div>
+
+        <!-- MedicoAI -->
+        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">MedicoAI</h3>
+          <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Coming 2027</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">{{ i18n "medicoai_desc" }}</p>
+          <a href="#newsletter"
+            class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 font-medium rounded-lg transition-colors text-sm">
+            {{ i18n "medicoai_notify" }} â†’
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success Section -->
+<section id="success" class="py-20 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-12 section-title" data-reveal data-delay="0">
+      {{ i18n "section_success" }}
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-reveal data-delay="120">
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+        <p class="text-2xl mb-2">đź”“</p>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_ownership_title" }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_ownership_desc" }}</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+        <p class="text-2xl mb-2">đź¤–</p>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_ai_title" }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_ai_desc" }}</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+        <p class="text-2xl mb-2">âšˇ</p>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_speed_title" }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_speed_desc" }}</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+        <p class="text-2xl mb-2">đź’¶</p>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_cost_title" }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_cost_desc" }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lead Magnet Section -->
+<section id="lead-magnet" class="py-20 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 p-10 text-white text-center" data-reveal data-delay="0">
+      <p class="text-4xl mb-4">đź“</p>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">{{ i18n "lead_magnet_title" }}</h2>
+      <p class="text-primary-100 mb-8">{{ i18n "lead_magnet_desc" }}</p>
+      <a href="#newsletter"
+        class="inline-flex items-center px-6 py-3 bg-white text-primary-700 hover:bg-gray-100 font-medium rounded-lg transition-colors">
+        {{ i18n "lead_magnet_cta" }}
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Manifest Section -->
-<section id="manifest" class="py-20 relative overflow-hidden fade-in-on-scroll">
+<section id="manifest" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
       <h2
@@ -79,90 +357,10 @@
       </div>
     </div>
   </div>
-
-  <!-- Background accent -->
-  <div
-    class="absolute -bottom-40 right-0 w-80 h-80 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl opacity-30 -z-10">
-  </div>
-</section>
-
-
-<!-- How It Works Section -->
-<section id="how-it-works" class="py-20 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2
-      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16">
-      {{ i18n "section_how_it_works" }}
-    </h2>
-
-    <!-- Placeholder: FHIR/HL7/DICOM gateway diagram -->
-    <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 md:p-12 text-center">
-      <p class="text-gray-500 dark:text-gray-400">
-        [Gateway architecture diagram placeholder]
-      </p>
-      <p class="text-sm text-gray-400 dark:text-gray-500 mt-4">
-        FHIR • HL7 • DICOM
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Products Section -->
-<section id="products" class="py-20 fade-in-on-scroll">
-  <div class="bg-gray-50 dark:bg-gray-800/50 py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2
-        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title"
-        data-reveal data-delay="0">
-        {{ i18n "section_products" }}
-      </h2>
-      <p data-reveal data-delay="120"
-        class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-        {{ i18n "powered_by" }}
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-reveal data-delay="0">
-        <!-- QuantumMed -->
-        <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
-          class="group p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all transform hover:scale-105 hover:-translate-y-2">
-          <h3
-            class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-            QuantumMed
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            AI Integration Platform for Radiology
-          </p>
-          <span class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium">
-            {{ i18n "learn_more" }}
-            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </span>
-        </a>
-
-        <!-- MedicoAI -->
-        <div
-          class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60 card-hover"
-          data-reveal data-delay="0">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            MedicoAI
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Coming soon
-          </p>
-          <span class="inline-flex items-center text-gray-400 font-medium">
-            Stay tuned
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- Partner Section (Segment Picker) -->
 <section id="partners" class="py-20 fade-in-on-scroll">
-
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
       class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center m-0 mb-10 section-title"
@@ -173,10 +371,8 @@
     <div class="max-w-3xl mx-auto">
       {{ partial "segment-picker.html" . }}
     </div>
-
   </div>
 </section>
-
 
 <!-- Status Section -->
 <section id="status" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
@@ -185,13 +381,16 @@
       class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
       {{ i18n "section_status" }}
     </h2>
+    <p class="text-center text-gray-600 dark:text-gray-300 mb-10">{{ i18n "status_subtitle" }}</p>
 
-    <!-- Placeholder: Status/roadmap -->
-    <div
-      class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
-      <p class="text-gray-500 dark:text-gray-400 text-center">
-        [Status/roadmap placeholder - transparent updates about current phase]
-      </p>
+    <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">FHIR Gateway Core</span><span class="px-3 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">Ready</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">HL7 Integration Pack</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">DICOM AI Router</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">Public Sector Connectors</span><span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Design</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">MedicoAI Copilot</span><span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200">Concept</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -205,7 +404,7 @@
         {{ i18n "newsletter_title" }}
       </h2>
       <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-        Get updates on open-sourcing progress and new features.
+        {{ i18n "newsletter_desc" }}
       </p>
 
       <!-- HubSpot newsletter form placeholder -->
@@ -213,7 +412,6 @@
         {{ partial "hubspot-newsletter.html" . }}
       </div>
     </div>
-  </div>
   </div>
 </section>
 
@@ -229,11 +427,10 @@
       <!-- Form -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-          Send a message
+          {{ i18n "contact_form_title" }}
         </h3>
         {{ partial "hubspot-form.html" . }}
       </div>
-      
 
       <!-- Hubspot calendar scheduling -->
       <div class="rounded-2xl p-8 border border-[#4a6580] dark:bg-[#425b76] bg-[#425b76]">
@@ -247,3 +444,5 @@
 </section>
 
 {{ end }}
+
+
