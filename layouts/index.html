@@ -1,22 +1,22 @@
 {{ define "main" }}
 
-<!-- Hero Section -->
+<!-- 1) Hero -->
 <section id="hero" class="relative overflow-hidden bg-white dark:bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
     <div class="text-center max-w-4xl mx-auto">
       <h1
         class="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-gradient-pulse mb-6 leading-tight">
-        {{ i18n "hero_title" }}
+        {{ i18n "section.hero.title" }}
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
         {{ i18n "hero_subtitle" }}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#contact"
+        <a href="#join"
           class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
           {{ i18n "hero_cta" }}
         </a>
-        <a href="#how-it-works"
+        <a href="#integration_layer"
           class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium rounded-lg transition-colors">
           {{ i18n "hero_cta_secondary" }}
         </a>
@@ -24,14 +24,11 @@
     </div>
   </div>
 
-  <!-- Animated Background: Grid + Subtle Floating Orbs -->
   <div class="absolute inset-0 -z-10 overflow-hidden max-w-full">
-    <!-- Base gradient -->
     <div
       class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-900/95 dark:to-gray-900">
     </div>
 
-    <!-- Subtle grid -->
     <svg class="absolute inset-0 w-full h-full opacity-5 dark:opacity-10" preserveAspectRatio="none">
       <defs>
         <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -41,34 +38,25 @@
       <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>
 
-    <!-- Floating orb #1 - top right (GREEN) -->
     <div class="absolute -top-48 -right-48 w-96 h-96 rounded-full blur-3xl animate-float-slow"
       style="background: radial-gradient(circle, rgba(22, 163, 74, 0.25) 0%, transparent 70%); opacity: 0.6;"></div>
-
-    <!-- Floating orb #2 - bottom left (BLUE) -->
     <div class="absolute -bottom-48 -left-48 w-80 h-80 rounded-full blur-3xl animate-float-slow"
       style="background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); opacity: 0.4; animation-delay: 4s;">
     </div>
-
-    <!-- Center subtle glow - PULSING -->
     <div class="absolute top-1/3 right-1/3 w-96 h-96 rounded-full blur-3xl animate-pulse-subtle"
       style="background: radial-gradient(circle, rgba(22, 163, 74, 0.12) 0%, transparent 70%); opacity: 0.5; animation-delay: 2s;">
     </div>
   </div>
 </section>
 
-<!-- Countdown (if enabled) -->
-{{ partial "countdown.html" . }}
-
-<!-- Problem / Stakes Section -->
+<!-- 2) Problem -->
 <section id="problem" class="py-20 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
-      {{ i18n "section_problem" }}
+      {{ i18n "section.problem.title" }}
     </h2>
 
     <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-reveal data-delay="120">
-      <!-- External Problem -->
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
           <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +67,6 @@
         <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_external_desc" }}</p>
       </div>
 
-      <!-- Internal Problem -->
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
           <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +77,6 @@
         <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_internal_desc" }}</p>
       </div>
 
-      <!-- Philosophical Problem -->
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
           <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +88,6 @@
       </div>
     </div>
 
-    <!-- Stakes -->
     <div class="mt-12 max-w-3xl mx-auto text-center" data-reveal data-delay="240">
       <p class="text-gray-500 dark:text-gray-400 italic">
         {{ i18n "problem_stakes" }}
@@ -111,19 +96,27 @@
   </div>
 </section>
 
-<!-- Guide / Team Section -->
-<section id="guide" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<!-- 3) Movement -->
+<section id="movement" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
-      {{ i18n "section_guide" }}
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center section-title" data-reveal data-delay="0">
+      {{ i18n "section.movement.title" }}
     </h2>
+  </div>
+</section>
+
+<!-- 4) Standard -->
+<section id="standard" class="py-20 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-12 section-title" data-reveal data-delay="0">
+      {{ i18n "section.standard.title" }}
+    </h2>
+
     <p class="text-lg text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto" data-reveal data-delay="120">
       {{ i18n "guide_intro" }}
     </p>
 
-    <!-- Team Cards -->
     <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12" data-reveal data-delay="180">
-      <!-- Sylwester -->
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
           <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">SC</span>
@@ -133,7 +126,6 @@
         <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "guide_sc_bio" }}</p>
       </div>
 
-      <!-- Krzysztof -->
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
           <span class="text-2xl font-bold text-accent-600 dark:text-accent-400">KB</span>
@@ -144,8 +136,7 @@
       </div>
     </div>
 
-    <!-- Authority Stats -->
-    <div class="text-center" data-reveal data-delay="240">
+    <div class="text-center mb-12" data-reveal data-delay="240">
       <p class="text-sm text-gray-500 dark:text-gray-400 tracking-wide">
         {{ i18n "guide_stats" }}
       </p>
@@ -153,148 +144,6 @@
         FHIR &middot; HL7 &middot; DICOM
       </p>
     </div>
-  </div>
-</section>
-
-<!-- How It Works Section (3-step Plan) -->
-<section id="how-it-works" class="py-20 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
-      {{ i18n "section_how_it_works" }}
-    </h2>
-
-    <!-- 3 Steps -->
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-reveal data-delay="120">
-      <!-- Step 1 -->
-      <div class="text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">1</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step1_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step1_desc" }}</p>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-accent-600 dark:text-accent-400">2</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step2_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step2_desc" }}</p>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">3</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step3_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step3_desc" }}</p>
-      </div>
-    </div>
-
-    <!-- Architecture Diagram -->
-    <div class="mt-12 max-w-3xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-center" data-reveal data-delay="240">
-      <div class="font-mono text-sm text-gray-600 dark:text-gray-300 space-y-2">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
-          <div class="flex flex-col gap-1 text-right">
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">HIS</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">PACS</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">RIS</span>
-          </div>
-          <div class="text-2xl text-primary-500">&harr;</div>
-          <div class="px-4 py-3 bg-primary-600 text-white rounded-xl font-bold text-center">
-            OpenMedGate<br>
-            <span class="text-xs font-normal opacity-80">FHIR &middot; HL7 &middot; DICOM</span>
-          </div>
-          <div class="text-2xl text-primary-500">&harr;</div>
-          <div class="flex flex-col gap-1 text-left">
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">AI Tools</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Analytics</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Gov Platforms</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="mt-8 text-center" data-reveal data-delay="300">
-      <a href="#contact"
-        class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
-        {{ i18n "hiw_cta" }}
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- Products Section -->
-<section id="products" class="py-20 fade-in-on-scroll">
-  <div class="bg-gray-50 dark:bg-gray-800/50 py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
-        {{ i18n "section_products" }}
-      </h2>
-      <p data-reveal data-delay="120" class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-        {{ i18n "products_subtitle" }}
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-reveal data-delay="0">
-        <!-- QuantumMed -->
-        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">QuantumMed</h3>
-          <p class="text-primary-600 dark:text-primary-400 font-medium mb-4">{{ i18n "qm_tagline" }}</p>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">{{ i18n "qm_desc" }}</p>
-          <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2 mb-6">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {{ i18n "qm_feature_1" }}
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {{ i18n "qm_feature_2" }}
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {{ i18n "qm_feature_3" }}
-            </li>
-          </ul>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
-              class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium rounded-lg transition-colors text-sm">
-              {{ i18n "learn_more" }} &rarr;
-            </a>
-            <a href="#contact"
-              class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors text-sm">
-              {{ i18n "qm_cta" }}
-            </a>
-          </div>
-        </div>
-
-        <!-- MedicoAI -->
-        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">MedicoAI</h3>
-          <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Coming 2027</p>
-          <p class="text-gray-600 dark:text-gray-300 mb-6">{{ i18n "medicoai_desc" }}</p>
-          <a href="#newsletter"
-            class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 font-medium rounded-lg transition-colors text-sm">
-            {{ i18n "medicoai_notify" }} &rarr;
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Success Section -->
-<section id="success" class="py-20 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-12 section-title" data-reveal data-delay="0">
-      {{ i18n "section_success" }}
-    </h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-reveal data-delay="120">
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
@@ -324,48 +173,81 @@
   </div>
 </section>
 
-<!-- Lead Magnet Section -->
-<section id="lead-magnet" class="py-20 fade-in-on-scroll">
+<!-- 5) Integration Layer -->
+<section id="integration_layer" class="py-20 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 p-10 text-white text-center" data-reveal data-delay="0">
-      <p class="text-4xl mb-4">&#x1F4D8;</p>
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">{{ i18n "lead_magnet_title" }}</h2>
-      <p class="text-primary-100 mb-8">{{ i18n "lead_magnet_desc" }}</p>
-      <a href="#newsletter"
-        class="inline-flex items-center px-6 py-3 bg-white text-primary-700 hover:bg-gray-100 font-medium rounded-lg transition-colors">
-        {{ i18n "lead_magnet_cta" }}
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
+      {{ i18n "section.integration_layer.title" }}
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-reveal data-delay="120">
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">1</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step1_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step1_desc" }}</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-accent-600 dark:text-accent-400">2</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step2_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step2_desc" }}</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">3</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step3_title" }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step3_desc" }}</p>
+      </div>
+    </div>
+
+    <div class="mt-12 max-w-3xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-center" data-reveal data-delay="240">
+      <div class="font-mono text-sm text-gray-600 dark:text-gray-300 space-y-2">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+          <div class="flex flex-col gap-1 text-right">
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">HIS</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">PACS</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">RIS</span>
+          </div>
+          <div class="text-2xl text-primary-500">&harr;</div>
+          <div class="px-4 py-3 bg-primary-600 text-white rounded-xl font-bold text-center">
+            OpenMedGate<br>
+            <span class="text-xs font-normal opacity-80">FHIR &middot; HL7 &middot; DICOM</span>
+          </div>
+          <div class="text-2xl text-primary-500">&harr;</div>
+          <div class="flex flex-col gap-1 text-left">
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">AI Tools</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Analytics</span>
+            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Gov Platforms</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center" data-reveal data-delay="300">
+      <a href="#join"
+        class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+        {{ i18n "hiw_cta" }}
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Manifest Section -->
-<section id="manifest" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-      <h2
-        class="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent section-title"
-        data-reveal data-delay="0">
-        {{ i18n "section_manifest" }}
-      </h2>
-
-      <!-- Prose content -->
-      <div class="prose prose-lg dark:prose-invert mx-auto max-w-none">
-        <div data-reveal data-delay="120" class="manifest-text">
-          {{ .Content }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Partner Section (Segment Picker) -->
-<section id="partners" class="py-20 fade-in-on-scroll">
+<!-- 6) Audience -->
+<section id="audience" class="py-20 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
       class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center m-0 mb-10 section-title"
       data-reveal data-delay="0">
-      {{ i18n "section_partners" }}
+      {{ i18n "section.audience.title" }}
     </h2>
 
     <div class="max-w-3xl mx-auto">
@@ -374,57 +256,15 @@
   </div>
 </section>
 
-<!-- Status Section -->
-<section id="status" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2
-      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
-      {{ i18n "section_status" }}
-    </h2>
-    <p class="text-center text-gray-600 dark:text-gray-300 mb-10">{{ i18n "status_subtitle" }}</p>
-
-    <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
-      <ul class="space-y-4 text-sm">
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">FHIR Gateway Core</span><span class="px-3 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">Ready</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">HL7 Integration Pack</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">DICOM AI Router</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">Public Sector Connectors</span><span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Design</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">MedicoAI Copilot</span><span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200">Concept</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Newsletter Section -->
-<section id="newsletter" class="py-20 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2
-        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
-        {{ i18n "newsletter_title" }}
-      </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-        {{ i18n "newsletter_desc" }}
-      </p>
-
-      <!-- HubSpot newsletter form placeholder -->
-      <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-left">
-        {{ partial "hubspot-newsletter.html" . }}
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+<!-- 7) Join -->
+<section id="join" class="py-20 bg-gray-50 dark:bg-gray-800/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
       class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16">
-      {{ i18n "section_contact" }}
+      {{ i18n "section.join.title" }}
     </h2>
 
     <div class="grid md:grid-cols-2 gap-4 sm:gap-12 max-w-5xl mx-auto">
-      <!-- Form -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
           {{ i18n "contact_form_title" }}
@@ -432,7 +272,6 @@
         {{ partial "hubspot-form.html" . }}
       </div>
 
-      <!-- Hubspot calendar scheduling -->
       <div class="rounded-2xl p-8 border border-[#4a6580] dark:bg-[#425b76] bg-[#425b76]">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
           {{ i18n "book_meeting" }}
@@ -443,6 +282,128 @@
   </div>
 </section>
 
+<!-- 8) First Implementation -->
+<section id="first_implementation" class="py-20 fade-in-on-scroll">
+  <div class="bg-gray-50 dark:bg-gray-800/50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
+        {{ i18n "section.first_implementation.title" }}
+      </h2>
+      <p data-reveal data-delay="120" class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+        {{ i18n "products_subtitle" }}
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-reveal data-delay="0">
+        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">QuantumMed</h3>
+          <p class="text-primary-600 dark:text-primary-400 font-medium mb-4">{{ i18n "qm_tagline" }}</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{{ i18n "qm_desc" }}</p>
+          <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              {{ i18n "qm_feature_1" }}
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              {{ i18n "qm_feature_2" }}
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              {{ i18n "qm_feature_3" }}
+            </li>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
+              class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium rounded-lg transition-colors text-sm">
+              {{ i18n "learn_more" }} &rarr;
+            </a>
+            <a href="#join"
+              class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors text-sm">
+              {{ i18n "qm_cta" }}
+            </a>
+          </div>
+        </div>
+
+        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">MedicoAI</h3>
+          <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Coming 2027</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">{{ i18n "medicoai_desc" }}</p>
+          <a href="#newsletter"
+            class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 font-medium rounded-lg transition-colors text-sm">
+            {{ i18n "medicoai_notify" }} &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9) Road to Foundation -->
+<section id="road_to_foundation" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2
+      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-10 section-title"
+      data-reveal data-delay="0">
+      {{ i18n "section.road_to_foundation.title" }}
+    </h2>
+
+    <div class="mb-12">
+      {{ partial "countdown.html" . }}
+    </div>
+
+    <p class="text-center text-gray-600 dark:text-gray-300 mb-10">{{ i18n "status_subtitle" }}</p>
+    <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 mb-12">
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">FHIR Gateway Core</span><span class="px-3 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">Ready</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">HL7 Integration Pack</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">DICOM AI Router</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">Public Sector Connectors</span><span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Design</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">MedicoAI Copilot</span><span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200">Concept</span></li>
+      </ul>
+    </div>
+
+    <div class="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 p-10 text-white text-center mb-12" data-reveal data-delay="0">
+      <p class="text-4xl mb-4">&#x1F4D8;</p>
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">{{ i18n "lead_magnet_title" }}</h3>
+      <p class="text-primary-100 mb-8">{{ i18n "lead_magnet_desc" }}</p>
+      <a href="#newsletter"
+        class="inline-flex items-center px-6 py-3 bg-white text-primary-700 hover:bg-gray-100 font-medium rounded-lg transition-colors">
+        {{ i18n "lead_magnet_cta" }}
+      </a>
+    </div>
+
+    <div id="newsletter" class="max-w-2xl mx-auto text-center">
+      <h3
+        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
+        {{ i18n "newsletter_title" }}
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        {{ i18n "newsletter_desc" }}
+      </p>
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-left">
+        {{ partial "hubspot-newsletter.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10) Manifesto -->
+<section id="manifesto" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2
+        class="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent section-title"
+        data-reveal data-delay="0">
+        {{ i18n "section.manifesto.title" }}
+      </h2>
+
+      <div class="prose prose-lg dark:prose-invert mx-auto max-w-none">
+        <div data-reveal data-delay="120" class="manifest-text">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {{ end }}
-
-

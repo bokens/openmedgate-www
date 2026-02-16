@@ -314,3 +314,33 @@ other = "Book a Meeting"
 
 [learn_more]
 other = "Learn More"
+
+["section.hero.title"]
+other = "End vendor lock-in in healthcare."
+
+["section.problem.title"]
+other = "The problem: closed infrastructure blocks innovation"
+
+["section.movement.title"]
+other = "This is a movement."
+
+["section.standard.title"]
+other = "An open interoperability standard"
+
+["section.integration_layer.title"]
+other = "An open-source integration layer"
+
+["section.audience.title"]
+other = "Who OpenMedGate is for"
+
+["section.join.title"]
+other = "Join OpenMedGate"
+
+["section.first_implementation.title"]
+other = "First implementation: QuantumMed"
+
+["section.road_to_foundation.title"]
+other = "Road to the Foundation"
+
+["section.manifesto.title"]
+other = "The OpenMedGate Manifesto"

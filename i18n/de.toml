@@ -314,3 +314,33 @@ other = "Termin buchen"
 
 [learn_more]
 other = "Mehr erfahren"
+
+["section.hero.title"]
+other = "Beenden wir den Vendor Lock-in im Gesundheitswesen."
+
+["section.problem.title"]
+other = "Das Problem: geschlossene Infrastrukturen blockieren Innovation"
+
+["section.movement.title"]
+other = "Das ist eine Bewegung."
+
+["section.standard.title"]
+other = "Ein offener Interoperabilit\u00e4tsstandard"
+
+["section.integration_layer.title"]
+other = "Eine Open-Source-Integrationsschicht"
+
+["section.audience.title"]
+other = "F\u00fcr wen OpenMedGate gedacht ist"
+
+["section.join.title"]
+other = "Schlie\u00dfen Sie sich OpenMedGate an"
+
+["section.first_implementation.title"]
+other = "Erste Implementierung: QuantumMed"
+
+["section.road_to_foundation.title"]
+other = "Der Weg zur Stiftung"
+
+["section.manifesto.title"]
+other = "Das OpenMedGate Manifest"
