@@ -129,7 +129,7 @@ other = "One contract. One point of contact. Access to the best AI diagnostic mo
 other = "Integrates with your PACS/RIS"
 
 [qm_feature_2]
-other = "Multiple AI models (InferVision, Radiobotics, AZMED...)"
+other = "Multiple AI models"
 
 [qm_feature_3]
 other = "Cloud or on-premise · GDPR & NIS2 compliant"
