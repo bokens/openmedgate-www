@@ -293,19 +293,25 @@
       </div>
     </div>
 
-    <div id="join" class="grid md:grid-cols-2 gap-4 sm:gap-12 max-w-5xl mx-auto">
-      <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-          {{ i18n "contact_form_title" }}
-        </h3>
-        {{ partial "hubspot-form.html" . }}
-      </div>
+    <div id="join" class="max-w-5xl mx-auto" data-reveal data-delay="0">
+      <h3 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-8 section-title">
+        {{ i18n "section_contact" }}
+      </h3>
 
-      <div class="rounded-2xl p-8 border border-[#4a6580] dark:bg-[#425b76] bg-[#425b76]">
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-          {{ i18n "book_meeting" }}
-        </h3>
-        {{ partial "hubspot-meetings.html" . }}
+      <div class="grid md:grid-cols-2 gap-4 sm:gap-12">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            {{ i18n "contact_form_title" }}
+          </h3>
+          {{ partial "hubspot-form.html" . }}
+        </div>
+
+        <div class="rounded-2xl p-8 border border-[#4a6580] dark:bg-[#425b76] bg-[#425b76]">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            {{ i18n "book_meeting" }}
+          </h3>
+          {{ partial "hubspot-meetings.html" . }}
+        </div>
       </div>
     </div>
   </div>
