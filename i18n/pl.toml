@@ -16,10 +16,10 @@ other = "Twoje dane szpitalne. Twój wybór AI. Bez vendor lock-in."
 other = "OpenMedGate to otwarta platforma integracyjna, która łączy systemy medyczne i umożliwia bezpieczne wdrażanie AI — w oparciu o standardy FHIR, HL7 i DICOM."
 
 [hero_cta]
-other = "Umów rozmowę"
+other = "Zobacz jak to działa"
 
 [hero_cta_secondary]
-other = "Zobacz jak to działa"
+other = "Dołącz do OpenMedGate"
 
 # Sections
 [section_manifest]
@@ -94,7 +94,7 @@ other = "Kontroluj"
 other = "Jesteś właścicielem swoich danych, wybierasz narzędzia i zmieniasz dostawców w dowolnym momencie — bez milionowych projektów migracyjnych."
 
 [hiw_cta]
-other = "Umów rozmowę o Twoim środowisku"
+other = "Poznaj specyfikację"
 
 # Guide
 [guide_intro]
@@ -213,7 +213,7 @@ other = "Buduj na otwartych standardach i łącz się z systemami ochrony zdrowi
 other = "Przyspiesz cyfryzację dzięki interoperacyjnej infrastrukturze dla publicznej ochrony zdrowia."
 
 [segment_hospital_cta]
-other = "Umów rozmowę"
+other = "Dołącz do OpenMedGate"
 
 [segment_ai_vendor_cta]
 other = "Zostań partnerem"
@@ -346,7 +346,7 @@ other = "Otwarto\u017ar\u00f3d\u0142owa warstwa integracyjna"
 other = "Dla kogo jest OpenMedGate"
 
 ["section.join.title"]
-other = "Do\u0142\u0105cz do OpenMedGate"
+other = "Dołącz do OpenMedGate"
 
 ["section.first_implementation.title"]
 other = "Produkty"
@@ -364,22 +364,23 @@ other = "Dlaczego teraz"
 other = "To nie jest „kolejny trend technologiczny”. To punkt zwrotny dla infrastruktury ochrony zdrowia."
 
 [why_now_item_1_title]
-other = "1) AI przestała być eksperymentem — stała się wymaganiem wdrożeniowym."
+other = "AI przestała być eksperymentem — stała się wymaganiem wdrożeniowym."
 
 [why_now_item_1_desc]
 other = "Modele AI będą mnożyć się szybciej niż zdolność szpitali do ich bezpiecznej integracji. Bez interoperacyjności każde wdrożenie staje się osobnym projektem integracyjnym, który nie skaluje się organizacyjnie."
 
 [why_now_item_2_title]
-other = "2) Regulacje wymuszają wymianę danych — i podnoszą poprzeczkę interoperacyjności."
+other = "Regulacje wymuszają wymianę danych — i podnoszą poprzeczkę interoperacyjności."
 
 [why_now_item_2_desc]
 other = "W Europie EHDS uruchamia wieloletni proces wdrożeniowy, którego końcowym skutkiem ma być realna, transgraniczna dostępność i wymienialność danych. W USA zasady interoperacyjności i przeciwdziałania blokowaniu informacji (Cures Act Final Rule) wspierają ekosystem API i konkurencję aplikacji. Niezależnie od kraju, kierunek jest ten sam: standardy i otwarty dostęp do danych stają się normą."
 
 [why_now_item_3_title]
-other = "3) Zaufanie do AI będzie zależeć od infrastruktury."
+other = "Zaufanie do AI będzie zależeć od infrastruktury."
 
 [why_now_item_3_desc]
 other = "Coraz większy nacisk kładzie się na monitorowanie real-world performance i kontrolę zmian w AI. Bez neutralnej warstwy integracyjnej, standaryzacji danych i spójnych interfejsów trudno budować audytowalność, bezpieczeństwo i odpowiedzialność w całym cyklu życia rozwiązań."
 
 [why_now_outro]
 other = "Dlatego właśnie teraz: jeśli standard i wspólna infrastruktura nie powstaną dziś, rynek ułoży się wokół zamkniętych ekosystemów — a koszt wyjścia będzie tylko rósł."
+

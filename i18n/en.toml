@@ -16,7 +16,7 @@ other = "Your hospital data. Your choice of AI. No vendor lock-in."
 other = "OpenMedGate is an open integration platform that connects healthcare systems and enables secure AI adoption — based on FHIR, HL7 & DICOM standards."
 
 [hero_cta]
-other = "Book a Call"
+other = "Join OpenMedGate"
 
 [hero_cta_secondary]
 other = "See How It Works"
@@ -94,7 +94,7 @@ other = "Control"
 other = "You own your data, choose your tools, and switch providers anytime — without million-euro migration projects."
 
 [hiw_cta]
-other = "Book a Call to Discuss Your Setup"
+other = "Explore specs"
 
 # Guide
 [guide_intro]
@@ -213,7 +213,7 @@ other = "Build on open standards and connect to healthcare systems without vendo
 other = "Accelerate digitalization with interoperable infrastructure built for public healthcare."
 
 [segment_hospital_cta]
-other = "Book a Call"
+other = "Join OpenMedGate"
 
 [segment_ai_vendor_cta]
 other = "Become a Partner"
@@ -364,19 +364,19 @@ other = "Why Now"
 other = "This isn't \"another tech trend.\" It's a structural turning point for healthcare infrastructure."
 
 [why_now_item_1_title]
-other = "1) AI is no longer a pilot — it's becoming a deployment requirement."
+other = "AI is no longer a pilot — it's becoming a deployment requirement."
 
 [why_now_item_1_desc]
 other = "The number of AI models will grow faster than hospitals' ability to integrate them safely. Without interoperability, every deployment becomes a one-off integration project that doesn't scale across an organization."
 
 [why_now_item_2_title]
-other = "2) Regulation is pushing data exchange — and raising the bar for interoperability."
+other = "Regulation is pushing data exchange — and raising the bar for interoperability."
 
 [why_now_item_2_desc]
 other = "In Europe, EHDS has started a multi-year implementation path toward practical access and cross-border exchange of key health data. In the U.S., the Cures Act Final Rule strengthens interoperability and discourages information blocking, enabling a more competitive API-driven ecosystem. Different regions, same direction: open standards and access become the default."
 
 [why_now_item_3_title]
-other = "3) Trust in AI will depend on infrastructure."
+other = "Trust in AI will depend on infrastructure."
 
 [why_now_item_3_desc]
 other = "There is growing emphasis on measuring and evaluating real-world performance of AI-enabled medical devices over time. Without a neutral integration layer, standardized data, and consistent interfaces, it's hard to achieve auditability, safety, and accountability across the AI lifecycle."

@@ -12,11 +12,11 @@
         {{ i18n "hero_subtitle" }}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#join"
+        <a href="#integration_layer"
           class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
           {{ i18n "hero_cta" }}
         </a>
-        <a href="#integration_layer"
+        <a href="#join"
           class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium rounded-lg transition-colors">
           {{ i18n "hero_cta_secondary" }}
         </a>
@@ -96,23 +96,8 @@
   </div>
 </section>
 
-<!-- Lead Magnet -->
-<section class="py-12 bg-white dark:bg-gray-900 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 p-10 text-white text-center" data-reveal data-delay="0">
-      <p class="text-4xl mb-4">&#x1F4D8;</p>
-      <h3 class="text-2xl md:text-3xl font-bold mb-4">{{ i18n "lead_magnet_title" }}</h3>
-      <p class="text-primary-100 mb-8">{{ i18n "lead_magnet_desc" }}</p>
-      <a href="#newsletter"
-        class="inline-flex items-center px-6 py-3 bg-white text-primary-700 hover:bg-gray-100 font-medium rounded-lg transition-colors">
-        {{ i18n "lead_magnet_cta" }}
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- 3) Why Now -->
-<section id="why_now" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="why_now" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
     <div class="why-now-orb why-now-orb-a" aria-hidden="true"></div>
     <div class="why-now-orb why-now-orb-b" aria-hidden="true"></div>
@@ -159,7 +144,7 @@
 </section>
 
 <!-- 4) Movement -->
-<section id="movement" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
+<section id="movement" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center section-title" data-reveal data-delay="0">
       {{ i18n "section.movement.title" }}
@@ -200,7 +185,7 @@
 </section>
 
 <!-- 5) Standard -->
-<section id="standard" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="standard" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-12 section-title" data-reveal data-delay="0">
       {{ i18n "section.standard.title" }}
@@ -235,7 +220,7 @@
 </section>
 
 <!-- 6) Integration Layer -->
-<section id="integration_layer" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
+<section id="integration_layer" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
       {{ i18n "section.integration_layer.title" }}
@@ -303,7 +288,7 @@
 </section>
 
 <!-- 7) Governance -->
-<section id="road_to_foundation" class="pt-0 pb-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="road_to_foundation" class="pt-0 pb-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
 
   {{ partial "countdown.html" . }}
 
@@ -324,7 +309,7 @@
 </section>
 
 <!-- 8) Who Is This For -->
-<section id="audience" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
+<section id="audience" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
       class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center m-0 mb-10 section-title"
@@ -339,7 +324,7 @@
 </section>
 
 <!-- 9) First Implementation -->
-<section id="first_implementation" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="first_implementation" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
         {{ i18n "section.first_implementation.title" }}
@@ -389,7 +374,7 @@
 </section>
 
 <!-- 10) Manifest Section -->
-<section id="manifest" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
+<section id="manifest" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
       <h2
@@ -409,7 +394,7 @@
 </section>
 
 <!-- 11) Get Notified -->
-<section class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div id="newsletter" class="max-w-2xl mx-auto text-center mb-12">
       <h3
@@ -427,7 +412,7 @@
 </section>
 
 <!-- 12) Let's Talk -->
-<section class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
+<section class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div id="join" class="max-w-5xl mx-auto" data-reveal data-delay="0">
       <h3 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-8 section-title">
