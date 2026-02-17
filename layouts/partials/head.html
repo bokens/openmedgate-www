@@ -58,6 +58,56 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+<!-- Language auto-detection (first visit on home only) -->
+<script>
+  (function () {
+    const supported = ['en', 'pl', 'de'];
+    const defaultLang = 'en';
+    const storageKey = 'preferredLang';
+
+    const normalize = (value) => (value || '').toLowerCase().split('-')[0];
+
+    const path = window.location.pathname;
+    const saved = normalize(localStorage.getItem(storageKey));
+    if (supported.includes(saved)) return;
+
+    const pathMatch = path.match(/^\/(pl|de)(\/|$)/);
+    if (pathMatch && pathMatch[1]) {
+      localStorage.setItem(storageKey, pathMatch[1]);
+      return;
+    }
+
+    if (path !== '/' && path !== '/index.html') return;
+
+    const browserLangs = Array.isArray(navigator.languages) && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || ''];
+
+    let detected = '';
+    for (const lang of browserLangs) {
+      const code = normalize(lang);
+      if (supported.includes(code)) {
+        detected = code;
+        break;
+      }
+    }
+
+    if (!detected) {
+      const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
+      if (tz.includes('warsaw')) detected = 'pl';
+      if (tz.includes('berlin') || tz.includes('vienna') || tz.includes('zurich')) detected = 'de';
+    }
+
+    const targetLang = detected || defaultLang;
+    if (targetLang === 'en') return;
+
+    const targetPath = '/' + targetLang + '/';
+    if (window.location.pathname !== targetPath) {
+      window.location.replace(targetPath);
+    }
+  })();
+</script>
+
 <!-- Fonts (Inter) -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
