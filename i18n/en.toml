@@ -100,6 +100,12 @@ other = "Book a Call to Discuss Your Setup"
 [guide_intro]
 other = "OpenMedGate was born from frustration with closed systems — after years working inside healthcare IT. We're not building another silo. We're building the exit."
 
+[movement_intro]
+other = "OpenMedGate was born from frustration with closed systems — after years working inside healthcare IT. We're not building another silo. We're building the exit."
+
+[movement_founding_team]
+other = "Founding team"
+
 [guide_sc_role]
 other = "CEO & Co-founder"
 
@@ -222,6 +228,12 @@ other = "Schedule a Call"
 [status_subtitle]
 other = "Transparent product maturity across our core integration components"
 
+[status_item_fhir_gateway_core]
+other = "FHIR Gateway Core"
+
+[status_state_ready]
+other = "Ready"
+
 # Countdown
 [countdown_title]
 other = "Open-sourcing in"
@@ -337,7 +349,7 @@ other = "Who OpenMedGate is for"
 other = "Join OpenMedGate"
 
 ["section.first_implementation.title"]
-other = "First implementation: QuantumMed"
+other = "Products"
 
 ["section.road_to_foundation.title"]
 other = "Road to the Foundation"
@@ -347,3 +359,27 @@ other = "The OpenMedGate Manifesto"
 
 ["section.why_now.title"]
 other = "Why Now"
+
+[why_now_intro]
+other = "This isn't \"another tech trend.\" It's a structural turning point for healthcare infrastructure."
+
+[why_now_item_1_title]
+other = "1) AI is no longer a pilot — it's becoming a deployment requirement."
+
+[why_now_item_1_desc]
+other = "The number of AI models will grow faster than hospitals' ability to integrate them safely. Without interoperability, every deployment becomes a one-off integration project that doesn't scale across an organization."
+
+[why_now_item_2_title]
+other = "2) Regulation is pushing data exchange — and raising the bar for interoperability."
+
+[why_now_item_2_desc]
+other = "In Europe, EHDS has started a multi-year implementation path toward practical access and cross-border exchange of key health data. In the U.S., the Cures Act Final Rule strengthens interoperability and discourages information blocking, enabling a more competitive API-driven ecosystem. Different regions, same direction: open standards and access become the default."
+
+[why_now_item_3_title]
+other = "3) Trust in AI will depend on infrastructure."
+
+[why_now_item_3_desc]
+other = "There is growing emphasis on measuring and evaluating real-world performance of AI-enabled medical devices over time. Without a neutral integration layer, standardized data, and consistent interfaces, it's hard to achieve auditability, safety, and accountability across the AI lifecycle."
+
+[why_now_outro]
+other = "That's why now: if we don't build the open standard and shared infrastructure today, the market will consolidate around closed ecosystems — and the cost of change will only increase."

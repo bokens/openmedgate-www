@@ -47,7 +47,7 @@ other = "Co się zmienia, gdy Twoje dane są wolne"
 other = "Współpraca"
 
 [section_status]
-other = "Status"
+other = "Gdzie jesteśmy"
 
 [section_contact]
 other = "Porozmawiajmy"
@@ -99,6 +99,12 @@ other = "Umów rozmowę o Twoim środowisku"
 # Guide
 [guide_intro]
 other = "OpenMedGate powstał z frustracji zamkniętymi systemami — po latach pracy wewnątrz IT w ochronie zdrowia. Nie budujemy kolejnego silosu. Budujemy wyjście."
+
+[movement_intro]
+other = "OpenMedGate powstał z frustracji zamkniętymi systemami — po latach pracy wewnątrz IT w ochronie zdrowia. Nie budujemy kolejnego silosu. Budujemy wyjście."
+
+[movement_founding_team]
+other = "Zespół założycielski"
 
 [guide_sc_role]
 other = "CEO & Co-founder"
@@ -222,6 +228,12 @@ other = "Umów rozmowę"
 [status_subtitle]
 other = "Transparentna dojrzałość produktu w naszych kluczowych komponentach integracyjnych"
 
+[status_item_fhir_gateway_core]
+other = "FHIR Gateway Core"
+
+[status_state_ready]
+other = "Gotowe"
+
 # Countdown
 [countdown_title]
 other = "Open-source za"
@@ -337,7 +349,7 @@ other = "Dla kogo jest OpenMedGate"
 other = "Do\u0142\u0105cz do OpenMedGate"
 
 ["section.first_implementation.title"]
-other = "Pierwsza implementacja: QuantumMed"
+other = "Produkty"
 
 ["section.road_to_foundation.title"]
 other = "Droga do Fundacji"
@@ -347,3 +359,27 @@ other = "Manifest OpenMedGate"
 
 ["section.why_now.title"]
 other = "Dlaczego teraz"
+
+[why_now_intro]
+other = "To nie jest „kolejny trend technologiczny”. To punkt zwrotny dla infrastruktury ochrony zdrowia."
+
+[why_now_item_1_title]
+other = "1) AI przestała być eksperymentem — stała się wymaganiem wdrożeniowym."
+
+[why_now_item_1_desc]
+other = "Modele AI będą mnożyć się szybciej niż zdolność szpitali do ich bezpiecznej integracji. Bez interoperacyjności każde wdrożenie staje się osobnym projektem integracyjnym, który nie skaluje się organizacyjnie."
+
+[why_now_item_2_title]
+other = "2) Regulacje wymuszają wymianę danych — i podnoszą poprzeczkę interoperacyjności."
+
+[why_now_item_2_desc]
+other = "W Europie EHDS uruchamia wieloletni proces wdrożeniowy, którego końcowym skutkiem ma być realna, transgraniczna dostępność i wymienialność danych. W USA zasady interoperacyjności i przeciwdziałania blokowaniu informacji (Cures Act Final Rule) wspierają ekosystem API i konkurencję aplikacji. Niezależnie od kraju, kierunek jest ten sam: standardy i otwarty dostęp do danych stają się normą."
+
+[why_now_item_3_title]
+other = "3) Zaufanie do AI będzie zależeć od infrastruktury."
+
+[why_now_item_3_desc]
+other = "Coraz większy nacisk kładzie się na monitorowanie real-world performance i kontrolę zmian w AI. Bez neutralnej warstwy integracyjnej, standaryzacji danych i spójnych interfejsów trudno budować audytowalność, bezpieczeństwo i odpowiedzialność w całym cyklu życia rozwiązań."
+
+[why_now_outro]
+other = "Dlatego właśnie teraz: jeśli standard i wspólna infrastruktura nie powstaną dziś, rynek ułoży się wokół zamkniętych ekosystemów — a koszt wyjścia będzie tylko rósł."

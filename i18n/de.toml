@@ -47,7 +47,7 @@ other = "Was sich ändert, wenn Ihre Daten frei sind"
 other = "Partnerschaft"
 
 [section_status]
-other = "Status"
+other = "Wo wir stehen"
 
 [section_contact]
 other = "Lassen Sie uns sprechen"
@@ -99,6 +99,12 @@ other = "Vereinbaren Sie ein Gespräch über Ihre Infrastruktur"
 # Guide
 [guide_intro]
 other = "OpenMedGate entstand aus der Frustration über geschlossene Systeme — nach Jahren der Arbeit in der Gesundheits-IT. Wir bauen kein weiteres Silo. Wir bauen den Ausweg."
+
+[movement_intro]
+other = "OpenMedGate entstand aus Frustration über geschlossene Systeme — nach Jahren der Arbeit in der Gesundheits-IT. Wir bauen kein weiteres Silo. Wir bauen den Ausweg."
+
+[movement_founding_team]
+other = "Gründungsteam"
 
 [guide_sc_role]
 other = "CEO & Co-founder"
@@ -222,6 +228,12 @@ other = "Gespräch vereinbaren"
 [status_subtitle]
 other = "Transparente Produktreife über unsere zentralen Integrationskomponenten"
 
+[status_item_fhir_gateway_core]
+other = "FHIR Gateway Core"
+
+[status_state_ready]
+other = "Bereit"
+
 # Countdown
 [countdown_title]
 other = "Open-Source in"
@@ -337,7 +349,7 @@ other = "F\u00fcr wen OpenMedGate gedacht ist"
 other = "Schlie\u00dfen Sie sich OpenMedGate an"
 
 ["section.first_implementation.title"]
-other = "Erste Implementierung: QuantumMed"
+other = "Produkte"
 
 ["section.road_to_foundation.title"]
 other = "Der Weg zur Stiftung"
@@ -347,3 +359,27 @@ other = "Das OpenMedGate Manifest"
 
 ["section.why_now.title"]
 other = "Warum jetzt"
+
+[why_now_intro]
+other = "Das ist kein „weiterer Tech-Trend“. Es ist ein struktureller Wendepunkt für die Gesundheits-IT."
+
+[why_now_item_1_title]
+other = "1) KI ist nicht mehr Pilot — sie wird zur Anforderung für den Betrieb."
+
+[why_now_item_1_desc]
+other = "Die Zahl der KI-Modelle wächst schneller als die Fähigkeit von Kliniken, sie sicher zu integrieren. Ohne Interoperabilität wird jede Einführung zu einem individuellen Integrationsprojekt, das sich organisatorisch nicht skalieren lässt."
+
+[why_now_item_2_title]
+other = "2) Regulierung treibt Datenaustausch — und erhöht die Anforderungen an Interoperabilität."
+
+[why_now_item_2_desc]
+other = "In Europa hat EHDS eine mehrjährige Umsetzungsphase gestartet, mit dem Ziel praktikabler digitaler Verfügbarkeit und grenzüberschreitendem Austausch zentraler Gesundheitsdaten. In den USA stärkt die Cures Act Final Rule Interoperabilität und wirkt Informationsblockaden entgegen — Grundlage für ein API-basiertes Ökosystem. Unterschiedliche Regionen, gleiche Richtung: offene Standards werden zur Norm."
+
+[why_now_item_3_title]
+other = "3) Vertrauen in KI hängt von der Infrastruktur ab."
+
+[why_now_item_3_desc]
+other = "Der Fokus auf Messung und Bewertung der Real-World-Performance von KI-fähigen Medizinprodukten nimmt zu. Ohne neutrale Integrationsschicht, standardisierte Daten und konsistente Schnittstellen sind Auditierbarkeit, Sicherheit und Verantwortlichkeit über den Lebenszyklus schwer erreichbar."
+
+[why_now_outro]
+other = "Darum jetzt: Wenn wir den offenen Standard und die gemeinsame Infrastruktur nicht heute schaffen, konsolidiert der Markt um geschlossene Ökosysteme — und die Wechselkosten steigen weiter."

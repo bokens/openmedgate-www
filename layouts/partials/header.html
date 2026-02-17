@@ -13,19 +13,19 @@
       </div>
 
       <!-- Desktop nav -->
-      <div class="hidden md:flex md:items-center md:space-x-8">
+      <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
         <!-- Nav links -->
-        <a href="#problem" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+        <a href="#problem" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
           {{ i18n "section_problem_nav" }}
         </a>
-        <a href="#integration_layer" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section.integration_layer.title" }}
+        <a href="#integration_layer" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_how_it_works" }}
         </a>
-        <a href="#first_implementation" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section.first_implementation.title" }}
+        <a href="#first_implementation" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_products" }}
         </a>
-        <a href="#join" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section.join.title" }}
+        <a href="#join" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+          {{ i18n "section_contact" }}
         </a>
 
         <!-- Language switcher -->
@@ -85,9 +85,9 @@
     <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden pb-4">
       <div class="flex flex-col space-y-4">
         <a href="#problem" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_problem_nav" }}</a>
-        <a href="#integration_layer" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section.integration_layer.title" }}</a>
-        <a href="#first_implementation" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section.first_implementation.title" }}</a>
-        <a href="#join" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section.join.title" }}</a>
+        <a href="#integration_layer" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_how_it_works" }}</a>
+        <a href="#first_implementation" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_products" }}</a>
+        <a href="#join" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_contact" }}</a>
 
         <!-- Mobile language switcher -->
         <div class="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">

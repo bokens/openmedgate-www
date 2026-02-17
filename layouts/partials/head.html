@@ -511,6 +511,72 @@ html, body {
   max-width: 100vw;
 }
 
+/* Why now visual accents */
+#why_now {
+  position: relative;
+  overflow: hidden;
+}
+
+.why-now-orb {
+  position: absolute;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.why-now-orb-a {
+  top: 1rem;
+  left: -6rem;
+  background: radial-gradient(circle, rgba(22, 163, 74, 0.18) 0%, transparent 70%);
+}
+
+.why-now-orb-b {
+  right: -5rem;
+  bottom: 1rem;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.16) 0%, transparent 70%);
+}
+
+.why-now-card {
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.why-now-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(17, 24, 39, 0.14);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.dark .why-now-card:hover {
+  box-shadow: 0 16px 38px rgba(2, 6, 23, 0.45);
+}
+
+.why-now-card-glow {
+  position: absolute;
+  inset: auto -40px -50px auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 9999px;
+  filter: blur(34px);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.why-now-card-glow-1 {
+  background: rgba(22, 163, 74, 0.7);
+}
+
+.why-now-card-glow-2 {
+  background: rgba(59, 130, 246, 0.72);
+}
+
+.why-now-card-glow-3 {
+  background: rgba(20, 184, 166, 0.72);
+}
+
 
 </style>
 

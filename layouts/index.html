@@ -96,32 +96,88 @@
   </div>
 </section>
 
-<!-- 3) Why Now -->
-<section id="why_now" class="py-20 fade-in-on-scroll">
+<!-- Lead Magnet -->
+<section class="py-12 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 p-10 text-white text-center" data-reveal data-delay="0">
+      <p class="text-4xl mb-4">&#x1F4D8;</p>
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">{{ i18n "lead_magnet_title" }}</h3>
+      <p class="text-primary-100 mb-8">{{ i18n "lead_magnet_desc" }}</p>
+      <a href="#newsletter"
+        class="inline-flex items-center px-6 py-3 bg-white text-primary-700 hover:bg-gray-100 font-medium rounded-lg transition-colors">
+        {{ i18n "lead_magnet_cta" }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 3) Why Now -->
+<section id="why_now" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="why-now-orb why-now-orb-a" aria-hidden="true"></div>
+    <div class="why-now-orb why-now-orb-b" aria-hidden="true"></div>
+
     <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center section-title" data-reveal data-delay="0">
       {{ i18n "section.why_now.title" }}
     </h2>
+
+    <p class="mt-10 max-w-4xl mx-auto text-center text-lg text-gray-600 dark:text-gray-300" data-reveal data-delay="120">
+      {{ i18n "why_now_intro" }}
+    </p>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6 lg:gap-8 relative z-10" data-reveal data-delay="180">
+      <article class="why-now-card p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/70 backdrop-blur-sm">
+        <div class="why-now-card-glow why-now-card-glow-1" aria-hidden="true"></div>
+        <div class="w-12 h-12 mb-4 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-700 dark:text-primary-300 font-bold">1</div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{{ i18n "why_now_item_1_title" }}</h3>
+        <p class="text-sm leading-7 text-gray-600 dark:text-gray-300">{{ i18n "why_now_item_1_desc" }}</p>
+      </article>
+
+      <article class="why-now-card p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/70 backdrop-blur-sm">
+        <div class="why-now-card-glow why-now-card-glow-2" aria-hidden="true"></div>
+        <div class="w-12 h-12 mb-4 rounded-xl bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center text-accent-700 dark:text-accent-300 font-bold">2</div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{{ i18n "why_now_item_2_title" }}</h3>
+        <p class="text-sm leading-7 text-gray-600 dark:text-gray-300">{{ i18n "why_now_item_2_desc" }}</p>
+      </article>
+
+      <article class="why-now-card p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/70 backdrop-blur-sm">
+        <div class="why-now-card-glow why-now-card-glow-3" aria-hidden="true"></div>
+        <div class="w-12 h-12 mb-4 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-700 dark:text-emerald-300 font-bold">3</div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{{ i18n "why_now_item_3_title" }}</h3>
+        <p class="text-sm leading-7 text-gray-600 dark:text-gray-300">{{ i18n "why_now_item_3_desc" }}</p>
+      </article>
+    </div>
+
+    <div class="mt-10 max-w-5xl mx-auto rounded-2xl p-[1px] bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500" data-reveal data-delay="260">
+      <div class="rounded-2xl px-6 py-7 md:px-10 md:py-8 bg-white/95 dark:bg-gray-900/90 backdrop-blur-sm text-center">
+        <p class="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
+          {{ i18n "why_now_outro" }}
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- 4) Movement -->
-<section id="movement" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="movement" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center section-title" data-reveal data-delay="0">
       {{ i18n "section.movement.title" }}
     </h2>
-  </div>
-</section>
 
-<!-- 5) Standard -->
-<section id="standard" class="py-20 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-12 section-title" data-reveal data-delay="0">
-      {{ i18n "section.standard.title" }}
-    </h2>
+    <div class="mt-8 max-w-3xl mx-auto text-center" data-reveal data-delay="120">
+      <p class="text-gray-600 dark:text-gray-300">
+        {{ i18n "movement_intro" }}
+      </p>
+    </div>
 
-    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12" data-reveal data-delay="180">
+    <div class="mt-12 text-center" data-reveal data-delay="180">
+      <p class="text-sm text-gray-500 dark:text-gray-400 tracking-wide uppercase">
+        {{ i18n "movement_founding_team" }}
+      </p>
+    </div>
+
+    <div class="mt-6 grid md:grid-cols-2 gap-8 max-w-3xl mx-auto" data-reveal data-delay="240">
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
           <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">SC</span>
@@ -140,15 +196,15 @@
         <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "guide_kb_bio" }}</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="text-center mb-12" data-reveal data-delay="240">
-      <p class="text-sm text-gray-500 dark:text-gray-400 tracking-wide">
-        {{ i18n "guide_stats" }}
-      </p>
-      <p class="mt-2 text-xs text-gray-400 dark:text-gray-500 tracking-widest uppercase">
-        FHIR &middot; HL7 &middot; DICOM
-      </p>
-    </div>
+<!-- 5) Standard -->
+<section id="standard" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-12 section-title" data-reveal data-delay="0">
+      {{ i18n "section.standard.title" }}
+    </h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-reveal data-delay="120">
       <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
@@ -179,7 +235,7 @@
 </section>
 
 <!-- 6) Integration Layer -->
-<section id="integration_layer" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="integration_layer" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
       {{ i18n "section.integration_layer.title" }}
@@ -246,23 +302,17 @@
   </div>
 </section>
 
-<!-- 7) Governance / Road to Foundation -->
-<section id="road_to_foundation" class="py-20 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2
-      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-10 section-title"
-      data-reveal data-delay="0">
-      {{ i18n "section.road_to_foundation.title" }}
-    </h2>
-  </div>
+<!-- 7) Governance -->
+<section id="road_to_foundation" class="pt-0 pb-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
 
   {{ partial "countdown.html" . }}
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-20">
+    <h3 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">{{ i18n "section_status" }}</h3>
     <p class="text-center text-gray-600 dark:text-gray-300 mb-10">{{ i18n "status_subtitle" }}</p>
     <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 mb-12">
       <ul class="space-y-4 text-sm">
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">FHIR Gateway Core</span><span class="px-3 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">Ready</span></li>
+        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">{{ i18n "status_item_fhir_gateway_core" }}</span><span class="px-3 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">{{ i18n "status_state_ready" }}</span></li>
         <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">HL7 Integration Pack</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
         <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">DICOM AI Router</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
         <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">Public Sector Connectors</span><span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Design</span></li>
@@ -270,55 +320,11 @@
       </ul>
     </div>
 
-    <div class="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 p-10 text-white text-center mb-12" data-reveal data-delay="0">
-      <p class="text-4xl mb-4">&#x1F4D8;</p>
-      <h3 class="text-2xl md:text-3xl font-bold mb-4">{{ i18n "lead_magnet_title" }}</h3>
-      <p class="text-primary-100 mb-8">{{ i18n "lead_magnet_desc" }}</p>
-      <a href="#newsletter"
-        class="inline-flex items-center px-6 py-3 bg-white text-primary-700 hover:bg-gray-100 font-medium rounded-lg transition-colors">
-        {{ i18n "lead_magnet_cta" }}
-      </a>
-    </div>
-
-    <div id="newsletter" class="max-w-2xl mx-auto text-center mb-12">
-      <h3
-        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
-        {{ i18n "newsletter_title" }}
-      </h3>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-        {{ i18n "newsletter_desc" }}
-      </p>
-      <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-left">
-        {{ partial "hubspot-newsletter.html" . }}
-      </div>
-    </div>
-
-    <div id="join" class="max-w-5xl mx-auto" data-reveal data-delay="0">
-      <h3 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-8 section-title">
-        {{ i18n "section_contact" }}
-      </h3>
-
-      <div class="grid md:grid-cols-2 gap-4 sm:gap-12">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-            {{ i18n "contact_form_title" }}
-          </h3>
-          {{ partial "hubspot-form.html" . }}
-        </div>
-
-        <div class="rounded-2xl p-8 border border-[#4a6580] dark:bg-[#425b76] bg-[#425b76]">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-            {{ i18n "book_meeting" }}
-          </h3>
-          {{ partial "hubspot-meetings.html" . }}
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- 8) Who Is This For -->
-<section id="audience" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="audience" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
       class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center m-0 mb-10 section-title"
@@ -333,7 +339,7 @@
 </section>
 
 <!-- 9) First Implementation -->
-<section id="first_implementation" class="py-20 fade-in-on-scroll">
+<section id="first_implementation" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
         {{ i18n "section.first_implementation.title" }}
@@ -366,10 +372,6 @@
               class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium rounded-lg transition-colors text-sm">
               {{ i18n "learn_more" }} &rarr;
             </a>
-            <a href="#join"
-              class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors text-sm">
-              {{ i18n "qm_cta" }}
-            </a>
           </div>
         </div>
 
@@ -387,7 +389,7 @@
 </section>
 
 <!-- 10) Manifest Section -->
-<section id="manifest" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+<section id="manifest" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
       <h2
@@ -400,6 +402,51 @@
       <div class="prose prose-lg dark:prose-invert mx-auto max-w-none">
         <div data-reveal data-delay="120" class="manifest-text">
           {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11) Get Notified -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="newsletter" class="max-w-2xl mx-auto text-center mb-12">
+      <h3
+        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
+        {{ i18n "newsletter_title" }}
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        {{ i18n "newsletter_desc" }}
+      </p>
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-left">
+        {{ partial "hubspot-newsletter.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12) Let's Talk -->
+<section class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="join" class="max-w-5xl mx-auto" data-reveal data-delay="0">
+      <h3 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-8 section-title">
+        {{ i18n "section_contact" }}
+      </h3>
+
+      <div class="grid md:grid-cols-2 gap-4 sm:gap-12">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            {{ i18n "contact_form_title" }}
+          </h3>
+          {{ partial "hubspot-form.html" . }}
+        </div>
+
+        <div class="rounded-2xl p-8 border border-[#4a6580] dark:bg-[#425b76] bg-[#425b76]">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            {{ i18n "book_meeting" }}
+          </h3>
+          {{ partial "hubspot-meetings.html" . }}
         </div>
       </div>
     </div>
