@@ -101,7 +101,7 @@
     const targetLang = detected || defaultLang;
     if (targetLang === 'en') return;
 
-    const targetPath = '/' + targetLang + '/';
+    const targetPath = '/' + targetLang + '/index.html';
     if (window.location.pathname !== targetPath) {
       window.location.replace(targetPath);
     }
