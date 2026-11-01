@@ -1,27 +1,14 @@
+# Site-wide parameters. Copy lives in data/site/<lang>.yaml and i18n/<lang>.toml.
+
 author = "OpenMedGate"
-description = "Open infrastructure for healthcare AI interoperability"
+ogImage = "/images/og/openmedgate-og.png"
 
-ogImage = "/images/og-image.png"
-twitterHandle = "@openmedgate"
+# Contact. Placeholders until the owners confirm the addresses.
+email = "contact@openmedgate.com"
+linkedinPage = "https://www.linkedin.com/company/openmedgate"
 
-quantummedURL = "https://quantummed.eu"
-medicoaiURL = "https://medicoai.eu"
+# When true, items flagged `placeholder: true` in data/site/*.yaml carry a visible badge.
+showPlaceholderBadges = true
 
-hubspotPortalId = "146629432"
-hubspotFormId = "aeadca76-4128-4c72-a7c6-260b461c8a75"
-newsletterFormGuid = "e4bcb230-3e96-439e-b9bb-7fc0a40974ff"
-
-
-countdownEnabled = true
-countdownTargetDate = "2026-08-01T00:00:00Z"
-
-cookieConsentEnabled = true
-
-darkModeEnabled = true
-darkModeDefault = "dark"
-
-[nav]
-  logo = "/images/logo2.png"
-
-[footer]
-  copyright = "OpenMedGate"
+# Blog
+postsOnHome = 3

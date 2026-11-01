@@ -1,0 +1,10 @@
+# Author profiles used by the blog and the founders section.
+# `linkedin` is empty until the owners confirm the profile addresses.
+sylwester-cyrwus:
+  name: Sylwester Cyrwus
+  photo: images/founders/sylwester-cyrwus.jpg
+  linkedin: ""
+krzysztof-bokiej:
+  name: Krzysztof Bokiej
+  photo: images/founders/krzysztof-bokiej.jpg
+  linkedin: ""

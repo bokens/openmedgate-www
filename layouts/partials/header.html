@@ -1,123 +1,27 @@
-<header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" x-data="{ mobileMenuOpen: false }">
-    <div class="flex justify-between h-16">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <a href="{{ site.Home.RelPermalink }}" class="flex items-center space-x-2">
-          {{ with site.Params.nav.logo }}
-            <img src="{{ . }}" alt="{{ site.Title }}" class="h-8 w-auto">
-          {{ else }}
-            <span class="text-xl font-bold text-primary-600 dark:text-primary-400">OpenMedGate</span>
-          {{ end }}
-        </a>
-      </div>
-
-      <!-- Desktop nav -->
-      <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-6 xl:space-x-8">
-        <!-- Nav links -->
-        <a href="#problem" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section_problem_nav" }}
-        </a>
-        <a href="#integration_layer" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section_how_it_works" }}
-        </a>
-        <a href="#first_implementation" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section_products" }}
-        </a>
-        <a href="#join" class="text-sm lg:text-base whitespace-nowrap text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          {{ i18n "section_contact" }}
-        </a>
-
-        <!-- Language switcher -->
-        <div class="relative" x-data="{ open: false }">
-          <button @click="open = !open" @click.outside="open = false"
-                  class="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-            <span class="uppercase text-sm font-medium">{{ .Language.Lang }}</span>
-            <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </button>
-          <div x-show="open" x-cloak x-transition
-               class="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1">
-            {{ range site.Home.AllTranslations }}
-              <a href="{{ .RelPermalink }}index.html" data-lang-choice="{{ .Language.Lang }}"
-                 class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 {{ if eq $.Language.Lang .Language.Lang }}bg-gray-100 dark:bg-gray-700{{ end }}">
-                {{ .Language.LanguageName }}
-              </a>
-            {{ end }}
-          </div>
-        </div>
-
-        <!-- Dark mode toggle -->
-        {{ if site.Params.darkModeEnabled }}
-        <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
-                class="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'">
-          <svg x-show="!darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-          </svg>
-          <svg x-show="darkMode" x-cloak class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-          </svg>
-        </button>
-        {{ end }}
-
-        <!-- CTA Button -->
-        <a href="#join" class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
-          {{ i18n "hero_cta" }}
-        </a>
-      </div>
-
-      <!-- Mobile menu button -->
-      <div class="flex items-center md:hidden">
-        <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 text-gray-600 dark:text-gray-300">
-          <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <svg x-show="mobileMenuOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="OpenMedGate">
+      {{ partial "logo.html" (dict "class" "brand-mark") }}
+      <span class="brand-word"><span class="brand-open">Open</span>MedGate</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul class="nav-list">
+        {{- range site.Menus.main }}
+        {{- $url := .URL }}
+        {{- with .Params.anchor }}{{ $url = printf "%s#%s" site.Home.RelPermalink . }}{{ end }}
+        <li><a class="nav-link" href="{{ $url }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    <div class="header-tools">
+      {{ partial "lang-switch.html" . }}
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ i18n "theme_toggle" }}" title="{{ i18n "theme_toggle" }}">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="nav" aria-expanded="false" aria-label="{{ i18n "menu_open" }}">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
     </div>
-
-    <!-- Mobile menu -->
-    <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden pb-4">
-      <div class="flex flex-col space-y-4">
-        <a href="#problem" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_problem_nav" }}</a>
-        <a href="#integration_layer" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_how_it_works" }}</a>
-        <a href="#first_implementation" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_products" }}</a>
-        <a href="#join" @click="mobileMenuOpen = false" class="text-gray-600 dark:text-gray-300">{{ i18n "section_contact" }}</a>
-
-        <!-- Mobile language switcher -->
-        <div class="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-          {{ range site.Home.AllTranslations }}
-            <a href="{{ .RelPermalink }}index.html" data-lang-choice="{{ .Language.Lang }}"
-               class="text-sm font-medium {{ if eq $.Language.Lang .Language.Lang }}text-primary-600 dark:text-primary-400{{ else }}text-gray-600 dark:text-gray-300{{ end }}">
-              {{ .Language.Lang | upper }}
-            </a>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </nav>
+  </div>
 </header>
-
-<script>
-  const darkModeDefault = "{{ site.Params.darkModeDefault }}"; // "dark" or "light"
-  const stored = localStorage.getItem('darkMode');
-
-  if (stored !== null) {
-    if (stored === 'true') document.documentElement.classList.add('dark');
-  } else if (darkModeDefault === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.classList.add('dark');
-  }
-
-  // Persist manual language choice so auto-detection never overrides the user.
-  document.querySelectorAll('[data-lang-choice]').forEach((link) => {
-    link.addEventListener('click', () => {
-      const lang = (link.getAttribute('data-lang-choice') || '').toLowerCase();
-      if (lang) localStorage.setItem('preferredLang', lang);
-    });
-  });
-</script>

@@ -1,22 +1,22 @@
 baseURL = "https://openmedgate.com/"
-languageCode = "en"
 title = "OpenMedGate"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
-
-# Hugo modules
 enableRobotsTXT = true
-enableGitInfo = true
+enableGitInfo = false
+disableKinds = ["taxonomy", "term"]
+timeZone = "Europe/Warsaw"
 
-# Build settings
 [minify]
   minifyOutput = true
-disableKinds = ["taxonomy", "term"]
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
 
 [sitemap]
   changefreq = "weekly"
@@ -24,12 +24,18 @@ disableKinds = ["taxonomy", "term"]
   filename = "sitemap.xml"
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+[imaging]
+  quality = 82
+  resampleFilter = "Lanczos"
 
 [caches]
-  [caches.assets]
+  [caches.images]
     dir = ":resourceDir/_gen"
     maxAge = "720h"
-  [caches.getcsv]
-    dir = ":cacheDir/:project"
+  [caches.assets]
+    dir = ":resourceDir/_gen"
     maxAge = "720h"

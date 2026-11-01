@@ -13,6 +13,13 @@ Source and infrastructure of openmedgate.com, a static Hugo site. [README.md](RE
 - `hugo --minify`: production build in `public/` (generated, not committed).
 - Publishing: `upload_www_content.sh` builds, mirrors `public/` to S3 with `--delete` and invalidates CloudFront, using the AWS SSO profile `quantummed-www-editor`. Its `DISTRIBUTION_ID` is empty; look it up with `aws cloudfront list-distributions --profile quantummed-www-editor --query "DistributionList.Items[?Aliases.Items[?@=='openmedgate.com']].Id"` before the first upload.
 
+## Where things are
+
+- Start-page copy: `data/site/en.yaml` and `data/site/pl.yaml`; interface strings: `i18n/`; menus: `config/_default/menus.<lang>.toml`. Layouts hold no copy.
+- Items flagged `placeholder: true` in the data files carry a visible badge while `showPlaceholderBadges` is on in `config/_default/params.toml`. Replace the text and remove the flag together.
+- Blog posts: page bundles under `content/<lang>/blog/<slug>/`, linked by `translationKey`. When the operator says a new post has arrived, or `blog-inbox/` holds a post folder, follow [blog-inbox/README.md](blog-inbox/README.md) step by step.
+- Design tokens and every style: `assets/css/site.css`. Fonts are self-hosted in `static/fonts/`; do not add third-party scripts, fonts or trackers.
+
 ## What the site is
 
 OpenMedGate is an initiative, not a company, a product or an open-source project. The canon that defines it lives outside this repository, in QuantumMed-Shared (`01-Products/OpenMedGate/OpenMedGate-Overview.md`). Read it before writing or changing any text. The rules that follow from it:

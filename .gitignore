@@ -3,9 +3,12 @@
 /resources/_gen/
 .hugo_build.lock
 
-# Node (if using Tailwind build)
+# Blog inbox: posts arrive here and leave after publication
+/blog-inbox/*
+!/blog-inbox/README.md
+
+# Node
 node_modules/
-package-lock.json
 
 # OS
 .DS_Store
@@ -14,6 +17,7 @@ Thumbs.db
 # IDE
 .idea/
 .vscode/
+.vs/
 *.swp
 *.swo
 

@@ -1,386 +1,104 @@
-# Navigation
-[nav_home]
-other = "Start"
+[skip_to_content]
+other = "Przejdź do treści"
 
-[nav_about]
-other = "O nas"
+[menu_open]
+other = "Otwórz menu"
 
-[nav_contact]
+[menu_close]
+other = "Zamknij menu"
+
+[theme_toggle]
+other = "Przełącz tryb jasny i ciemny"
+
+[language_switch]
+other = "Język"
+
+[placeholder]
+other = "placeholder"
+
+[draft]
+other = "szkic"
+
+[read_more]
+other = "Czytaj ustalenie"
+
+[all_posts]
+other = "Wszystkie ustalenia"
+
+[back_to_blog]
+other = "Wróć do bloga"
+
+[published]
+other = "Opublikowano"
+
+[updated]
+other = "Zaktualizowano"
+
+[reading_time]
+other = "{{ .Count }} min czytania"
+
+[authors]
+other = "Autorzy"
+
+[sources]
+other = "Źródła"
+
+[share]
+other = "Udostępnij"
+
+[share_linkedin]
+other = "Udostępnij na LinkedIn"
+
+[copy_link]
+other = "Kopiuj link"
+
+[link_copied]
+other = "Link skopiowany"
+
+[blog_title]
+other = "Ustalenia"
+
+[blog_description]
+other = "Ustalenia, liczby i dokumenty. Każdy wpis ma nazwanego autora i wskazane źródła."
+
+[blog_empty]
+other = "Tu pojawią się pierwsze ustalenia."
+
+[not_found_title]
+other = "Tej strony nie ma."
+
+[not_found_text]
+other = "Adres może być nieaktualny. Poprzednia wersja tej strony miała inne podstrony; już ich nie ma."
+
+[not_found_home]
+other = "Przejdź na stronę główną"
+
+[footer_no_tracking]
+other = "Ta strona nie ustawia ciasteczek i nie prowadzi analityki."
+
+[footer_site]
+other = "Strona"
+
+[footer_contact]
 other = "Kontakt"
 
-# Hero
-[hero_title]
-other = "Twoje dane szpitalne. Twój wybór AI. Bez vendor lock-in."
+[footer_note]
+other = "Nota"
 
-[hero_subtitle]
-other = "OpenMedGate to otwarta platforma integracyjna, która łączy systemy medyczne i umożliwia bezpieczne wdrażanie AI — w oparciu o standardy FHIR, HL7 i DICOM."
+[rss]
+other = "Kanał RSS"
 
-[hero_cta]
-other = "Zobacz jak to działa"
+[cat_method]
+other = "Metoda"
 
-[hero_cta_secondary]
-other = "Dołącz do OpenMedGate"
+[cat_mechanism]
+other = "Mechanizm"
 
-# Sections
-[section_manifest]
-other = "Manifest"
+[cat_evidence]
+other = "Dowody"
 
-[section_problem]
-other = "Dane medyczne są uwięzione. I to Cię kosztuje."
+[cat_standards]
+other = "Standardy"
 
-[section_problem_nav]
-other = "Problem"
-
-[section_how_it_works]
-other = "Jak to działa"
-
-[section_guide]
-other = "Widzieliśmy ten problem od środka"
-
-[section_products]
-other = "Produkty"
-
-[section_success]
-other = "Co się zmienia, gdy Twoje dane są wolne"
-
-[section_partners]
-other = "Współpraca"
-
-[section_status]
-other = "Gdzie jesteśmy"
-
-[section_contact]
-other = "Porozmawiajmy"
-
-# Problem
-[problem_external_title]
-other = "Integracja kosztuje miliony"
-
-[problem_external_desc]
-other = "Każde nowe narzędzie wymaga osobnej umowy, projektu integracyjnego i negocjacji z dostawcą. Płacisz za dostęp do własnych danych."
-
-[problem_internal_title]
-other = "Czujesz się zamknięty"
-
-[problem_internal_desc]
-other = "Zmiana dostawcy trwa latami. Twoje dane są w zamkniętych formatach. Innowacja zależy od roadmapy dostawcy, nie Twojej."
-
-[problem_philosophical_title]
-other = "To nie powinno być normą"
-
-[problem_philosophical_desc]
-other = "Dane pacjenta należą do pacjenta. Szpitale powinny wybierać najlepsze narzędzia — nie być zakładnikami starych kontraktów."
-
-[problem_stakes]
-other = "Bez zmian: rosnące koszty, zablokowana innowacja i pozostawanie w tyle za szpitalami, które już wdrożyły otwarte standardy."
-
-# How it works
-[hiw_step1_title]
-other = "Połącz"
-
-[hiw_step1_desc]
-other = "Podłączamy się do Twoich istniejących systemów (HIS, PACS, RIS) przez standardowe protokoły — bez wymiany tego, co działa."
-
-[hiw_step2_title]
-other = "Integruj"
-
-[hiw_step2_desc]
-other = "Dodaj narzędzia AI, analitykę lub nowe moduły przez jedną otwartą bramkę — zamiast pięciu osobnych umów z dostawcami."
-
-[hiw_step3_title]
-other = "Kontroluj"
-
-[hiw_step3_desc]
-other = "Jesteś właścicielem swoich danych, wybierasz narzędzia i zmieniasz dostawców w dowolnym momencie — bez milionowych projektów migracyjnych."
-
-[hiw_cta]
-other = "Poznaj specyfikację"
-
-# Guide
-[guide_intro]
-other = "OpenMedGate powstał z frustracji zamkniętymi systemami — po latach pracy wewnątrz IT w ochronie zdrowia. Nie budujemy kolejnego silosu. Budujemy wyjście."
-
-[movement_intro]
-other = "OpenMedGate powstał z frustracji zamkniętymi systemami — po latach pracy wewnątrz IT w ochronie zdrowia. Nie budujemy kolejnego silosu. Budujemy wyjście."
-
-[movement_founding_team]
-other = "Zespół założycielski"
-
-[guide_sc_role]
-other = "CEO & Co-founder"
-
-[guide_sc_bio]
-other = "10+ lat kierowania projektami IT w ochronie zdrowia. Executive MBA."
-
-[guide_kb_role]
-other = "CTO & Co-founder"
-
-[guide_kb_bio]
-other = "17+ lat integracji systemów enterprise. Były lider techniczny w Roche."
-
-[guide_stats]
-other = "24 partnerów technologicznych AI · 15 podpisanych NDA · 4 aktywne integracje"
-
-# Products
-[products_subtitle]
-other = "Produkty zbudowane na otwartych standardach"
-
-[qm_tagline]
-other = "Platforma integracji AI dla radiologii"
-
-[qm_desc]
-other = "Jedna umowa. Jeden punkt kontaktu. Dostęp do najlepszych modeli diagnostycznych AI — bez vendor lock-in."
-
-[qm_feature_1]
-other = "Integruje się z Twoim PACS/RIS"
-
-[qm_feature_2]
-other = "Wiele modeli AI"
-
-[qm_feature_3]
-other = "Chmura lub on-premise · Zgodność z RODO i NIS2"
-
-[qm_cta]
-other = "Zamów pilotaż"
-
-[medicoai_desc]
-other = "Wsparcie decyzji klinicznych AI wykraczające poza radiologię."
-
-[medicoai_notify]
-other = "Powiadom mnie"
-
-# Success
-[success_ownership_title]
-other = "Prawdziwa własność danych"
-
-[success_ownership_desc]
-other = "Eksportuj, migruj i używaj swoich danych w dowolnym standardowym formacie. Koniec z płaceniem za dostęp."
-
-[success_ai_title]
-other = "Najlepsze AI w swojej klasie"
-
-[success_ai_desc]
-other = "Wybieraj spośród dziesiątek narzędzi AI — nie tylko to, co oferuje Twój dostawca. Zmień w każdej chwili."
-
-[success_speed_title]
-other = "Szybsza innowacja"
-
-[success_speed_desc]
-other = "Wdrażaj nowe narzędzia w tygodnie, nie lata. Twoja roadmapa, nie dostawcy."
-
-[success_cost_title]
-other = "Niższy koszt całkowity"
-
-[success_cost_desc]
-other = "Jedna warstwa integracyjna zamiast dziesiątek niestandardowych konektorów. Przewidywalne koszty."
-
-# Lead magnet
-[lead_magnet_title]
-other = "Darmowy poradnik: Jak uwolnić się od vendor lock-in"
-
-[lead_magnet_desc]
-other = "Praktyczny poradnik dla liderów szpitali gotowych przejąć kontrolę nad danymi i strategią AI."
-
-[lead_magnet_cta]
-other = "Wkrótce — Zapisz się"
-
-# Segment picker
-[segment_hospital]
-other = "Szpital"
-
-[segment_ai_vendor]
-other = "Dostawca AI"
-
-[segment_developer]
-other = "Developer"
-
-[segment_public_sector]
-other = "Sektor publiczny"
-
-[segment_question]
-other = "Jestem:"
-
-[segment_hospital_value]
-other = "Przejmij kontrolę nad infrastrukturą i skaluj wdrożenia AI na własnych zasadach."
-
-[segment_ai_vendor_value]
-other = "Docieraj do szpitali szybciej dzięki jednej warstwie integracyjnej zamiast projektów szytych na miarę."
-
-[segment_developer_value]
-other = "Buduj na otwartych standardach i łącz się z systemami ochrony zdrowia bez vendor lock-in."
-
-[segment_public_value]
-other = "Przyspiesz cyfryzację dzięki interoperacyjnej infrastrukturze dla publicznej ochrony zdrowia."
-
-[segment_hospital_cta]
-other = "Dołącz do OpenMedGate"
-
-[segment_ai_vendor_cta]
-other = "Zostań partnerem"
-
-[segment_developer_cta]
-other = "Zobacz GitHub"
-
-[segment_public_cta]
-other = "Umów rozmowę"
-
-# Status
-[status_subtitle]
-other = "Transparentna dojrzałość produktu w naszych kluczowych komponentach integracyjnych"
-
-[status_item_fhir_gateway_core]
-other = "FHIR Gateway Core"
-
-[status_state_ready]
-other = "Gotowe"
-
-# Countdown
-[countdown_title]
-other = "Open-source za"
-
-[countdown_days]
-other = "dni"
-
-[countdown_hours]
-other = "godzin"
-
-[countdown_minutes]
-other = "minut"
-
-[countdown_seconds]
-other = "sekund"
-
-# Newsletter
-[newsletter_title]
-other = "Otrzymuj powiadomienia"
-
-[newsletter_desc]
-other = "Otrzymuj aktualizacje o postępach open-source i nowych funkcjach."
-
-[newsletter_placeholder]
-other = "Twój email"
-
-[newsletter_button]
-other = "Zapisz się"
-
-[newsletter_submit]
-other = "Zapisz się"
-
-[newsletter_submitting]
-other = "Zapisywanie..."
-
-[newsletter_success]
-other = "Dziękujemy — zapis został przyjęty."
-
-[newsletter_error_required]
-other = "Uzupełnij wymagane pola."
-
-# Contact form
-[contact_form_title]
-other = "Wyślij wiadomość"
-
-[contact_name]
-other = "Imię i nazwisko"
-
-[contact_email]
-other = "Email"
-
-[contact_company]
-other = "Firma"
-
-[contact_message]
-other = "Wiadomość"
-
-[contact_submit]
-other = "Wyślij"
-
-# Cookie consent
-[cookie_message]
-other = "Używamy plików cookie, aby poprawić Twoje doświadczenia. Kontynuując, zgadzasz się na ich użycie."
-
-[cookie_accept]
-other = "Akceptuję"
-
-[cookie_decline]
-other = "Odrzucam"
-
-[cookie_settings]
-other = "Ustawienia"
-
-# Footer
-[footer_privacy]
-other = "Polityka prywatności"
-
-[footer_terms]
-other = "Regulamin"
-
-[footer_imprint]
-other = "Impressum"
-
-# Misc
-[powered_by]
-other = "Powered by OpenMedGate"
-
-[book_meeting]
-other = "Umów spotkanie"
-
-[learn_more]
-other = "Dowiedz się więcej"
-
-["section.hero.title"]
-other = "Zako\u0144cz vendor lock-in w ochronie zdrowia."
-
-["section.problem.title"]
-other = "Problem: zamkni\u0119ta infrastruktura blokuje innowacj\u0119"
-
-["section.movement.title"]
-other = "To jest ruch."
-
-["section.standard.title"]
-other = "Otwarty standard interoperacyjno\u015bci"
-
-["section.integration_layer.title"]
-other = "Otwarto\u017ar\u00f3d\u0142owa warstwa integracyjna"
-
-["section.audience.title"]
-other = "Dla kogo jest OpenMedGate"
-
-["section.join.title"]
-other = "Dołącz do OpenMedGate"
-
-["section.first_implementation.title"]
-other = "Produkty"
-
-["section.road_to_foundation.title"]
-other = "Droga do Fundacji"
-
-["section.manifesto.title"]
-other = "Manifest OpenMedGate"
-
-["section.why_now.title"]
-other = "Dlaczego teraz"
-
-[why_now_intro]
-other = "To nie jest „kolejny trend technologiczny”. To punkt zwrotny dla infrastruktury ochrony zdrowia."
-
-[why_now_item_1_title]
-other = "AI przestała być eksperymentem — stała się wymaganiem wdrożeniowym."
-
-[why_now_item_1_desc]
-other = "Modele AI będą mnożyć się szybciej niż zdolność szpitali do ich bezpiecznej integracji. Bez interoperacyjności każde wdrożenie staje się osobnym projektem integracyjnym, który nie skaluje się organizacyjnie."
-
-[why_now_item_2_title]
-other = "Regulacje wymuszają wymianę danych — i podnoszą poprzeczkę interoperacyjności."
-
-[why_now_item_2_desc]
-other = "W Europie EHDS uruchamia wieloletni proces wdrożeniowy, którego końcowym skutkiem ma być realna, transgraniczna dostępność i wymienialność danych. W USA zasady interoperacyjności i przeciwdziałania blokowaniu informacji (Cures Act Final Rule) wspierają ekosystem API i konkurencję aplikacji. Niezależnie od kraju, kierunek jest ten sam: standardy i otwarty dostęp do danych stają się normą."
-
-[why_now_item_3_title]
-other = "Zaufanie do AI będzie zależeć od infrastruktury."
-
-[why_now_item_3_desc]
-other = "Coraz większy nacisk kładzie się na monitorowanie real-world performance i kontrolę zmian w AI. Bez neutralnej warstwy integracyjnej, standaryzacji danych i spójnych interfejsów trudno budować audytowalność, bezpieczeństwo i odpowiedzialność w całym cyklu życia rozwiązań."
-
-[why_now_outro]
-other = "Dlatego właśnie teraz: jeśli standard i wspólna infrastruktura nie powstaną dziś, rynek ułoży się wokół zamkniętych ekosystemów — a koszt wyjścia będzie tylko rósł."
-
+[cat_procedures]
+other = "Postępowania"

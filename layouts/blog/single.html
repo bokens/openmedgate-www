@@ -1,0 +1,57 @@
+{{ define "bodyclass" }}page page-post{{ end }}
+{{ define "main" }}
+<article class="post">
+  <header class="post-head">
+    <div class="container container-narrow">
+      <div class="post-meta mono reveal">
+        {{- with .Params.category }}<span class="post-cat">{{ i18n (printf "cat_%s" .) | default . }}</span>{{ end }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+        <span>{{ i18n "reading_time" (dict "Count" .ReadingTime) }}</span>
+        {{- if .Draft }}<span class="badge badge-draft">{{ i18n "draft" }}</span>{{ end }}
+      </div>
+      <h1 class="post-title reveal">{{ .Title }}</h1>
+      {{- with .Params.lead }}<p class="post-lead reveal">{{ . }}</p>{{ end }}
+      <div class="post-authors reveal">
+        {{- range .Params.authors }}
+        {{- with index site.Data.authors . }}
+        <span class="post-author">
+          {{- with resources.Get .photo }}{{ $t := .Fill "96x96 Center webp q80" }}<img src="{{ $t.RelPermalink }}" width="48" height="48" alt="" loading="lazy">{{ end }}
+          <span>{{ .name }}</span>
+        </span>
+        {{- end }}
+        {{- end }}
+      </div>
+    </div>
+  </header>
+  {{- with .Params.cover }}
+  {{- with $.Resources.GetMatch . }}
+  <figure class="post-cover">
+    {{- $img := .Fill "1600x900 Center webp q82" }}
+    <img src="{{ $img.RelPermalink }}" width="1600" height="900" alt="{{ $.Params.coverAlt | default "" }}" decoding="async">
+    {{- with $.Params.coverCaption }}<figcaption class="mono">{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{- end }}
+  {{- end }}
+  <div class="container container-narrow">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+    {{- with .Params.sources }}
+    <aside class="sources">
+      <h2 class="sources-title mono">{{ i18n "sources" }}</h2>
+      <ol class="sources-list">
+        {{- range . }}<li>{{ . | markdownify }}</li>{{ end }}
+      </ol>
+    </aside>
+    {{- end }}
+    <footer class="post-foot">
+      <div class="share">
+        <span class="mono">{{ i18n "share" }}</span>
+        <a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | urlquery }}" rel="noopener" target="_blank">{{ i18n "share_linkedin" }}</a>
+        <button class="share-link" type="button" data-copy-link="{{ .Permalink }}" data-copied="{{ i18n "link_copied" }}">{{ i18n "copy_link" }}</button>
+      </div>
+      {{- with site.GetPage "/blog" }}<a class="btn btn-ghost" href="{{ .RelPermalink }}">{{ i18n "back_to_blog" }}</a>{{ end }}
+    </footer>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,33 @@
+[[main]]
+  identifier = "principles"
+  name = "Założenia"
+  weight = 10
+  [main.params]
+    anchor = "principles"
+
+[[main]]
+  identifier = "evidence"
+  name = "Dowody"
+  weight = 20
+  [main.params]
+    anchor = "evidence"
+
+[[main]]
+  identifier = "founders"
+  name = "Założyciele"
+  weight = 30
+  [main.params]
+    anchor = "founders"
+
+[[main]]
+  identifier = "signatories"
+  name = "Sygnatariusze"
+  weight = 40
+  [main.params]
+    anchor = "signatories"
+
+[[main]]
+  identifier = "blog"
+  name = "Blog"
+  pageRef = "/blog"
+  weight = 50

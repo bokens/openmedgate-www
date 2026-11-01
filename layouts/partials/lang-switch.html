@@ -1,0 +1,12 @@
+{{- $cur := .Language.Lang -}}
+<div class="lang" role="group" aria-label="{{ i18n "language_switch" }}">
+{{- range site.Languages }}
+  {{- $lang := .Lang }}
+  {{- $url := "" }}
+  {{- if eq $lang $cur }}{{ $url = $.RelPermalink }}{{ else }}
+    {{- range $.Translations }}{{ if eq .Language.Lang $lang }}{{ $url = .RelPermalink }}{{ end }}{{ end }}
+    {{- if not $url }}{{ range site.Sites }}{{ if eq .Language.Lang $lang }}{{ $url = .Home.RelPermalink }}{{ end }}{{ end }}{{ end }}
+  {{- end }}
+  <a class="lang-link" href="{{ $url }}" lang="{{ $lang }}" hreflang="{{ $lang }}"{{ if eq $lang $cur }} aria-current="true"{{ end }}>{{ upper $lang }}</a>
+{{- end }}
+</div>

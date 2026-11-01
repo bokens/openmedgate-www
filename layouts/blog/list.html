@@ -1,0 +1,23 @@
+{{ define "bodyclass" }}page page-blog{{ end }}
+{{ define "main" }}
+<section class="section section-list">
+  <div class="container">
+    <header class="section-head section-head-row reveal">
+      <div>
+        <span class="section-label mono">Blog</span>
+        <h1 class="section-title">{{ .Title }}</h1>
+        <p class="section-intro">{{ .Description }}</p>
+      </div>
+      {{- with .OutputFormats.Get "RSS" }}<a class="btn btn-ghost" href="{{ .RelPermalink }}">{{ i18n "rss" }}</a>{{ end }}
+    </header>
+    {{- $posts := .RegularPages }}
+    {{- if $posts }}
+    <div class="post-list">
+      {{- range $posts }}{{ partial "post-card.html" . }}{{ end }}
+    </div>
+    {{- else }}
+    <p class="blog-empty reveal">{{ i18n "blog_empty" }}</p>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

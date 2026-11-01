@@ -1,441 +1,230 @@
+{{ define "bodyclass" }}page page-home{{ end }}
 {{ define "main" }}
+{{- $d := index site.Data.site site.Language.Lang -}}
 
-<!-- 1) Hero -->
-<section id="hero" class="relative overflow-hidden bg-white dark:bg-gray-900">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
-    <div class="text-center max-w-4xl mx-auto">
-      <h1
-        class="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent animate-gradient-pulse mb-6 leading-tight">
-        {{ i18n "section.hero.title" }}
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-        {{ i18n "hero_subtitle" }}
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#integration_layer"
-          class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
-          {{ i18n "hero_cta" }}
-        </a>
-        <a href="#join"
-          class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium rounded-lg transition-colors">
-          {{ i18n "hero_cta_secondary" }}
-        </a>
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow mono reveal">{{ $d.hero.eyebrow }}</p>
+      <h1 class="display reveal">{{ $d.hero.title }}</h1>
+      <p class="lead reveal">{{ $d.hero.lead }}</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#principles">{{ $d.hero.cta_primary }}</a>
+        <a class="btn btn-ghost" href="#evidence">{{ $d.hero.cta_secondary }}<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
-  </div>
-
-  <div class="absolute inset-0 -z-10 overflow-hidden max-w-full">
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-900/95 dark:to-gray-900">
-    </div>
-
-    <svg class="absolute inset-0 w-full h-full opacity-5 dark:opacity-10" preserveAspectRatio="none">
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-
-    <div class="absolute -top-48 -right-48 w-96 h-96 rounded-full blur-3xl animate-float-slow"
-      style="background: radial-gradient(circle, rgba(22, 163, 74, 0.25) 0%, transparent 70%); opacity: 0.6;"></div>
-    <div class="absolute -bottom-48 -left-48 w-80 h-80 rounded-full blur-3xl animate-float-slow"
-      style="background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); opacity: 0.4; animation-delay: 4s;">
-    </div>
-    <div class="absolute top-1/3 right-1/3 w-96 h-96 rounded-full blur-3xl animate-pulse-subtle"
-      style="background: radial-gradient(circle, rgba(22, 163, 74, 0.12) 0%, transparent 70%); opacity: 0.5; animation-delay: 2s;">
+    <div class="hero-visual reveal" aria-hidden="true">
+      <figure class="doc">
+        <div class="doc-page">
+          <div class="doc-kicker mono">{{ $d.hero.doc.kicker }}</div>
+          <div class="doc-heading">{{ $d.hero.doc.heading }}</div>
+          <div class="doc-lines"><span class="l" style="--w:92%"></span><span class="l" style="--w:76%"></span><span class="l" style="--w:84%"></span></div>
+          <p class="doc-clause">{{ $d.hero.doc.clause }}</p>
+          <div class="doc-lines"><span class="l" style="--w:88%"></span><span class="l" style="--w:64%"></span></div>
+          <div class="doc-annex mono">{{ $d.hero.doc.annex }}</div>
+          <div class="doc-redacted"><span class="r" style="--w:96%"></span><span class="r" style="--w:82%"></span><span class="r" style="--w:90%"></span><span class="r" style="--w:58%"></span></div>
+          <div class="doc-stamp mono">{{ $d.hero.doc.stamp }}</div>
+        </div>
+        <figcaption class="doc-caption mono">{{ $d.hero.doc.caption }}</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- 2) Problem -->
-<section id="problem" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
-      {{ i18n "section.problem.title" }}
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-reveal data-delay="120">
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
-        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-          <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "problem_external_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_external_desc" }}</p>
+<section class="section section-what" id="what">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="section-label mono">{{ $d.what.label }}</span>
+      <h2 class="section-title">{{ $d.what.title }}</h2>
+    </header>
+    <div class="what-grid stagger">
+      {{- range $d.what.items }}
+      <div class="what-item reveal">
+        <h3 class="what-title">{{ .title }}</h3>
+        <p>{{ .text }}</p>
       </div>
-
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
-        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
-          <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-          </svg>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "problem_internal_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_internal_desc" }}</p>
-      </div>
-
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
-        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-          <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
-          </svg>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "problem_philosophical_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "problem_philosophical_desc" }}</p>
-      </div>
+      {{- end }}
     </div>
-
-    <div class="mt-12 max-w-3xl mx-auto text-center" data-reveal data-delay="240">
-      <p class="text-gray-500 dark:text-gray-400 italic">
-        {{ i18n "problem_stakes" }}
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- 3) Why Now -->
-<section id="why_now" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-    <div class="why-now-orb why-now-orb-a" aria-hidden="true"></div>
-    <div class="why-now-orb why-now-orb-b" aria-hidden="true"></div>
-
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center section-title" data-reveal data-delay="0">
-      {{ i18n "section.why_now.title" }}
-    </h2>
-
-    <p class="mt-10 max-w-4xl mx-auto text-center text-lg text-gray-600 dark:text-gray-300" data-reveal data-delay="120">
-      {{ i18n "why_now_intro" }}
-    </p>
-
-    <div class="mt-12 grid md:grid-cols-3 gap-6 lg:gap-8 relative z-10" data-reveal data-delay="180">
-      <article class="why-now-card p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/70 backdrop-blur-sm">
-        <div class="why-now-card-glow why-now-card-glow-1" aria-hidden="true"></div>
-        <div class="w-12 h-12 mb-4 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-700 dark:text-primary-300 font-bold">1</div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{{ i18n "why_now_item_1_title" }}</h3>
-        <p class="text-sm leading-7 text-gray-600 dark:text-gray-300">{{ i18n "why_now_item_1_desc" }}</p>
-      </article>
-
-      <article class="why-now-card p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/70 backdrop-blur-sm">
-        <div class="why-now-card-glow why-now-card-glow-2" aria-hidden="true"></div>
-        <div class="w-12 h-12 mb-4 rounded-xl bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center text-accent-700 dark:text-accent-300 font-bold">2</div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{{ i18n "why_now_item_2_title" }}</h3>
-        <p class="text-sm leading-7 text-gray-600 dark:text-gray-300">{{ i18n "why_now_item_2_desc" }}</p>
-      </article>
-
-      <article class="why-now-card p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/70 backdrop-blur-sm">
-        <div class="why-now-card-glow why-now-card-glow-3" aria-hidden="true"></div>
-        <div class="w-12 h-12 mb-4 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-700 dark:text-emerald-300 font-bold">3</div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{{ i18n "why_now_item_3_title" }}</h3>
-        <p class="text-sm leading-7 text-gray-600 dark:text-gray-300">{{ i18n "why_now_item_3_desc" }}</p>
-      </article>
-    </div>
-
-    <div class="mt-10 max-w-5xl mx-auto rounded-2xl p-[1px] bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500" data-reveal data-delay="260">
-      <div class="rounded-2xl px-6 py-7 md:px-10 md:py-8 bg-white/95 dark:bg-gray-900/90 backdrop-blur-sm text-center">
-        <p class="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
-          {{ i18n "why_now_outro" }}
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4) Movement -->
-<section id="movement" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center section-title" data-reveal data-delay="0">
-      {{ i18n "section.movement.title" }}
-    </h2>
-
-    <div class="mt-8 max-w-3xl mx-auto text-center" data-reveal data-delay="120">
-      <p class="text-gray-600 dark:text-gray-300">
-        {{ i18n "movement_intro" }}
-      </p>
-    </div>
-
-    <div class="mt-12 text-center" data-reveal data-delay="180">
-      <p class="text-sm text-gray-500 dark:text-gray-400 tracking-wide uppercase">
-        {{ i18n "movement_founding_team" }}
-      </p>
-    </div>
-
-    <div class="mt-6 grid md:grid-cols-2 gap-8 max-w-3xl mx-auto" data-reveal data-delay="240">
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">SC</span>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Sylwester Cyrwus</h3>
-        <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">{{ i18n "guide_sc_role" }}</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "guide_sc_bio" }}</p>
-      </div>
-
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-accent-600 dark:text-accent-400">KB</span>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Krzysztof Bokiej</h3>
-        <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">{{ i18n "guide_kb_role" }}</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "guide_kb_bio" }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5) Standard -->
-<section id="standard" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-12 section-title" data-reveal data-delay="0">
-      {{ i18n "section.standard.title" }}
-    </h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-reveal data-delay="120">
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
-        <p class="text-2xl mb-2">&#x1F5C2;</p>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_ownership_title" }}</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_ownership_desc" }}</p>
-      </div>
-
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
-        <p class="text-2xl mb-2">&#x1F916;</p>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_ai_title" }}</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_ai_desc" }}</p>
-      </div>
-
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
-        <p class="text-2xl mb-2">&#x26A1;</p>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_speed_title" }}</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_speed_desc" }}</p>
-      </div>
-
-      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
-        <p class="text-2xl mb-2">&#x1F4B6;</p>
-        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ i18n "success_cost_title" }}</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ i18n "success_cost_desc" }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6) Integration Layer -->
-<section id="integration_layer" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-16 section-title" data-reveal data-delay="0">
-      {{ i18n "section.integration_layer.title" }}
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-reveal data-delay="120">
-      <div class="text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">1</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step1_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step1_desc" }}</p>
-      </div>
-
-      <div class="text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-accent-600 dark:text-accent-400">2</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step2_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step2_desc" }}</p>
-      </div>
-
-      <div class="text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-          <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">3</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ i18n "hiw_step3_title" }}</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm">{{ i18n "hiw_step3_desc" }}</p>
-      </div>
-    </div>
-
-    <div class="mt-12 max-w-3xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-center" data-reveal data-delay="240">
-      <div class="font-mono text-sm text-gray-600 dark:text-gray-300 space-y-2">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
-          <div class="flex flex-col gap-1 text-right">
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">HIS</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">PACS</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">RIS</span>
-          </div>
-          <div class="text-2xl text-primary-500">&harr;</div>
-          <div class="px-4 py-3 bg-primary-600 text-white rounded-xl font-bold text-center">
-            OpenMedGate<br>
-            <span class="text-xs font-normal opacity-80">FHIR &middot; HL7 &middot; DICOM</span>
-          </div>
-          <div class="text-2xl text-primary-500">&harr;</div>
-          <div class="flex flex-col gap-1 text-left">
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">AI Tools</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Analytics</span>
-            <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">Gov Platforms</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-8 text-center" data-reveal data-delay="300">
-      <a href="#join"
-        class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
-        {{ i18n "hiw_cta" }}
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 7) Governance -->
-<section id="road_to_foundation" class="pt-0 pb-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-
-  {{ partial "countdown.html" . }}
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-20">
-    <h3 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">{{ i18n "section_status" }}</h3>
-    <p class="text-center text-gray-600 dark:text-gray-300 mb-10">{{ i18n "status_subtitle" }}</p>
-    <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 mb-12">
-      <ul class="space-y-4 text-sm">
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">{{ i18n "status_item_fhir_gateway_core" }}</span><span class="px-3 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300">{{ i18n "status_state_ready" }}</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">HL7 Integration Pack</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">DICOM AI Router</span><span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Partial</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">Public Sector Connectors</span><span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Design</span></li>
-        <li class="flex items-center justify-between gap-4"><span class="text-gray-700 dark:text-gray-200">MedicoAI Copilot</span><span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200">Concept</span></li>
+    <div class="what-not reveal">
+      <h3 class="what-not-title mono">{{ $d.what.not_title }}</h3>
+      <ul class="what-not-list">
+        {{- range $d.what.not_items }}<li>{{ . }}</li>{{ end }}
       </ul>
     </div>
-
   </div>
 </section>
 
-<!-- 8) Who Is This For -->
-<section id="audience" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2
-      class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center m-0 mb-10 section-title"
-      data-reveal data-delay="0">
-      {{ i18n "section.audience.title" }}
-    </h2>
+<section class="section section-thesis" id="thesis">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="section-label mono">{{ $d.thesis.label }}</span>
+      <h2 class="section-title">{{ $d.thesis.title }}</h2>
+    </header>
+    <ol class="thesis-list stagger">
+      {{- range $d.thesis.items }}
+      <li class="thesis-item reveal">
+        <span class="thesis-n mono">{{ .n }}</span>
+        <h3 class="thesis-title">{{ .title }}</h3>
+        <p class="thesis-text">{{ .text }}</p>
+      </li>
+      {{- end }}
+    </ol>
+  </div>
+</section>
 
-    <div class="max-w-3xl mx-auto">
-      {{ partial "segment-picker.html" . }}
+<section class="section section-evidence" id="evidence">
+  <div class="container">
+    <header class="section-head section-head-wide reveal">
+      <span class="section-label mono">{{ $d.evidence.label }}</span>
+      <h2 class="section-title">{{ $d.evidence.title }}</h2>
+      <p class="section-intro">{{ $d.evidence.intro }}</p>
+    </header>
+    <div class="stats reveal">
+      {{- range $d.evidence.stats }}
+      <div class="stat{{ if .placeholder }} is-ph{{ end }}">
+        <div class="stat-value">{{ .value }}<span class="stat-unit">{{ .unit }}</span></div>
+        <div class="stat-label">{{ .label }}</div>
+        <div class="stat-note mono">{{ .note }}</div>
+        {{ partial "badge.html" (dict "flag" .placeholder) }}
+      </div>
+      {{- end }}
+    </div>
+    <div class="registry reveal">
+      <div class="registry-head mono">
+        <span>{{ $d.evidence.columns.ref }}</span><span>{{ $d.evidence.columns.date }}</span><span>{{ $d.evidence.columns.finding }}</span><span>{{ $d.evidence.columns.source }}</span>
+      </div>
+      {{- range $d.evidence.rows }}
+      <div class="registry-row{{ if .placeholder }} is-ph{{ end }}">
+        <span class="registry-ref mono">{{ .ref }}</span>
+        <span class="registry-date mono">{{ .date }}</span>
+        <span class="registry-finding">{{ .finding }} {{ partial "badge.html" (dict "flag" .placeholder) }}</span>
+        <span class="registry-source">{{ .source }}</span>
+      </div>
+      {{- end }}
+    </div>
+    <div class="evidence-foot">
+      <div class="method reveal">
+        <h3 class="method-title">{{ $d.evidence.method.title }}</h3>
+        <p class="method-intro">{{ $d.evidence.method.intro }}</p>
+        <ol class="method-list">
+          {{- range $d.evidence.method.items }}<li>{{ . }}</li>{{ end }}
+        </ol>
+      </div>
+      <blockquote class="evidence-note reveal"><p>{{ $d.evidence.note }}</p></blockquote>
     </div>
   </div>
 </section>
 
-<!-- 9) First Implementation -->
-<section id="first_implementation" class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4 section-title" data-reveal data-delay="0">
-        {{ i18n "section.first_implementation.title" }}
-      </h2>
-      <p data-reveal data-delay="120" class="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-        {{ i18n "products_subtitle" }}
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-reveal data-delay="0">
-        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">QuantumMed</h3>
-          <p class="text-primary-600 dark:text-primary-400 font-medium mb-4">{{ i18n "qm_tagline" }}</p>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">{{ i18n "qm_desc" }}</p>
-          <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2 mb-6">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {{ i18n "qm_feature_1" }}
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {{ i18n "qm_feature_2" }}
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {{ i18n "qm_feature_3" }}
-            </li>
-          </ul>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="{{ site.Params.quantummedURL }}" target="_blank" rel="noopener"
-              class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium rounded-lg transition-colors text-sm">
-              {{ i18n "learn_more" }} &rarr;
-            </a>
-          </div>
+<section class="section section-principles" id="principles">
+  <div class="container">
+    <header class="section-head section-head-wide reveal">
+      <span class="section-label mono">{{ $d.principles.label }}</span>
+      <h2 class="section-title">{{ $d.principles.title }}</h2>
+      <p class="section-intro">{{ $d.principles.intro }}</p>
+    </header>
+    <ol class="principles">
+      {{- range $i, $p := $d.principles.items }}
+      <li class="principle reveal">
+        <span class="principle-n mono">{{ printf "%02d" (add $i 1) }}</span>
+        <div class="principle-body">
+          <h3 class="principle-title">{{ $p.title }}</h3>
+          <p class="principle-text">{{ $p.text }}</p>
         </div>
-
-        <div class="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">MedicoAI</h3>
-          <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Coming 2027</p>
-          <p class="text-gray-600 dark:text-gray-300 mb-6">{{ i18n "medicoai_desc" }}</p>
-          <a href="#newsletter"
-            class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 font-medium rounded-lg transition-colors text-sm">
-            {{ i18n "medicoai_notify" }} &rarr;
-          </a>
-        </div>
-      </div>
+      </li>
+      {{- end }}
+    </ol>
+    <p class="principles-outro reveal">{{ $d.principles.outro }}</p>
   </div>
 </section>
 
-<!-- 10) Manifest Section -->
-<section id="manifest" class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-      <h2
-        class="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent section-title"
-        data-reveal data-delay="0">
-        {{ i18n "section_manifest" }}
-      </h2>
-
-      <!-- Prose content -->
-      <div class="prose prose-lg dark:prose-invert mx-auto max-w-none">
-        <div data-reveal data-delay="120" class="manifest-text">
-          {{ .Content }}
+<section class="section section-founders" id="founders">
+  <div class="container">
+    <header class="section-head section-head-wide reveal">
+      <span class="section-label mono">{{ $d.founders.label }}</span>
+      <h2 class="section-title">{{ $d.founders.title }}</h2>
+      <p class="section-intro">{{ $d.founders.intro }}</p>
+    </header>
+    <div class="founders stagger">
+      {{- range $d.founders.people }}
+      {{- $a := index site.Data.authors .id }}
+      <article class="founder reveal">
+        <div class="founder-photo">
+          {{- with resources.Get $a.photo }}
+          {{- $lg := .Fill "608x760 Center webp q82" }}
+          {{- $sm := .Fill "304x380 Center webp q82" }}
+          <img src="{{ $lg.RelPermalink }}" srcset="{{ $sm.RelPermalink }} 304w, {{ $lg.RelPermalink }} 608w" sizes="(min-width: 760px) 304px, 50vw" width="608" height="760" alt="{{ $a.name }}" loading="lazy" decoding="async">
+          {{- end }}
         </div>
+        <div class="founder-body">
+          <p class="founder-role mono">{{ .role }}</p>
+          <h3 class="founder-name">{{ .name }}</h3>
+          <p class="founder-line">{{ .line }}</p>
+          <p class="founder-bio">{{ .bio }} {{ partial "badge.html" (dict "flag" .placeholder) }}</p>
+          {{- with $a.linkedin }}<a class="founder-link mono" href="{{ . }}" rel="noopener" target="_blank">LinkedIn ↗</a>{{ end }}
+        </div>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section-signatories" id="signatories">
+  <div class="container">
+    <header class="section-head section-head-wide reveal">
+      <span class="section-label mono">{{ $d.signatories.label }}</span>
+      <h2 class="section-title">{{ $d.signatories.title }}</h2>
+      <p class="section-intro">{{ $d.signatories.intro }}</p>
+    </header>
+    <ul class="signatories reveal">
+      {{- range $d.signatories.items }}
+      <li class="signatory">
+        <a href="{{ .url }}" rel="noopener" target="_blank" aria-label="{{ .name }}">
+          <img class="logo-light" src="/images/signatories/{{ .logo }}-color.svg" alt="" loading="lazy">
+          <img class="logo-dark" src="/images/signatories/{{ .logo }}-white.svg" alt="" loading="lazy">
+          <span class="signatory-name mono">{{ .name }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    <div class="signatories-foot">
+      <p class="signatories-relation reveal">{{ $d.signatories.relation }}</p>
+      <div class="signatories-cta reveal">
+        <h3 class="signatories-cta-title">{{ $d.signatories.cta_title }}</h3>
+        <p>{{ $d.signatories.cta_text }}</p>
+        <a class="btn btn-ghost" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 11) Get Notified -->
-<section class="py-20 bg-gray-50 dark:bg-gray-800/50 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div id="newsletter" class="max-w-2xl mx-auto text-center mb-12">
-      <h3
-        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-4">
-        {{ i18n "newsletter_title" }}
-      </h3>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-        {{ i18n "newsletter_desc" }}
-      </p>
-      <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-left">
-        {{ partial "hubspot-newsletter.html" . }}
+<section class="section section-blog" id="blog">
+  <div class="container">
+    <header class="section-head section-head-row reveal">
+      <div>
+        <span class="section-label mono">{{ $d.blog.label }}</span>
+        <h2 class="section-title">{{ $d.blog.title }}</h2>
+        <p class="section-intro">{{ $d.blog.intro }}</p>
       </div>
+      {{- with site.GetPage "/blog" }}<a class="btn btn-ghost" href="{{ .RelPermalink }}">{{ i18n "all_posts" }}</a>{{ end }}
+    </header>
+    {{- $posts := where site.RegularPages "Section" "blog" }}
+    {{- with first (site.Params.postsOnHome | default 3) $posts }}
+    <div class="post-grid stagger">
+      {{- range . }}{{ partial "post-card.html" . }}{{ end }}
     </div>
+    {{- else }}
+    <p class="blog-empty reveal">{{ i18n "blog_empty" }}</p>
+    {{- end }}
   </div>
 </section>
 
-<!-- 12) Let's Talk -->
-<section class="py-20 bg-white dark:bg-gray-900 fade-in-on-scroll">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div id="join" class="max-w-5xl mx-auto" data-reveal data-delay="0">
-      <h3 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600 bg-clip-text text-transparent text-center mb-8 section-title">
-        {{ i18n "section_contact" }}
-      </h3>
-
-      <div class="grid md:grid-cols-2 gap-4 sm:gap-12">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 border border-gray-200 dark:border-gray-700">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-            {{ i18n "contact_form_title" }}
-          </h3>
-          {{ partial "hubspot-form.html" . }}
-        </div>
-
-        <div class="rounded-2xl p-8 border border-[#4a6580] dark:bg-[#425b76] bg-[#425b76]">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-            {{ i18n "book_meeting" }}
-          </h3>
-          {{ partial "hubspot-meetings.html" . }}
-        </div>
-      </div>
+<section class="section section-history" id="history">
+  <div class="container">
+    <div class="history reveal">
+      <div class="history-meta mono"><span>{{ $d.history.label }}</span><span>{{ $d.history.date }}</span></div>
+      <h2 class="history-title">{{ $d.history.title }}</h2>
+      <p class="history-text">{{ $d.history.text }}</p>
     </div>
   </div>
 </section>
-
 {{ end }}
