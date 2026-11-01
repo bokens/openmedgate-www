@@ -145,9 +145,15 @@ button { font: inherit; color: inherit; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .hero-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    radial-gradient(70% 90% at 18% 75%, rgba(6, 17, 27, 0.78), transparent 65%),
-    linear-gradient(180deg, rgba(6, 17, 27, 0.35) 0%, rgba(6, 17, 27, 0.05) 35%, rgba(6, 17, 27, 0.85) 100%);
+    radial-gradient(60% 85% at 16% 72%, rgba(6, 17, 27, 0.72), transparent 66%),
+    linear-gradient(180deg, rgba(6, 17, 27, 0.3) 0%, rgba(6, 17, 27, 0) 35%, rgba(6, 17, 27, 0.72) 100%);
 }
+.video-toggle { position: absolute; left: var(--gutter); bottom: 1.5rem; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(6, 17, 27, 0.35); color: var(--on-night); cursor: pointer; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease); }
+.video-toggle:hover { border-color: var(--on-night); background: rgba(6, 17, 27, 0.55); }
+.video-toggle .icon { width: 16px; height: 16px; }
+.video-toggle .icon-play { display: none; }
+.video-toggle.is-paused .icon-play { display: block; }
+.video-toggle.is-paused .icon-pause { display: none; }
 .hero-inner { position: relative; z-index: 2; padding-block: clamp(5rem, 12vw, 9rem) clamp(4.5rem, 8vw, 6.5rem); }
 .hero .display { color: var(--on-night); text-shadow: 0 2px 24px rgba(6, 17, 27, 0.45); }
 .hero .lead { color: rgba(243, 247, 250, 0.85); }

@@ -88,6 +88,12 @@ other = "Nota"
 [rss]
 other = "Kanał RSS"
 
+[video_pause]
+other = "Zatrzymaj film"
+
+[video_play]
+other = "Odtwórz film"
+
 [cat_method]
 other = "Metoda"
 

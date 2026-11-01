@@ -46,11 +46,30 @@
     var vio = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         var v = entry.target;
-        if (entry.isIntersecting) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
+        if (entry.isIntersecting && !v.hasAttribute('data-user-paused')) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
         else { v.pause(); }
       });
     }, { threshold: 0.1 });
     videos.forEach(function (v) { vio.observe(v); });
+  }
+
+  // Hero film: pause and play.
+  var vToggle = document.querySelector('[data-video-toggle]');
+  var hero = document.querySelector('.hero-video');
+  if (vToggle && hero) {
+    var syncToggle = function () {
+      var paused = hero.paused;
+      vToggle.classList.toggle('is-paused', paused);
+      vToggle.setAttribute('aria-label', vToggle.getAttribute(paused ? 'data-label-play' : 'data-label-pause'));
+    };
+    vToggle.addEventListener('click', function () {
+      if (hero.paused) { hero.removeAttribute('data-user-paused'); var p = hero.play(); if (p && p.catch) { p.catch(function () {}); } }
+      else { hero.setAttribute('data-user-paused', '1'); hero.pause(); }
+      setTimeout(syncToggle, 50);
+    });
+    hero.addEventListener('play', syncToggle);
+    hero.addEventListener('pause', syncToggle);
+    syncToggle();
   }
 
   // Mechanism diagram: closed today, open by design. Cycles on its own until the visitor takes over.
