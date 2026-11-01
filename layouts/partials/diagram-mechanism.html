@@ -1,0 +1,68 @@
+{{- /* Interactive system diagram. `.n` holds node labels; state is driven by data-state on the wrapper. */ -}}
+{{- $n := .n -}}
+<svg class="mech-svg" viewBox="100 100 800 500" role="img" aria-label="{{ $n.core }}">
+  <defs>
+    <path id="mech-e1" d="M500 310 Q 380 200 250 170"/>
+    <path id="mech-e2" d="M500 310 Q 620 200 750 170"/>
+    <path id="mech-e3" d="M500 310 Q 330 330 170 340"/>
+    <path id="mech-e4" d="M500 310 Q 670 330 830 340"/>
+    <path id="mech-e5" d="M500 310 Q 400 440 270 500"/>
+    <path id="mech-e6" d="M500 310 Q 600 440 730 500"/>
+    <filter id="mech-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <g class="mech-edges">
+    {{- range seq 6 }}
+    <use class="edge" href="#mech-e{{ . }}"/>
+    {{- end }}
+  </g>
+
+  <circle class="mech-wall" cx="500" cy="310" r="78"/>
+
+  <g class="mech-packets">
+    {{- range $i := seq 6 }}
+    {{- range $k := seq 2 }}
+    <circle class="packet{{ if eq $k 2 }} packet-alt{{ end }}" r="5">
+      <animateMotion dur="{{ add 2.6 (mul 0.35 $i) }}s" begin="{{ mul (sub $k 1) 1.4 }}s" repeatCount="indefinite" keyPoints="{{ if eq $k 2 }}1;0{{ else }}0;1{{ end }}" keyTimes="0;1" calcMode="linear">
+        <mpath href="#mech-e{{ $i }}"/>
+      </animateMotion>
+    </circle>
+    {{- end }}
+    {{- end }}
+  </g>
+
+  <g class="mech-locks">
+    {{- range $p := slice (dict "x" 383 "y" 212) (dict "x" 617 "y" 212) (dict "x" 335 "y" 327) (dict "x" 665 "y" 327) (dict "x" 393 "y" 420) (dict "x" 607 "y" 420) }}
+    <g class="lock" transform="translate({{ $p.x }} {{ $p.y }})">
+      <circle r="15"/>
+      <rect x="-6" y="-2" width="12" height="9" rx="1.5"/>
+      <path d="M-4 -2 v-3 a4 4 0 0 1 8 0 v3" fill="none"/>
+    </g>
+    {{- end }}
+  </g>
+
+  <g class="mech-nodes">
+    <g class="node node-core" transform="translate(500 310)">
+      <circle class="node-ring" r="54"/>
+      <circle class="node-dot" r="22"/>
+      <text class="node-label" y="84">{{ $n.core }}</text>
+    </g>
+    {{- range $s := slice (dict "x" 250 "y" 170 "k" "lab") (dict "x" 750 "y" 170 "k" "imaging") (dict "x" 170 "y" 340 "k" "registration") (dict "x" 830 "y" 340 "k" "ai") (dict "x" 270 "y" 500 "k" "pharmacy") (dict "x" 730 "y" 500 "k" "national") }}
+    <g class="node" transform="translate({{ $s.x }} {{ $s.y }})">
+      <circle class="node-ring" r="30"/>
+      <circle class="node-dot" r="9"/>
+      <text class="node-label" y="54">{{ index $n $s.k }}</text>
+    </g>
+    {{- end }}
+  </g>
+
+  <g class="mech-badge" transform="translate(500 560)">
+    <rect class="badge-closed" x="-70" y="-18" width="140" height="36" rx="18"/>
+    <text class="badge-text badge-text-closed" y="5">{{ .closed }}</text>
+    <rect class="badge-open" x="-90" y="-18" width="180" height="36" rx="18"/>
+    <text class="badge-text badge-text-open" y="5">{{ .open }}</text>
+  </g>
+</svg>

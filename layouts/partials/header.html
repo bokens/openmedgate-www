@@ -15,10 +15,7 @@
     </nav>
     <div class="header-tools">
       {{ partial "lang-switch.html" . }}
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ i18n "theme_toggle" }}" title="{{ i18n "theme_toggle" }}">
-        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-      </button>
+      <a class="btn btn-mint btn-sm header-cta" href="{{ site.Home.RelPermalink }}#signatories">{{ (index site.Data.site site.Language.Lang).postulates.cta }}</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-controls="nav" aria-expanded="false" aria-label="{{ i18n "menu_open" }}">
         <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
       </button>

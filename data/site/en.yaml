@@ -1,203 +1,152 @@
-# English copy of the start page. Items with `placeholder: true` carry a visible badge
+# English copy of the start page. Keep it short. Items with `placeholder: true` carry a badge
 # while `showPlaceholderBadges` is on in params.toml.
 
 hero:
-  eyebrow: "An initiative that documents one mechanism"
-  title: "The right to compete exists in the tender document. It does not exist in practice."
+  eyebrow: "A movement for open interfaces in healthcare"
+  title: "Health data must be able to move."
   lead: >-
-    The specification needed to integrate with a hospital's information system belongs to its
-    producer. OpenMedGate publishes what follows from that: findings, numbers with their
-    denominators, and documents. It is a voice and a registry of evidence. It is not a company,
-    not a product and not an open-source project.
-  cta_primary: "Read the principles"
-  cta_secondary: "Evidence registry"
-  doc:
-    kicker: "Tender specification · excerpt"
-    heading: "4.2 Integration with the hospital information system"
-    clause: "The contracting authority admits equivalent solutions."
-    annex: "Annex 4 · Interface specification"
-    stamp: "Access: licence required"
-    caption: "Illustration. The registry quotes real documents, by their public number."
+    Every system a hospital buys should be able to talk to any other: through open standards,
+    on published terms. OpenMedGate is a movement and a registry of evidence for that one idea.
+  cta_primary: "The postulates"
+  cta_secondary: "See the mechanism"
+  scroll: "Scroll"
+  not: ["Not a company", "Not a product", "No code to release", "Nothing for sale"]
 
-what:
-  label: "§ 1"
-  title: "What OpenMedGate is"
-  items:
-    - title: "A voice."
-      text: >-
-        Findings are published by the initiative. Companies are named by people, on their own
-        profiles, on their own responsibility. Nothing is published here that we would not say to
-        the same person across a table.
-    - title: "A registry of evidence."
-      text: >-
-        Every statement rests on a document, a number with a stated denominator, or a published
-        clarification of a procurement. The material is a finding, not an opinion.
-    - title: "A name that needs explaining."
-      text: >-
-        “Open” refers to open interfaces and open standards: HL7, DICOM, FHIR, IHE. It is not a
-        promise to release code. There is no code and there is no product.
-  not_title: "What it is not"
-  not_items:
-    - "a company or a product"
-    - "an open-source project"
-    - "a brand above QuantumMed or any other company"
-    - "a sales channel; nobody is invited to buy anything here"
-    - "a standards body; it relies on HL7, IHE and public e-health documentation and does not replace them"
-    - "an anonymous account; it has two faces and two names"
+marquee: ["HL7 FHIR", "DICOM", "IHE profiles", "HL7 v2", "openEHR", "SNOMED CT", "LOINC", "EHDS", "IHE XDS", "OAuth 2.0"]
 
-thesis:
-  label: "§ 2"
-  title: "Three sentences the whole thing stands on"
+why:
+  label: "Why"
+  title: "Three facts the movement stands on"
   items:
-    - n: "01"
-      title: "The wall is not technological. It is contractual."
-      text: >-
-        Standards for exchanging medical data have existed for thirty years and are mature. The
-        specification of a given installation exists too. Access to it is governed not by a
-        standard but by a licence and the producer's maintenance agreement.
-    - n: "02"
-      title: "The asymmetry is measurable."
-      text: >-
-        Public e-health infrastructure shows that it can be done differently: documentation,
-        service catalogues, specifications, test data and an integration environment, available
-        to any supplier on request. The producer of a hospital system publishes none of this,
-        neither in the tender documents nor anywhere else.
-    - n: "03"
-      title: "The result is an entitlement without substance."
-      text: >-
-        The buyer admits an equivalent offer in good faith. Only the producer and its partners
-        are able to submit one.
+    - icon: people
+      title: "The data belong to patients and to the facilities that care for them."
+      text: "Not to the supplier of the software they happen to be stored in."
+    - icon: layers
+      title: "The standards exist and are mature."
+      text: "HL7, FHIR, DICOM and IHE describe how health data travel between systems, and have for decades."
+    - icon: key
+      title: "Access is the missing piece."
+      text: "What a specific installation exposes, and on what terms, is usually not public. That is where interoperability ends."
+
+mechanism:
+  label: "The mechanism"
+  title: "Closed today. Open by design."
+  toggle_closed: "Today"
+  toggle_open: "Open interfaces"
+  nodes:
+    core: "Hospital system"
+    lab: "Laboratory"
+    imaging: "Imaging"
+    ai: "AI models"
+    registration: "E-registration"
+    pharmacy: "Pharmacy"
+    national: "National e-health"
+  closed:
+    title: "One party holds the interface description."
+    text: "Every integration goes through the producer of the core system. Equivalent offers are admitted on paper; nobody else can price one."
+    badge: "1 supplier"
+  open:
+    title: "The interface is described, the terms are published."
+    text: "Any integrator can connect through standard interfaces, with a test environment and known costs. The facility chooses."
+    badge: "Any integrator"
+
+postulates:
+  label: "Postulates"
+  title: "What we stand for"
+  intro: "Six sentences. A company can read them in a minute and sign them without a lawyer."
+  items:
+    - title: "Patient data belong to the patient and to the facility that collects them."
+      text: "Never to the supplier of the software they are stored in."
+    - title: "A facility has the right to the interface description of every system it buys, and may hand it to whomever it chooses."
+      text: "That right cannot depend on a producer's consent to competition."
+    - title: "Where an open standard exists, it is the interface."
+      text: "HL7 FHIR, DICOM and IHE profiles first. Proprietary formats only where no standard reaches."
+    - title: "Terms of access are published and known on the day the contract is signed."
+      text: "Not negotiated at the first integration, and not priced by the party that competes with the integrator."
+    - title: "Every integrator gets a test environment and test data."
+      text: "Public e-health platforms already do this for any supplier on request. A hospital system can too."
+    - title: "Openness is measured and published."
+      text: "Number of bids, availability of specifications, cost of access: counted from public documents, with a stated method and a denominator."
+  outro: "Signatories sign the postulates, not the posts. A signature means: we want the same rules. It obliges nobody to take part in any dispute."
+  cta: "Sign the postulates"
 
 evidence:
-  label: "§ 3"
-  title: "Evidence registry"
+  label: "Evidence"
+  title: "Symptoms, counted"
   intro: >-
-    Every number carries its population, period, source and method. Procedures are identified by
-    their public number and quoted from their own documents. Hospitals, patients and private
-    conversations are never named.
+    A procedure with one bid is a symptom, not a verdict. We count symptoms from public documents,
+    with a stated method, and publish them with their denominators.
+  matrix:
+    label: "procedures in the current review"
+    status: "Numbers under audit. The method is public; the numbers follow."
+    placeholder: true
+  stats:
+    - value: "—"
+      unit: "%"
+      label: "lots decided with a single bid"
+      placeholder: true
+    - value: "—"
+      unit: ""
+      label: "lots reviewed, two independent readings each"
+      placeholder: true
+    - value: "—"
+      unit: ""
+      label: "buyers who changed documents after questions"
+      placeholder: true
   columns:
     ref: "Ref."
     date: "Date"
     finding: "Finding"
     source: "Source"
-  stats:
-    - value: "—"
-      unit: "%"
-      label: "procedures decided with a single bid"
-      note: "population · period · source · method"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "procedures reviewed"
-      note: "segment · period · source"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "buyers who changed their documents after questions"
-      note: "period · source"
-      placeholder: true
   rows:
     - ref: "OMG-2026-001"
       date: "2026-09-22"
       finding: >-
-        Asked for the interface documentation of its hospital information system, the buyer
-        answered that it does not hold it, because “this documentation is the proprietary
-        documentation of the producer”. The buyer admitted an equivalent integration module with
-        six named criteria. One bid was submitted.
-      source: "Procedure ZP-1559-2026 · clarification of the tender documents, 22 Sept 2026"
+        Asked for the interface documentation of its hospital system, a buyer answered that it does
+        not hold it: “this documentation is the proprietary documentation of the producer”. One bid.
+      source: "Procedure ZP-1559-2026 · clarification of 22 Sept 2026"
       placeholder: true
     - ref: "OMG-2026-002"
       date: "[date]"
-      finding: "Share of procedures decided with a single bid, by segment and year."
+      finding: "Share of lots decided with a single bid, by segment and year."
       source: "[population · period · source · method]"
       placeholder: true
     - ref: "OMG-2026-003"
       date: "[date]"
-      finding: >-
-        What a public e-health operator publishes to integrators, compared with what producers of
-        hospital systems publish.
+      finding: "What a public e-health operator publishes to integrators, and what producers of hospital systems do not."
       source: "[list of documents]"
       placeholder: true
-  note: >-
-    A procedure with a single bidder is not proof of anyone's fault. It is a symptom. Symptoms are
-    counted, described and explained; they are not used as a verdict.
   method:
     title: "How we count"
-    intro: "The numbers are being audited. Until the audit ends, the method is public and the numbers are not."
     items:
       - "The unit is a lot of a contract, not the whole procedure."
-      - "The window is twenty-four months of result notices, from the national bulletin below the EU thresholds and from TED above them."
-      - "A budget comes only from the official document. Where it is missing, we record “no information”, never an estimate."
-      - "Every document is hashed when captured and read twice, the second time independently."
-      - "Discrepancies are disclosed, not averaged away."
-
-principles:
-  label: "§ 4"
-  title: "The principles"
-  intro: >-
-    This is the document a partner company signs. It is short on purpose: readable in a minute,
-    signable without consulting a lawyer, and every sentence can be defended with a document.
-  items:
-    - title: "Patient data belong to the patient and to the facility that collects them."
-      text: "They do not belong to the supplier of the software in which they are stored."
-    - title: >-
-        A facility that bought a system has the right to know how to integrate with it, and to
-        pass that knowledge to a contractor of its choice.
-      text: "That right should not depend on the producer's consent to competition."
-    - title: "The standards have existed for thirty years."
-      text: >-
-        HL7, DICOM, FHIR and IHE were created precisely so that these walls would not exist. The
-        problem is not a missing standard. The problem is that the interface description of a
-        specific installation is not public.
-    - title: >-
-        Admitting an equivalent offer without access to the interface specification is an
-        entitlement without substance.
-      text: >-
-        A buyer may write it in good faith, and still nobody but the producer and its partners is
-        able to use it.
-    - title: >-
-        A publicly described interface is a condition of competition. An interface described only
-        by the producer is a barrier to entry, whatever the producer intends.
-      text: "We assess the effect, not the intention."
-    - title: "A procedure with a single bidder is not proof of anyone's fault."
-      text: "It is a symptom. Symptoms are counted, described and explained, not used as a verdict."
-    - title: "Public e-health infrastructure shows that it can be done differently."
-      text: >-
-        A national e-health operator makes documentation, service catalogues, specifications,
-        test data and an integration environment available to any supplier on request. The same
-        openness on the side of hospital-system producers would remove most of the problem.
-  outro: >-
-    Signatories sign the principles, not the posts. A signature means: we lose in the same way.
-    It does not mean endorsement of what someone wrote today, and it does not oblige anyone to
-    take part in a dispute.
+      - "Twenty-four months of result notices: the national bulletin below the EU thresholds, TED above."
+      - "A budget only from the official document; otherwise “no information”, never an estimate."
+      - "Every document hashed when captured and read twice, the second time independently."
+      - "Discrepancies disclosed, not averaged away."
 
 founders:
-  label: "§ 5"
-  title: "Who speaks"
-  intro: >-
-    The initiative has two faces and two names. Findings, numbers and documents are published
-    here. A company is named only by a person, on that person's own profile and on that person's
-    own responsibility.
+  label: "Who"
+  title: "Two names, two faces"
+  intro: "The movement is run by people, not by a company. A company is named only by a person, on that person's own profile and responsibility."
   people:
     - id: sylwester-cyrwus
       name: "Sylwester Cyrwus"
       role: "Co-founder"
-      line: "Writes about procedures, numbers and their consequences, in his own name."
-      bio: "[Two sentences of biography, to be agreed.]"
+      line: "Procedures, numbers, consequences."
+      bio: "[Two sentences, to be agreed.]"
       placeholder: true
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Co-founder"
-      line: "Writes about the mechanism: standards, interfaces, and the limits of what the evidence supports."
-      bio: "[Two sentences of biography, to be agreed.]"
+      line: "Standards, interfaces, the limits of what the evidence supports."
+      bio: "[Two sentences, to be agreed.]"
       placeholder: true
 
 signatories:
-  label: "§ 6"
-  title: "Signatories of the principles"
-  intro: >-
-    Companies that have signed the principles appear here, in this one place, and nowhere else
-    on this site.
+  label: "Signatories"
+  title: "Who signed"
+  intro: "Companies that signed the postulates appear here, and nowhere else on this site."
   items:
     - name: "QuantumMed"
       logo: quantummed
@@ -208,32 +157,25 @@ signatories:
     - name: "SafeMed AI by QuantumMed"
       logo: safemed-ai
       url: "https://safemedai.eu"
-  relation: >-
-    QuantumMed is the first signatory. The founders of OpenMedGate are its co-founders, and we say
-    so openly: we have skin in the game and we lose in the same way as any other supplier.
-    QuantumMed does not own this initiative, and this initiative sells nothing for QuantumMed.
-  cta_title: "Do you lose in the same way?"
-  cta_text: >-
-    If your company has a documented case, send us the documents. A case is published only when it
-    can be defended with a document, and only with the sender's consent.
+  relation: "QuantumMed is the first signatory and the founders' own company; we say so openly. It does not own the movement, and the movement sells nothing."
+  cta_title: "Sign the postulates"
+  cta_text: "A hospital, a company, an integrator or a person. Write to us; signatories are published in one place, here."
 
 blog:
-  label: "§ 7"
-  title: "Findings"
-  intro: "Findings, numbers and documents, in a form that can be quoted. Each entry names its author and its sources."
+  label: "Findings"
+  title: "Short, sourced, quotable"
+  intro: "Each entry names its author and its sources."
 
 history:
   label: "Note"
-  title: "What this initiative was before, and what changed"
+  title: "What changed"
   date: "November 2026"
   text: >-
-    Until autumn 2026 this site described OpenMedGate as an open integration platform, counted
-    down to a release of its source code, announced a product for 2027 and presented QuantumMed as
-    its product. That was a different idea, and we withdraw it in plain words: there is no code to
-    release, there is no product and there is no roadmap. QuantumMed is a signatory of the
-    principles, not the owner of the initiative. The earlier pages remain in web archives; we
-    prefer to say this ourselves.
+    Until autumn 2026 this site described OpenMedGate as an integration platform, counted down to a
+    release of its source code and presented QuantumMed as its product. We withdraw that in plain
+    words: there is no code to release and no product. There is a movement, its postulates and its
+    evidence. The earlier pages remain in web archives; we would rather say this ourselves.
 
 contact:
   title: "Contact"
-  text: "Questions about a finding, a correction, or a documented case of your own."
+  text: "A finding, a correction, a signature or a documented case of your own."

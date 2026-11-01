@@ -3,98 +3,139 @@
 {{- $d := index site.Data.site site.Language.Lang -}}
 
 <section class="hero" id="top">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow mono reveal">{{ $d.hero.eyebrow }}</p>
-      <h1 class="display reveal">{{ $d.hero.title }}</h1>
-      <p class="lead reveal">{{ $d.hero.lead }}</p>
-      <div class="hero-cta reveal">
-        <a class="btn btn-primary" href="#principles">{{ $d.hero.cta_primary }}</a>
-        <a class="btn btn-ghost" href="#evidence">{{ $d.hero.cta_secondary }}<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/media/hero/open-flow-poster.jpg" aria-hidden="true" data-video>
+    <source src="/media/hero/open-flow.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <p class="eyebrow mono reveal">{{ $d.hero.eyebrow }}</p>
+    <h1 class="display reveal">{{ $d.hero.title }}</h1>
+    <p class="lead reveal">{{ $d.hero.lead }}</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-mint" href="#postulates">{{ $d.hero.cta_primary }}</a>
+      <a class="btn btn-outline-light" href="#mechanism">{{ $d.hero.cta_secondary }}{{ partial "icon.html" "arrow" }}</a>
     </div>
-    <div class="hero-visual reveal" aria-hidden="true">
-      <figure class="doc">
-        <div class="doc-page">
-          <div class="doc-kicker mono">{{ $d.hero.doc.kicker }}</div>
-          <div class="doc-heading">{{ $d.hero.doc.heading }}</div>
-          <div class="doc-lines"><span class="l" style="--w:92%"></span><span class="l" style="--w:76%"></span><span class="l" style="--w:84%"></span></div>
-          <p class="doc-clause">{{ $d.hero.doc.clause }}</p>
-          <div class="doc-lines"><span class="l" style="--w:88%"></span><span class="l" style="--w:64%"></span></div>
-          <div class="doc-annex mono">{{ $d.hero.doc.annex }}</div>
-          <div class="doc-redacted"><span class="r" style="--w:96%"></span><span class="r" style="--w:82%"></span><span class="r" style="--w:90%"></span><span class="r" style="--w:58%"></span></div>
-          <div class="doc-stamp mono">{{ $d.hero.doc.stamp }}</div>
-        </div>
-        <figcaption class="doc-caption mono">{{ $d.hero.doc.caption }}</figcaption>
-      </figure>
-    </div>
+    <ul class="hero-not reveal">
+      {{- range $d.hero.not }}<li>{{ . }}</li>{{ end }}
+    </ul>
   </div>
+  <a class="scroll-cue mono" href="#why">{{ $d.hero.scroll }}{{ partial "icon.html" "down" }}</a>
 </section>
 
-<section class="section section-what" id="what">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {{- range seq 2 }}{{ range $d.marquee }}<span class="marquee-item">{{ . }}</span>{{ end }}{{ end }}
+  </div>
+</div>
+
+<section class="section section-why" id="why">
   <div class="container">
     <header class="section-head reveal">
-      <span class="section-label mono">{{ $d.what.label }}</span>
-      <h2 class="section-title">{{ $d.what.title }}</h2>
+      <span class="section-label mono">{{ $d.why.label }}</span>
+      <h2 class="section-title">{{ $d.why.title }}</h2>
     </header>
-    <div class="what-grid stagger">
-      {{- range $d.what.items }}
-      <div class="what-item reveal">
-        <h3 class="what-title">{{ .title }}</h3>
-        <p>{{ .text }}</p>
+    <div class="why-grid stagger">
+      {{- range $d.why.items }}
+      <div class="why-item reveal">
+        {{ partial "icon.html" .icon }}
+        <h3 class="why-title">{{ .title }}</h3>
+        <p class="why-text">{{ .text }}</p>
       </div>
       {{- end }}
     </div>
-    <div class="what-not reveal">
-      <h3 class="what-not-title mono">{{ $d.what.not_title }}</h3>
-      <ul class="what-not-list">
-        {{- range $d.what.not_items }}<li>{{ . }}</li>{{ end }}
-      </ul>
+  </div>
+</section>
+
+<section class="section section-mechanism night" id="mechanism">
+  <div class="container">
+    <header class="section-head section-head-row reveal">
+      <div>
+        <span class="section-label mono">{{ $d.mechanism.label }}</span>
+        <h2 class="section-title">{{ $d.mechanism.title }}</h2>
+      </div>
+      <div class="mech-toggle" role="group" data-mech-toggle>
+        <button type="button" class="mech-btn is-active" data-state="closed">{{ $d.mechanism.toggle_closed }}</button>
+        <button type="button" class="mech-btn" data-state="open">{{ $d.mechanism.toggle_open }}</button>
+      </div>
+    </header>
+    <div class="mech reveal" data-mech data-state="closed">
+      <div class="mech-stage">
+        {{ partial "diagram-mechanism.html" (dict "n" $d.mechanism.nodes "closed" $d.mechanism.closed.badge "open" $d.mechanism.open.badge) }}
+      </div>
+      <div class="mech-captions">
+        <div class="mech-caption mech-caption-closed">
+          <span class="mech-dot mech-dot-closed"></span>
+          <h3>{{ $d.mechanism.closed.title }}</h3>
+          <p>{{ $d.mechanism.closed.text }}</p>
+        </div>
+        <div class="mech-caption mech-caption-open">
+          <span class="mech-dot mech-dot-open"></span>
+          <h3>{{ $d.mechanism.open.title }}</h3>
+          <p>{{ $d.mechanism.open.text }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section-thesis" id="thesis">
+<section class="section section-postulates" id="postulates">
   <div class="container">
     <header class="section-head reveal">
-      <span class="section-label mono">{{ $d.thesis.label }}</span>
-      <h2 class="section-title">{{ $d.thesis.title }}</h2>
+      <span class="section-label mono">{{ $d.postulates.label }}</span>
+      <h2 class="section-title">{{ $d.postulates.title }}</h2>
+      <p class="section-intro">{{ $d.postulates.intro }}</p>
     </header>
-    <ol class="thesis-list stagger">
-      {{- range $d.thesis.items }}
-      <li class="thesis-item reveal">
-        <span class="thesis-n mono">{{ .n }}</span>
-        <h3 class="thesis-title">{{ .title }}</h3>
-        <p class="thesis-text">{{ .text }}</p>
+    <ol class="postulates">
+      {{- range $i, $p := $d.postulates.items }}
+      <li class="postulate reveal">
+        <span class="postulate-n">{{ printf "%02d" (add $i 1) }}</span>
+        <div class="postulate-body">
+          <h3 class="postulate-title">{{ $p.title }}</h3>
+          <p class="postulate-text">{{ $p.text }}</p>
+        </div>
       </li>
       {{- end }}
     </ol>
+    <div class="postulates-foot reveal">
+      <p class="postulates-outro">{{ $d.postulates.outro }}</p>
+      <a class="btn btn-ink" href="mailto:{{ site.Params.email }}">{{ $d.postulates.cta }}{{ partial "icon.html" "arrow" }}</a>
+    </div>
   </div>
 </section>
 
-<section class="section section-evidence" id="evidence">
+<section class="section section-evidence snow" id="evidence">
   <div class="container">
-    <header class="section-head section-head-wide reveal">
+    <header class="section-head reveal">
       <span class="section-label mono">{{ $d.evidence.label }}</span>
       <h2 class="section-title">{{ $d.evidence.title }}</h2>
       <p class="section-intro">{{ $d.evidence.intro }}</p>
     </header>
-    <div class="stats reveal">
-      {{- range $d.evidence.stats }}
-      <div class="stat{{ if .placeholder }} is-ph{{ end }}">
-        <div class="stat-value">{{ .value }}<span class="stat-unit">{{ .unit }}</span></div>
-        <div class="stat-label">{{ .label }}</div>
-        <div class="stat-note mono">{{ .note }}</div>
-        {{ partial "badge.html" (dict "flag" .placeholder) }}
+    <div class="evidence-grid">
+      <div class="matrix-card reveal">
+        <div class="matrix" data-matrix aria-hidden="true">
+          {{- range seq 100 }}<i style="--i:{{ . }}"></i>{{ end }}
+        </div>
+        <div class="matrix-foot">
+          <span class="matrix-count"><strong data-matrix-value>100</strong> {{ $d.evidence.matrix.label }}</span>
+          <span class="matrix-status mono">{{ $d.evidence.matrix.status }} {{ partial "badge.html" (dict "flag" $d.evidence.matrix.placeholder) }}</span>
+        </div>
       </div>
-      {{- end }}
+      <div class="stats stagger">
+        {{- range $d.evidence.stats }}
+        <div class="stat reveal{{ if .placeholder }} is-ph{{ end }}">
+          <div class="stat-value">{{ .value }}<span class="stat-unit">{{ .unit }}</span></div>
+          <div class="stat-label">{{ .label }}</div>
+          {{ partial "badge.html" (dict "flag" .placeholder) }}
+        </div>
+        {{- end }}
+      </div>
     </div>
     <div class="registry reveal">
       <div class="registry-head mono">
         <span>{{ $d.evidence.columns.ref }}</span><span>{{ $d.evidence.columns.date }}</span><span>{{ $d.evidence.columns.finding }}</span><span>{{ $d.evidence.columns.source }}</span>
       </div>
       {{- range $d.evidence.rows }}
-      <div class="registry-row{{ if .placeholder }} is-ph{{ end }}">
+      <div class="registry-row">
         <span class="registry-ref mono">{{ .ref }}</span>
         <span class="registry-date mono">{{ .date }}</span>
         <span class="registry-finding">{{ .finding }} {{ partial "badge.html" (dict "flag" .placeholder) }}</span>
@@ -102,44 +143,18 @@
       </div>
       {{- end }}
     </div>
-    <div class="evidence-foot">
-      <div class="method reveal">
-        <h3 class="method-title">{{ $d.evidence.method.title }}</h3>
-        <p class="method-intro">{{ $d.evidence.method.intro }}</p>
-        <ol class="method-list">
-          {{- range $d.evidence.method.items }}<li>{{ . }}</li>{{ end }}
-        </ol>
-      </div>
-      <blockquote class="evidence-note reveal"><p>{{ $d.evidence.note }}</p></blockquote>
+    <div class="method reveal">
+      <h3 class="method-title">{{ $d.evidence.method.title }}</h3>
+      <ol class="method-list">
+        {{- range $d.evidence.method.items }}<li>{{ . }}</li>{{ end }}
+      </ol>
     </div>
-  </div>
-</section>
-
-<section class="section section-principles" id="principles">
-  <div class="container">
-    <header class="section-head section-head-wide reveal">
-      <span class="section-label mono">{{ $d.principles.label }}</span>
-      <h2 class="section-title">{{ $d.principles.title }}</h2>
-      <p class="section-intro">{{ $d.principles.intro }}</p>
-    </header>
-    <ol class="principles">
-      {{- range $i, $p := $d.principles.items }}
-      <li class="principle reveal">
-        <span class="principle-n mono">{{ printf "%02d" (add $i 1) }}</span>
-        <div class="principle-body">
-          <h3 class="principle-title">{{ $p.title }}</h3>
-          <p class="principle-text">{{ $p.text }}</p>
-        </div>
-      </li>
-      {{- end }}
-    </ol>
-    <p class="principles-outro reveal">{{ $d.principles.outro }}</p>
   </div>
 </section>
 
 <section class="section section-founders" id="founders">
   <div class="container">
-    <header class="section-head section-head-wide reveal">
+    <header class="section-head reveal">
       <span class="section-label mono">{{ $d.founders.label }}</span>
       <h2 class="section-title">{{ $d.founders.title }}</h2>
       <p class="section-intro">{{ $d.founders.intro }}</p>
@@ -150,9 +165,9 @@
       <article class="founder reveal">
         <div class="founder-photo">
           {{- with resources.Get $a.photo }}
-          {{- $lg := .Fill "608x760 Center webp q82" }}
-          {{- $sm := .Fill "304x380 Center webp q82" }}
-          <img src="{{ $lg.RelPermalink }}" srcset="{{ $sm.RelPermalink }} 304w, {{ $lg.RelPermalink }} 608w" sizes="(min-width: 760px) 304px, 50vw" width="608" height="760" alt="{{ $a.name }}" loading="lazy" decoding="async">
+          {{- $lg := .Fill "760x880 Center webp q84" }}
+          {{- $sm := .Fill "380x440 Center webp q82" }}
+          <img src="{{ $lg.RelPermalink }}" srcset="{{ $sm.RelPermalink }} 380w, {{ $lg.RelPermalink }} 760w" sizes="(min-width: 900px) 40vw, 90vw" width="760" height="880" alt="{{ $a.name }}" loading="lazy" decoding="async">
           {{- end }}
         </div>
         <div class="founder-body">
@@ -168,9 +183,12 @@
   </div>
 </section>
 
-<section class="section section-signatories" id="signatories">
-  <div class="container">
-    <header class="section-head section-head-wide reveal">
+<section class="section section-signatories night" id="signatories">
+  <video class="band-video" autoplay muted loop playsinline preload="metadata" poster="/media/pulse/pulse-poster.jpg" aria-hidden="true" data-video>
+    <source src="/media/pulse/pulse-loop.mp4" type="video/mp4">
+  </video>
+  <div class="container band-inner">
+    <header class="section-head reveal">
       <span class="section-label mono">{{ $d.signatories.label }}</span>
       <h2 class="section-title">{{ $d.signatories.title }}</h2>
       <p class="section-intro">{{ $d.signatories.intro }}</p>
@@ -179,19 +197,17 @@
       {{- range $d.signatories.items }}
       <li class="signatory">
         <a href="{{ .url }}" rel="noopener" target="_blank" aria-label="{{ .name }}">
-          <img class="logo-light" src="/images/signatories/{{ .logo }}-color.svg" alt="" loading="lazy">
-          <img class="logo-dark" src="/images/signatories/{{ .logo }}-white.svg" alt="" loading="lazy">
-          <span class="signatory-name mono">{{ .name }}</span>
+          <img src="/images/signatories/{{ .logo }}-white.svg" alt="" loading="lazy">
         </a>
       </li>
       {{- end }}
     </ul>
-    <div class="signatories-foot">
-      <p class="signatories-relation reveal">{{ $d.signatories.relation }}</p>
-      <div class="signatories-cta reveal">
-        <h3 class="signatories-cta-title">{{ $d.signatories.cta_title }}</h3>
+    <div class="signatories-foot reveal">
+      <p class="signatories-relation">{{ $d.signatories.relation }}</p>
+      <div class="sign-cta">
+        <h3 class="sign-cta-title">{{ $d.signatories.cta_title }}</h3>
         <p>{{ $d.signatories.cta_text }}</p>
-        <a class="btn btn-ghost" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+        <a class="btn btn-mint" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
       </div>
     </div>
   </div>
@@ -205,7 +221,7 @@
         <h2 class="section-title">{{ $d.blog.title }}</h2>
         <p class="section-intro">{{ $d.blog.intro }}</p>
       </div>
-      {{- with site.GetPage "/blog" }}<a class="btn btn-ghost" href="{{ .RelPermalink }}">{{ i18n "all_posts" }}</a>{{ end }}
+      {{- with site.GetPage "/blog" }}<a class="btn btn-outline" href="{{ .RelPermalink }}">{{ i18n "all_posts" }}</a>{{ end }}
     </header>
     {{- $posts := where site.RegularPages "Section" "blog" }}
     {{- with first (site.Params.postsOnHome | default 3) $posts }}

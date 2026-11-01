@@ -1,9 +1,9 @@
 The fonts in this folder are distributed under the SIL Open Font License, Version 1.1.
 
-Fraunces
-Copyright 2020 The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+Manrope
+Copyright 2018 The Manrope Project Authors (https://github.com/sharanda/manrope)
 
-IBM Plex Sans and IBM Plex Mono
+IBM Plex Mono
 Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
 
 The files here are WOFF2 subsets (Latin and Latin Extended) of the originals, served through Google Fonts; no glyphs were changed.

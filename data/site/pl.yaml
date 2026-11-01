@@ -1,201 +1,153 @@
-# Polska treść strony głównej. Pozycje z `placeholder: true` mają widoczną plakietkę,
+# Polska treść strony głównej. Krótko. Pozycje z `placeholder: true` mają plakietkę,
 # dopóki `showPlaceholderBadges` w params.toml jest włączone.
 
 hero:
-  eyebrow: "Inicjatywa, która dokumentuje jeden mechanizm"
-  title: "Prawo do konkurowania istnieje w dokumencie zamówienia. W praktyce nie istnieje."
+  eyebrow: "Ruch na rzecz otwartych interfejsów w ochronie zdrowia"
+  title: "Dane medyczne muszą móc się przemieszczać."
   lead: >-
-    Specyfikacja potrzebna do integracji z systemem informatycznym szpitala należy do jego
-    producenta. OpenMedGate publikuje to, co z tego wynika: ustalenia, liczby z mianownikiem
-    i dokumenty. Jest głosem i rejestrem dowodów. Nie jest firmą, produktem ani projektem
-    open source.
-  cta_primary: "Przeczytaj założenia"
-  cta_secondary: "Rejestr dowodów"
-  doc:
-    kicker: "Specyfikacja warunków zamówienia · fragment"
-    heading: "4.2 Integracja z systemem informatycznym szpitala"
-    clause: "Zamawiający dopuszcza rozwiązania równoważne."
-    annex: "Załącznik 4 · Specyfikacja interfejsu"
-    stamp: "Dostęp: wymagana licencja"
-    caption: "Ilustracja. Rejestr cytuje prawdziwe dokumenty, po numerze postępowania."
+    Każdy system, który kupuje szpital, powinien móc rozmawiać z każdym innym: przez otwarte
+    standardy, na opublikowanych warunkach. OpenMedGate to ruch i rejestr dowodów na rzecz tej
+    jednej idei.
+  cta_primary: "Postulaty"
+  cta_secondary: "Zobacz mechanizm"
+  scroll: "Przewiń"
+  not: ["Nie firma", "Nie produkt", "Bez kodu do otwarcia", "Nic na sprzedaż"]
 
-what:
-  label: "§ 1"
-  title: "Czym jest OpenMedGate"
-  items:
-    - title: "Głosem."
-      text: >-
-        Ustalenia publikuje inicjatywa. Firmy wskazują ludzie, na własnych profilach, na własną
-        odpowiedzialność. Nie publikujemy niczego, czego nie powiedzielibyśmy tej samej osobie
-        przy stole.
-    - title: "Rejestrem dowodów."
-      text: >-
-        Każde zdanie stoi na dokumencie, liczbie z jawnym mianownikiem albo na opublikowanym
-        wyjaśnieniu treści zamówienia. Materiałem jest ustalenie, nie opinia.
-    - title: "Nazwą, którą trzeba wyjaśnić."
-      text: >-
-        „Open” odnosi się do otwartych interfejsów i otwartych standardów: HL7, DICOM, FHIR, IHE.
-        Nie jest obietnicą otwarcia kodu. Nie ma kodu i nie ma produktu.
-  not_title: "Czym nie jest"
-  not_items:
-    - "firmą ani produktem"
-    - "projektem open source"
-    - "marką nadrzędną nad QuantumMed ani nad żadną inną firmą"
-    - "kanałem sprzedaży; nikogo nie zapraszamy tu do kupowania czegokolwiek"
-    - "organizacją standaryzacyjną; powołuje się na HL7, IHE i dokumentację publicznego e-zdrowia, nie zastępuje ich"
-    - "anonimowym kontem; ma dwie twarze i dwa nazwiska"
+marquee: ["HL7 FHIR", "DICOM", "profile IHE", "HL7 v2", "openEHR", "SNOMED CT", "LOINC", "EHDS", "IHE XDS", "OAuth 2.0"]
 
-thesis:
-  label: "§ 2"
-  title: "Trzy zdania, na których stoi całość"
+why:
+  label: "Dlaczego"
+  title: "Trzy fakty, na których stoi ruch"
   items:
-    - n: "01"
-      title: "Mur nie jest technologiczny. Jest umowny."
-      text: >-
-        Standardy wymiany danych medycznych istnieją od trzydziestu lat i są dojrzałe.
-        Specyfikacja konkretnej instalacji też istnieje. Dostępu do niej nie reguluje standard,
-        tylko licencja i umowa nadzoru autorskiego producenta.
-    - n: "02"
-      title: "Asymetria jest mierzalna."
-      text: >-
-        Publiczna infrastruktura e-zdrowia pokazuje, że da się inaczej: dokumentacja, wykaz
-        usług, specyfikacje, dane testowe i środowisko integracyjne, dostępne każdemu dostawcy
-        na wniosek. Producent systemu szpitalnego nie udostępnia tego ani w dokumentach
-        zamówienia, ani nigdzie indziej.
-    - n: "03"
-      title: "Skutkiem jest uprawnienie bez treści."
-      text: >-
-        Zamawiający w dobrej wierze dopuszcza ofertę równoważną. Złożyć ją może wyłącznie
-        producent i jego partnerzy.
+    - icon: people
+      title: "Dane należą do pacjentów i do placówek, które się nimi opiekują."
+      text: "Nie do dostawcy oprogramowania, w którym akurat są zapisane."
+    - icon: layers
+      title: "Standardy istnieją i są dojrzałe."
+      text: "HL7, FHIR, DICOM i IHE opisują, jak dane medyczne przemieszczają się między systemami, i robią to od dekad."
+    - icon: key
+      title: "Brakuje dostępu."
+      text: "Co wystawia konkretna instalacja i na jakich warunkach, zwykle nie jest publiczne. Tam kończy się interoperacyjność."
+
+mechanism:
+  label: "Mechanizm"
+  title: "Dziś zamknięte. Otwarte z założenia."
+  toggle_closed: "Dziś"
+  toggle_open: "Otwarte interfejsy"
+  nodes:
+    core: "System szpitalny"
+    lab: "Laboratorium"
+    imaging: "Obrazowanie"
+    ai: "Modele AI"
+    registration: "E-rejestracja"
+    pharmacy: "Apteka"
+    national: "Krajowe e-zdrowie"
+  closed:
+    title: "Opis interfejsu ma jedna strona."
+    text: "Każda integracja przechodzi przez producenta systemu centralnego. Oferty równoważne są dopuszczone na papierze; nikt inny nie potrafi ich wycenić."
+    badge: "1 dostawca"
+  open:
+    title: "Interfejs jest opisany, warunki opublikowane."
+    text: "Każdy integrator łączy się przez standardowe interfejsy, ze środowiskiem testowym i znanym kosztem. Wybiera placówka."
+    badge: "Dowolny integrator"
+
+postulates:
+  label: "Postulaty"
+  title: "O co nam chodzi"
+  intro: "Sześć zdań. Firma przeczyta je w minutę i podpisze bez prawnika."
+  items:
+    - title: "Dane pacjenta należą do pacjenta i do placówki, która je gromadzi."
+      text: "Nigdy do dostawcy oprogramowania, w którym są zapisane."
+    - title: "Placówka ma prawo do opisu interfejsów każdego systemu, który kupuje, i może przekazać go, komu chce."
+      text: "To prawo nie może zależeć od zgody producenta na konkurencję."
+    - title: "Tam, gdzie istnieje otwarty standard, on jest interfejsem."
+      text: "Najpierw HL7 FHIR, DICOM i profile IHE. Formaty własne tylko tam, gdzie standard nie sięga."
+    - title: "Warunki dostępu są opublikowane i znane w dniu podpisania umowy."
+      text: "Nie negocjowane przy pierwszej integracji i nie wyceniane przez stronę, która konkuruje z integratorem."
+    - title: "Każdy integrator dostaje środowisko testowe i dane testowe."
+      text: "Publiczne platformy e-zdrowia robią to już dziś dla każdego dostawcy na wniosek. System szpitalny też może."
+    - title: "Otwartość jest mierzona i publikowana."
+      text: "Liczba ofert, dostępność specyfikacji, koszt dostępu: liczone z dokumentów publicznych, z jawną metodą i mianownikiem."
+  outro: "Sygnatariusze podpisują postulaty, nie posty. Podpis znaczy: chcemy tych samych reguł. Nie zobowiązuje nikogo do udziału w żadnym sporze."
+  cta: "Podpisz postulaty"
 
 evidence:
-  label: "§ 3"
-  title: "Rejestr dowodów"
+  label: "Dowody"
+  title: "Objawy, policzone"
   intro: >-
-    Każda liczba ma populację, okres, źródło i metodę. Postępowania opisujemy numerem i cytatem
-    z ich własnych dokumentów. Nie nazywamy placówek, pacjentów ani rozmówców.
+    Postępowanie z jedną ofertą to objaw, nie wyrok. Objawy liczymy z dokumentów publicznych,
+    z jawną metodą, i publikujemy z mianownikiem.
+  matrix:
+    label: "postępowań w bieżącym przeglądzie"
+    status: "Liczby w audycie. Metoda jest publiczna; liczby będą."
+    placeholder: true
+  stats:
+    - value: "—"
+      unit: "%"
+      label: "części rozstrzygniętych przy jednej ofercie"
+      placeholder: true
+    - value: "—"
+      unit: ""
+      label: "przejrzanych części, każda z dwoma niezależnymi odczytami"
+      placeholder: true
+    - value: "—"
+      unit: ""
+      label: "zamawiających, którzy po pytaniach zmienili dokumenty"
+      placeholder: true
   columns:
     ref: "Sygn."
     date: "Data"
     finding: "Ustalenie"
     source: "Źródło"
-  stats:
-    - value: "—"
-      unit: "%"
-      label: "postępowań rozstrzygniętych przy jednej ofercie"
-      note: "populacja · okres · źródło · metoda"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "przejrzanych postępowań"
-      note: "segment · okres · źródło"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "zamawiających, którzy po pytaniach zmienili dokumenty"
-      note: "okres · źródło"
-      placeholder: true
   rows:
     - ref: "OMG-2026-001"
       date: "2026-09-22"
       finding: >-
         Zapytany o dokumentację interfejsów swojego systemu szpitalnego zamawiający odpowiedział,
-        że jej nie posiada, ponieważ „dokumentacja ta stanowi dokumentację własnościową
-        producenta”. Zamawiający dopuścił równoważny moduł integracyjny z sześcioma nazwanymi
-        kryteriami. Wpłynęła jedna oferta.
-      source: "Postępowanie ZP-1559-2026 · wyjaśnienia treści SWZ z 22.09.2026"
+        że jej nie posiada: „dokumentacja ta stanowi dokumentację własnościową producenta”. Jedna oferta.
+      source: "Postępowanie ZP-1559-2026 · wyjaśnienia z 22.09.2026"
       placeholder: true
     - ref: "OMG-2026-002"
       date: "[data]"
-      finding: "Udział postępowań rozstrzygniętych przy jednej ofercie, według segmentu i roku."
+      finding: "Udział części rozstrzygniętych przy jednej ofercie, według segmentu i roku."
       source: "[populacja · okres · źródło · metoda]"
       placeholder: true
     - ref: "OMG-2026-003"
       date: "[data]"
-      finding: >-
-        Co publiczny operator e-zdrowia udostępnia integratorom, a czego nie udostępniają
-        producenci systemów szpitalnych.
+      finding: "Co publiczny operator e-zdrowia udostępnia integratorom, a czego nie udostępniają producenci systemów szpitalnych."
       source: "[wykaz dokumentów]"
       placeholder: true
-  note: >-
-    Postępowanie z jednym oferentem nie jest dowodem niczyjej winy. Jest objawem. Objawy się
-    liczy, opisuje i wyjaśnia, a nie używa jako wyroku.
   method:
     title: "Jak liczymy"
-    intro: "Liczby są w audycie. Dopóki audyt trwa, publiczna jest metoda, a nie liczby."
     items:
       - "Jednostką jest część zamówienia, nie całe postępowanie."
-      - "Okno to dwadzieścia cztery miesiące ogłoszeń o wyniku, z Biuletynu Zamówień Publicznych poniżej progów unijnych i z TED powyżej."
-      - "Budżet pochodzi wyłącznie z oficjalnego dokumentu. Gdy go brak, zapisujemy „brak informacji”, nigdy szacunek."
-      - "Każdy dokument dostaje skrót kryptograficzny w chwili pobrania i jest czytany dwa razy, za drugim razem niezależnie."
-      - "Rozbieżności ujawniamy, nie uśredniamy."
-
-principles:
-  label: "§ 4"
-  title: "Założenia"
-  intro: >-
-    To dokument, który podpisuje firma partnerska. Jest krótki celowo: do przeczytania w minutę,
-    do podpisania bez konsultacji z prawnikiem, a każde zdanie da się obronić dokumentem.
-  items:
-    - title: "Dane pacjenta należą do pacjenta i do placówki, która je gromadzi."
-      text: "Nie należą do dostawcy oprogramowania, w którym są zapisane."
-    - title: >-
-        Placówka, która kupiła system, ma prawo wiedzieć, jak się z nim zintegrować, i przekazać
-        tę wiedzę wybranemu przez siebie wykonawcy.
-      text: "To prawo nie powinno zależeć od zgody producenta na konkurencję."
-    - title: "Standardy istnieją od trzydziestu lat."
-      text: >-
-        HL7, DICOM, FHIR i IHE powstały właśnie po to, żeby te mury nie istniały. Problemem nie
-        jest brak standardu. Problemem jest to, że opis interfejsu konkretnej instalacji nie jest
-        publiczny.
-    - title: >-
-        Dopuszczenie oferty równoważnej bez dostępu do specyfikacji interfejsu jest uprawnieniem
-        bez treści.
-      text: >-
-        Zamawiający może je zapisać w dobrej wierze, a i tak nikt poza producentem i jego
-        partnerami nie jest w stanie z niego skorzystać.
-    - title: >-
-        Interfejs opisany publicznie jest warunkiem konkurencji. Interfejs opisany wyłącznie przez
-        producenta jest barierą wejścia, niezależnie od intencji producenta.
-      text: "Oceniamy skutek, nie zamiar."
-    - title: "Postępowanie z jednym oferentem nie jest dowodem niczyjej winy."
-      text: "Jest objawem. Objawy się liczy, opisuje i wyjaśnia, a nie używa jako wyroku."
-    - title: "Publiczna infrastruktura e-zdrowia pokazuje, że da się inaczej."
-      text: >-
-        Krajowy operator e-zdrowia udostępnia dokumentację, wykaz usług, specyfikacje, dane
-        testowe i środowisko integracyjne każdemu dostawcy na wniosek. Ta sama otwartość po
-        stronie producentów systemów szpitalnych zlikwidowałaby większość problemu.
-  outro: >-
-    Sygnatariusze podpisują założenia, nie posty. Podpis znaczy: przegrywamy w ten sam sposób.
-    Nie znaczy, że popieramy to, co ktoś dzisiaj napisał, i nie zobowiązuje nikogo do udziału
-    w sporze.
+      - "Dwadzieścia cztery miesiące ogłoszeń o wyniku: BZP poniżej progów unijnych, TED powyżej."
+      - "Budżet wyłącznie z oficjalnego dokumentu; inaczej „brak informacji”, nigdy szacunek."
+      - "Każdy dokument ze skrótem kryptograficznym w chwili pobrania i czytany dwa razy, za drugim razem niezależnie."
+      - "Rozbieżności ujawniane, nie uśredniane."
 
 founders:
-  label: "§ 5"
-  title: "Kto mówi"
-  intro: >-
-    Inicjatywa ma dwie twarze i dwa nazwiska. Tu publikujemy ustalenia, liczby i dokumenty.
-    Firmę wskazuje wyłącznie człowiek, na własnym profilu, na własną odpowiedzialność.
+  label: "Kto"
+  title: "Dwa nazwiska, dwie twarze"
+  intro: "Ruch prowadzą ludzie, nie firma. Firmę wskazuje wyłącznie człowiek, na własnym profilu i na własną odpowiedzialność."
   people:
     - id: sylwester-cyrwus
       name: "Sylwester Cyrwus"
       role: "Współzałożyciel"
-      line: "Pisze o postępowaniach, liczbach i ich skutkach, we własnym imieniu."
-      bio: "[Dwa zdania biografii, do uzgodnienia.]"
+      line: "Postępowania, liczby, skutki."
+      bio: "[Dwa zdania, do uzgodnienia.]"
       placeholder: true
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Współzałożyciel"
-      line: "Pisze o mechanizmie: standardach, interfejsach i granicach tego, co wynika z dowodów."
-      bio: "[Dwa zdania biografii, do uzgodnienia.]"
+      line: "Standardy, interfejsy, granice tego, co wynika z dowodów."
+      bio: "[Dwa zdania, do uzgodnienia.]"
       placeholder: true
 
 signatories:
-  label: "§ 6"
-  title: "Sygnatariusze założeń"
-  intro: >-
-    Firmy, które podpisały założenia, występują tutaj, w tym jednym miejscu, i nigdzie indziej
-    na tej stronie.
+  label: "Sygnatariusze"
+  title: "Kto podpisał"
+  intro: "Firmy, które podpisały postulaty, występują tutaj i nigdzie indziej na tej stronie."
   items:
     - name: "QuantumMed"
       logo: quantummed
@@ -206,32 +158,25 @@ signatories:
     - name: "SafeMed AI by QuantumMed"
       logo: safemed-ai
       url: "https://safemedai.eu"
-  relation: >-
-    QuantumMed jest pierwszym sygnatariuszem. Założyciele OpenMedGate są jego współzałożycielami
-    i mówimy to wprost: mamy skórę w grze i przegrywamy tak samo jak każdy inny dostawca.
-    QuantumMed nie jest właścicielem tej inicjatywy, a inicjatywa niczego dla QuantumMed nie
-    sprzedaje.
-  cta_title: "Przegrywacie w ten sam sposób?"
-  cta_text: >-
-    Jeśli Wasza firma ma udokumentowany przypadek, prześlijcie dokumenty. Przypadek publikujemy
-    tylko wtedy, gdy da się go obronić dokumentem, i tylko za zgodą nadawcy.
+  relation: "QuantumMed jest pierwszym sygnatariuszem i firmą założycieli; mówimy to wprost. Nie jest właścicielem ruchu, a ruch niczego nie sprzedaje."
+  cta_title: "Podpisz postulaty"
+  cta_text: "Szpital, firma, integrator albo osoba. Napisz do nas; sygnatariuszy publikujemy w jednym miejscu, tutaj."
 
 blog:
-  label: "§ 7"
-  title: "Ustalenia"
-  intro: "Ustalenia, liczby i dokumenty, w formie do cytowania. Każdy wpis ma nazwanego autora i wskazane źródła."
+  label: "Ustalenia"
+  title: "Krótko, ze źródłami, do cytowania"
+  intro: "Każdy wpis ma nazwanego autora i wskazane źródła."
 
 history:
   label: "Nota"
-  title: "Czym ta inicjatywa była wcześniej i co się zmieniło"
+  title: "Co się zmieniło"
   date: "Listopad 2026"
   text: >-
-    Do jesieni 2026 ta strona opisywała OpenMedGate jako otwartą platformę integracyjną,
-    odliczała dni do otwarcia kodu, zapowiadała produkt na 2027 rok i przedstawiała QuantumMed
-    jako swój produkt. To był inny pomysł i wycofujemy go wprost: nie ma kodu do otwarcia, nie ma
-    produktu i nie ma roadmapy. QuantumMed jest sygnatariuszem założeń, nie właścicielem
-    inicjatywy. Dawne strony zostały w archiwach internetu; wolimy powiedzieć to sami.
+    Do jesieni 2026 ta strona opisywała OpenMedGate jako platformę integracyjną, odliczała dni do
+    otwarcia kodu i przedstawiała QuantumMed jako swój produkt. Wycofujemy to wprost: nie ma kodu
+    do otwarcia i nie ma produktu. Jest ruch, jego postulaty i jego dowody. Dawne strony zostały
+    w archiwach internetu; wolimy powiedzieć to sami.
 
 contact:
   title: "Kontakt"
-  text: "Pytania o ustalenie, sprostowanie albo własny, udokumentowany przypadek."
+  text: "Ustalenie, sprostowanie, podpis albo własny, udokumentowany przypadek."

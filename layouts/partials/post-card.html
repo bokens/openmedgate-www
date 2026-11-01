@@ -1,8 +1,15 @@
 {{- $p := . -}}
+{{- $cat := $p.Params.category | default "evidence" -}}
 <article class="post-card reveal">
+  <a class="post-card-cover cover-{{ $cat }}" href="{{ $p.RelPermalink }}" aria-hidden="true" tabindex="-1">
+    {{- with $p.Params.cover }}{{ with $p.Resources.GetMatch . }}{{ $img := .Fill "960x540 Center webp q80" }}<img src="{{ $img.RelPermalink }}" width="960" height="540" alt="" loading="lazy">{{ end }}{{ else }}
+    <span class="cover-pattern"></span>
+    <span class="cover-mark">{{ partial "logo.html" (dict "class" "cover-logo") }}</span>
+    {{- end }}
+  </a>
   <div class="post-card-meta mono">
-    <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date | time.Format ":date_long" }}</time>
     {{- with $p.Params.category }}<span class="post-card-cat">{{ i18n (printf "cat_%s" .) | default . }}</span>{{ end }}
+    <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date | time.Format ":date_long" }}</time>
     {{- if $p.Draft }}<span class="badge badge-draft">{{ i18n "draft" }}</span>{{ end }}
   </div>
   <h3 class="post-card-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>

@@ -19,10 +19,11 @@ Source and infrastructure of openmedgate.com, a static Hugo site. [README.md](RE
 - Items flagged `placeholder: true` in the data files carry a visible badge while `showPlaceholderBadges` is on in `config/_default/params.toml`. Replace the text and remove the flag together.
 - Blog posts: page bundles under `content/<lang>/blog/<slug>/`, linked by `translationKey`. When the operator says a new post has arrived, or `blog-inbox/` holds a post folder, follow [blog-inbox/README.md](blog-inbox/README.md) step by step.
 - Design tokens and every style: `assets/css/site.css`. Fonts are self-hosted in `static/fonts/`; do not add third-party scripts, fonts or trackers.
+- Video loops in `static/media/` are rendered by `asset-sources/media/render_media.py` (see `SOURCE.md` there). Never add footage or stock material; re-render instead.
 
 ## What the site is
 
-OpenMedGate is an initiative, not a company, a product or an open-source project. The canon that defines it lives outside this repository, in QuantumMed-Shared (`01-Products/OpenMedGate/OpenMedGate-Overview.md`). Read it before writing or changing any text. The rules that follow from it:
+OpenMedGate is a movement for open interfaces and open standards in healthcare: not a company, a product or an open-source project. The canon that defines it lives outside this repository, in QuantumMed-Shared (`01-Products/OpenMedGate/OpenMedGate-Overview.md`). Read it before writing or changing any text. The site argues for openness; it does not argue against any producer. The rules that follow from the canon:
 
 - No sales: no calls to contact a company, no lead forms, no links to commercial offers.
 - Signatory companies appear in one fixed place on the site, as signatories of the principles, never under a piece that points at a specific company.

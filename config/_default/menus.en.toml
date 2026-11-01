@@ -1,30 +1,30 @@
 [[main]]
-  identifier = "principles"
-  name = "Principles"
+  identifier = "postulates"
+  name = "Postulates"
   weight = 10
   [main.params]
-    anchor = "principles"
+    anchor = "postulates"
+
+[[main]]
+  identifier = "mechanism"
+  name = "Mechanism"
+  weight = 20
+  [main.params]
+    anchor = "mechanism"
 
 [[main]]
   identifier = "evidence"
   name = "Evidence"
-  weight = 20
+  weight = 30
   [main.params]
     anchor = "evidence"
 
 [[main]]
   identifier = "founders"
   name = "Founders"
-  weight = 30
-  [main.params]
-    anchor = "founders"
-
-[[main]]
-  identifier = "signatories"
-  name = "Signatories"
   weight = 40
   [main.params]
-    anchor = "signatories"
+    anchor = "founders"
 
 [[main]]
   identifier = "blog"

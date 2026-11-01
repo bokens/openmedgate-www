@@ -1,5 +1,5 @@
 {{- $d := index site.Data.site site.Language.Lang -}}
-<footer class="site-footer">
+<footer class="site-footer night">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
@@ -8,6 +8,9 @@
           <span class="brand-word"><span class="brand-open">Open</span>MedGate</span>
         </a>
         <p class="footer-tagline">{{ $d.hero.eyebrow }}.</p>
+        <ul class="footer-not mono">
+          {{- range $d.hero.not }}<li>{{ . }}</li>{{ end }}
+        </ul>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
@@ -18,6 +21,7 @@
             {{- with .Params.anchor }}{{ $url = printf "%s#%s" site.Home.RelPermalink . }}{{ end }}
             <li><a href="{{ $url }}">{{ .Name }}</a></li>
             {{- end }}
+            <li><a href="{{ site.Home.RelPermalink }}#signatories">{{ $d.signatories.label }}</a></li>
           </ul>
         </div>
         <div class="footer-col">
