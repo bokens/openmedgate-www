@@ -5,7 +5,7 @@
   contentDir = "content/en"
   title = "OpenMedGate"
   [en.params]
-    description = "An initiative that documents one mechanism: the right to compete for hospital IT exists in the tender document, not in practice."
+    description = "A movement for open interfaces and open standards in healthcare."
     ogLocale = "en_GB"
 
 [pl]
@@ -15,5 +15,5 @@
   contentDir = "content/pl"
   title = "OpenMedGate"
   [pl.params]
-    description = "Inicjatywa, która dokumentuje jeden mechanizm: prawo do konkurowania o IT szpitala istnieje w dokumencie zamówienia, nie w praktyce."
+    description = "Ruch na rzecz otwartych interfejsów i otwartych standardów w ochronie zdrowia."
     ogLocale = "pl_PL"

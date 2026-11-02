@@ -1,4 +1,4 @@
 ---
 title: "OpenMedGate"
-description: "An initiative that documents one mechanism: the right to compete for hospital IT exists in the tender document, not in practice."
+description: "A movement for open interfaces and open standards in healthcare."
 ---

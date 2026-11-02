@@ -15,9 +15,6 @@
       <a class="btn btn-mint" href="#postulates">{{ $d.hero.cta_primary }}</a>
       <a class="btn btn-outline-light" href="#mechanism">{{ $d.hero.cta_secondary }}{{ partial "icon.html" "arrow" }}</a>
     </div>
-    <ul class="hero-not reveal">
-      {{- range $d.hero.not }}<li>{{ . }}</li>{{ end }}
-    </ul>
   </div>
   <button class="video-toggle" type="button" data-video-toggle aria-label="{{ i18n "video_pause" }}" data-label-pause="{{ i18n "video_pause" }}" data-label-play="{{ i18n "video_play" }}">
     <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
@@ -47,6 +44,7 @@
       </div>
       {{- end }}
     </div>
+    <p class="why-note reveal">{{ $d.why.note }}</p>
   </div>
 </section>
 
@@ -238,13 +236,4 @@
   </div>
 </section>
 
-<section class="section section-history" id="history">
-  <div class="container">
-    <div class="history reveal">
-      <div class="history-meta mono"><span>{{ $d.history.label }}</span><span>{{ $d.history.date }}</span></div>
-      <h2 class="history-title">{{ $d.history.title }}</h2>
-      <p class="history-text">{{ $d.history.text }}</p>
-    </div>
-  </div>
-</section>
 {{ end }}

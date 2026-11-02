@@ -51,7 +51,9 @@ English is the default language and lives at the root; Polish lives under `/pl/`
 
 ## Start page
 
-Hero with a video loop, a marquee of standards, three facts, the interactive mechanism diagram (closed today, open by design; it cycles on its own until the visitor takes over), six postulates, evidence (dot matrix of the current review, three numbers, the registry, the method), founders, signatories on a second video loop, latest findings and a dated note on what changed.
+Hero with a video loop, a marquee of standards, three observations, the interactive mechanism diagram (today and with open interfaces; it cycles on its own until the visitor takes over), six postulates, evidence (dot matrix of the current review, three numbers, the registry, the method), founders, signatories on a second video loop and the latest findings.
+
+The copy follows the owner's writing rules: full sentences, no "not X but Y" contrasts, no triads, no closing aphorisms, no sentence fragments as headlines.
 
 Items in `data/site/*.yaml` flagged `placeholder: true` carry a visible badge while `showPlaceholderBadges` is on in `params.toml`. The dot matrix fills to `data-filled` on the `[data-matrix]` element once a number exists; without it, it shimmers as a placeholder.
 

@@ -59,7 +59,7 @@ other = "Link skopiowany"
 other = "Ustalenia"
 
 [blog_description]
-other = "Ustalenia, liczby i dokumenty. Każdy wpis ma nazwanego autora i wskazane źródła."
+other = "Tu publikujemy wyniki analiz postępowań i dokumentów wraz ze źródłami."
 
 [blog_empty]
 other = "Tu pojawią się pierwsze ustalenia."
@@ -68,7 +68,7 @@ other = "Tu pojawią się pierwsze ustalenia."
 other = "Tej strony nie ma."
 
 [not_found_text]
-other = "Adres może być nieaktualny. Poprzednia wersja tej strony miała inne podstrony; już ich nie ma."
+other = "Adres może pochodzić z poprzedniej wersji strony."
 
 [not_found_home]
 other = "Przejdź na stronę główną"

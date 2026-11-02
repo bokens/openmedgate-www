@@ -1,4 +1,4 @@
 ---
 title: "Findings"
-description: "Findings, numbers and documents. Each entry names its author and its sources."
+description: "Here we publish the results of our analyses of procedures and documents, together with their sources."
 ---

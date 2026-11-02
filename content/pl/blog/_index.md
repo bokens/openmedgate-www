@@ -1,4 +1,4 @@
 ---
 title: "Ustalenia"
-description: "Ustalenia, liczby i dokumenty. Każdy wpis ma nazwanego autora i wskazane źródła."
+description: "Tu publikujemy wyniki analiz postępowań i dokumentów wraz ze źródłami."
 ---
