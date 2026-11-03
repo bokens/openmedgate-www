@@ -78,21 +78,19 @@ postulates:
 
 founders:
   label: "Założyciele"
-  title: "Sylwester Cyrwus i Krzysztof Bokiej"
-  intro: "Obaj zawodowo zajmują się systemami informatycznymi dla ochrony zdrowia."
+  title: "Kim jesteśmy"
+  intro: "OpenMedGate założyli w 2026 roku Sylwester Cyrwus i Krzysztof Bokiej. Obaj od lat budują i wdrażają systemy informatyczne dla ochrony zdrowia i sami zadawali pytania w postępowaniach, o których tu piszą."
   people:
     - id: sylwester-cyrwus
       name: "Sylwester Cyrwus"
       role: "Współzałożyciel"
       line: "Analizuje postępowania przetargowe i pisze o tym, co wynika z ich dokumentów."
-      bio: "[Dwa zdania biografii, do uzgodnienia.]"
-      placeholder: true
+      bio: "Współzałożyciel i prezes QuantumMed. Od ponad dziesięciu lat prowadzi projekty informatyczne dla firm farmaceutycznych i placówek medycznych, obecnie także jako dyrektor jednostki Healthcare & Life Sciences w firmie wdrożeniowej."
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Współzałożyciel"
       line: "Odpowiada za standardy wymiany danych i architekturę interfejsów."
-      bio: "[Dwa zdania biografii, do uzgodnienia.]"
-      placeholder: true
+      bio: "Współzałożyciel i dyrektor technologiczny QuantumMed. Od siedemnastu lat projektuje i buduje integracje systemów w dużych organizacjach, wcześniej między innymi w Roche i w MNM Diagnostics."
 
 signatories:
   label: "Sygnatariusze"
@@ -107,14 +105,14 @@ signatories:
     - name: "SafeMed AI by QuantumMed"
       logo: safemed-ai
       url: "https://safemedai.eu"
-  relation: "Pierwszym sygnatariuszem jest QuantumMed, spółka założona przez autorów inicjatywy. Inicjatywa pozostaje od niej niezależna i nie prowadzi działalności handlowej."
+  relation: "Sygnatariusz figuruje na tej liście z logo i odnośnikiem do własnej strony i może powoływać się na postulaty we własnych umowach oraz postępowaniach. Przyłączenie się jest bezpłatne."
   cta_title: "Podpisz postulaty"
   cta_text: "Postulaty może podpisać placówka, firma, integrator albo osoba prywatna."
 
 blog:
   label: "Blog"
-  title: "Ustalenia"
-  intro: "Tu publikujemy wyniki analiz postępowań i dokumentów wraz ze źródłami."
+  title: "Najnowsze wpisy"
+  intro: "Odcinki serii „Jedna oferta” i inne teksty o otwartych interfejsach w ochronie zdrowia."
 
 contact:
   title: "Kontakt"

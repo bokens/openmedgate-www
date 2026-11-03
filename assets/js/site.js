@@ -16,12 +16,17 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setNav(false); } });
   }
 
-  // Header hairline once the page is scrolled.
+  // Header: hairline once scrolled; on the start page it turns light after the hero.
   var header = document.querySelector('[data-header]');
   if (header) {
-    var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+    var heroEl = document.querySelector('.hero');
+    var onScroll = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+      if (heroEl) { header.classList.toggle('is-light', window.scrollY > heroEl.offsetHeight - header.offsetHeight); }
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
   }
 
   // Reveal on scroll.

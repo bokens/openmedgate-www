@@ -1,4 +1,4 @@
 ---
-title: "Findings"
-description: "Here we publish the results of our analyses of procedures and documents, together with their sources."
+title: "Blog"
+description: "Episodes of the “One bid” series and other writing on open interfaces in healthcare."
 ---

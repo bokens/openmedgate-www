@@ -1,4 +1,4 @@
 ---
-title: "Ustalenia"
-description: "Tu publikujemy wyniki analiz postępowań i dokumentów wraz ze źródłami."
+title: "Blog"
+description: "Odcinki serii „Jedna oferta” i inne teksty o otwartych interfejsach w ochronie zdrowia."
 ---

@@ -20,10 +20,10 @@ other = "placeholder"
 other = "draft"
 
 [read_more]
-other = "Read the finding"
+other = "Read the post"
 
 [all_posts]
-other = "All findings"
+other = "All posts"
 
 [back_to_blog]
 other = "Back to the blog"
@@ -56,13 +56,13 @@ other = "Copy link"
 other = "Link copied"
 
 [blog_title]
-other = "Findings"
+other = "Blog"
 
 [blog_description]
-other = "Here we publish the results of our analyses of procedures and documents, together with their sources."
+other = "Episodes of the “One bid” series and other writing on open interfaces in healthcare."
 
 [blog_empty]
-other = "The first findings will be published here."
+other = "The first posts will appear here soon."
 
 [not_found_title]
 other = "This page does not exist."

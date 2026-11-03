@@ -20,10 +20,10 @@ other = "placeholder"
 other = "szkic"
 
 [read_more]
-other = "Czytaj ustalenie"
+other = "Czytaj wpis"
 
 [all_posts]
-other = "Wszystkie ustalenia"
+other = "Wszystkie wpisy"
 
 [back_to_blog]
 other = "Wróć do bloga"
@@ -56,13 +56,13 @@ other = "Kopiuj link"
 other = "Link skopiowany"
 
 [blog_title]
-other = "Ustalenia"
+other = "Blog"
 
 [blog_description]
-other = "Tu publikujemy wyniki analiz postępowań i dokumentów wraz ze źródłami."
+other = "Odcinki serii „Jedna oferta” i inne teksty o otwartych interfejsach w ochronie zdrowia."
 
 [blog_empty]
-other = "Tu pojawią się pierwsze ustalenia."
+other = "Pierwsze wpisy pojawią się wkrótce."
 
 [not_found_title]
 other = "Tej strony nie ma."

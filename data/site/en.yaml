@@ -78,21 +78,19 @@ postulates:
 
 founders:
   label: "Founders"
-  title: "Sylwester Cyrwus and Krzysztof Bokiej"
-  intro: "Both work professionally on information systems for healthcare."
+  title: "Who we are"
+  intro: "OpenMedGate was founded in 2026 by Sylwester Cyrwus and Krzysztof Bokiej. Both have built and deployed information systems for healthcare for years, and they have themselves asked questions in the procedures they write about here."
   people:
     - id: sylwester-cyrwus
       name: "Sylwester Cyrwus"
       role: "Co-founder"
       line: "Analyses procurement procedures and writes about what their documents show."
-      bio: "[Two sentences of biography, to be agreed.]"
-      placeholder: true
+      bio: "Co-founder and CEO of QuantumMed. For more than ten years he has led IT projects for pharmaceutical companies and healthcare providers, currently also as director of a Healthcare & Life Sciences business unit at a consulting and delivery firm."
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Co-founder"
       line: "Responsible for data exchange standards and interface architecture."
-      bio: "[Two sentences of biography, to be agreed.]"
-      placeholder: true
+      bio: "Co-founder and CTO of QuantumMed. For seventeen years he has designed and built system integrations in large organisations, earlier at Roche and MNM Diagnostics, among others."
 
 signatories:
   label: "Signatories"
@@ -107,14 +105,14 @@ signatories:
     - name: "SafeMed AI by QuantumMed"
       logo: safemed-ai
       url: "https://safemedai.eu"
-  relation: "The first signatory is QuantumMed, a company founded by the authors of the initiative. The initiative remains independent of it and conducts no commercial activity."
+  relation: "A signatory appears on this list with its logo and a link to its own site, and may invoke the postulates in its own contracts and procurement procedures. Joining is free of charge."
   cta_title: "Sign the postulates"
   cta_text: "A facility, a company, an integrator or a private person can sign the postulates."
 
 blog:
   label: "Blog"
-  title: "Findings"
-  intro: "Here we publish the results of our analyses of procedures and documents, together with their sources."
+  title: "Latest posts"
+  intro: "Episodes of the “One bid” series and other writing on open interfaces in healthcare."
 
 contact:
   title: "Contact"

@@ -35,13 +35,15 @@
       <span class="section-label mono">{{ $d.why.label }}</span>
       <h2 class="section-title">{{ $d.why.title }}</h2>
     </header>
-    <div class="why-grid stagger">
+    <div class="why-list">
       {{- range $d.why.items }}
-      <div class="why-item reveal is-{{ .figure }}">
-        {{ partial "why-figure.html" (dict "key" .figure "labels" .labels) }}
-        <p class="why-kicker mono">{{ .kicker }}</p>
-        <h3 class="why-title">{{ .title }}</h3>
-        <p class="why-text">{{ .text }}</p>
+      <div class="why-row reveal is-{{ .figure }}">
+        <div class="why-figure">{{ partial "why-figure.html" (dict "key" .figure "labels" .labels) }}</div>
+        <div class="why-body">
+          <p class="why-kicker mono">{{ .kicker }}</p>
+          <h3 class="why-title">{{ .title }}</h3>
+          <p class="why-text">{{ .text }}</p>
+        </div>
       </div>
       {{- end }}
     </div>
@@ -145,12 +147,14 @@
       <span class="section-label mono">{{ $d.signatories.label }}</span>
       <h2 class="section-title">{{ $d.signatories.title }}</h2>
     </header>
-    <div class="sig-row reveal">
-      {{- range $d.signatories.items }}
-      <a class="sig" href="{{ .url }}" rel="noopener" target="_blank" aria-label="{{ .name }}">
-        <img src="/images/signatories/{{ .logo }}-white.svg" alt="" loading="lazy">
-      </a>
-      {{- end }}
+    <div class="sig-belt reveal">
+      <div class="sig-track">
+        {{- range $r := seq 4 }}{{ range $d.signatories.items }}
+        <a class="sig" href="{{ .url }}" rel="noopener" target="_blank" aria-label="{{ .name }}"{{ if gt $r 2 }} aria-hidden="true" tabindex="-1"{{ end }}>
+          <img src="/images/signatories/{{ .logo }}-white.svg" alt="" loading="lazy">
+        </a>
+        {{- end }}{{ end }}
+      </div>
     </div>
     <p class="sig-relation reveal">{{ $d.signatories.relation }}</p>
     <div class="sig-join reveal">
