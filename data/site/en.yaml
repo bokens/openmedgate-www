@@ -85,12 +85,12 @@ founders:
       name: "Sylwester Cyrwus"
       role: "Co-founder"
       line: "Analyses procurement procedures and writes about what their documents show."
-      bio: "Co-founder and CEO of QuantumMed. For more than ten years he has led IT projects for pharmaceutical companies and healthcare providers, currently also as director of a Healthcare & Life Sciences business unit at a consulting and delivery firm."
+      bio: "For more than ten years he has led IT projects for pharmaceutical companies and hospitals. He heads a Healthcare & Life Sciences business unit at a consulting and delivery firm."
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Co-founder"
       line: "Responsible for data exchange standards and interface architecture."
-      bio: "Co-founder and CTO of QuantumMed. For seventeen years he has designed and built system integrations in large organisations, earlier at Roche and MNM Diagnostics, among others."
+      bio: "For seventeen years he has designed and built system integrations in large organisations, including in the pharmaceutical industry and in laboratory diagnostics."
 
 signatories:
   label: "Signatories"

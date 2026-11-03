@@ -85,12 +85,12 @@ founders:
       name: "Sylwester Cyrwus"
       role: "Współzałożyciel"
       line: "Analizuje postępowania przetargowe i pisze o tym, co wynika z ich dokumentów."
-      bio: "Współzałożyciel i prezes QuantumMed. Od ponad dziesięciu lat prowadzi projekty informatyczne dla firm farmaceutycznych i placówek medycznych, obecnie także jako dyrektor jednostki Healthcare & Life Sciences w firmie wdrożeniowej."
+      bio: "Od ponad dziesięciu lat prowadzi projekty informatyczne dla firm farmaceutycznych i szpitali. Kieruje jednostką Healthcare & Life Sciences w firmie wdrożeniowej."
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Współzałożyciel"
       line: "Odpowiada za standardy wymiany danych i architekturę interfejsów."
-      bio: "Współzałożyciel i dyrektor technologiczny QuantumMed. Od siedemnastu lat projektuje i buduje integracje systemów w dużych organizacjach, wcześniej między innymi w Roche i w MNM Diagnostics."
+      bio: "Od siedemnastu lat projektuje i buduje integracje systemów w dużych organizacjach, w tym w branży farmaceutycznej i w diagnostyce laboratoryjnej."
 
 signatories:
   label: "Sygnatariusze"

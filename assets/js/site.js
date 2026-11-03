@@ -16,17 +16,24 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setNav(false); } });
   }
 
-  // Header: hairline once scrolled; on the start page it turns light after the hero.
+  // Header: a hairline once scrolled, and a light or dark theme after what lies beneath the bar.
   var header = document.querySelector('[data-header]');
   if (header) {
-    var heroEl = document.querySelector('.hero');
-    var onScroll = function () {
+    var ticking = false;
+    var updateHeader = function () {
+      ticking = false;
       header.classList.toggle('is-scrolled', window.scrollY > 8);
-      if (heroEl) { header.classList.toggle('is-light', window.scrollY > heroEl.offsetHeight - header.offsetHeight); }
+      if (nav && nav.classList.contains('is-open')) { return; }
+      header.style.pointerEvents = 'none';
+      var under = document.elementFromPoint(Math.floor(window.innerWidth / 2), header.offsetHeight + 2);
+      header.style.pointerEvents = '';
+      if (!under) { return; }
+      header.setAttribute('data-theme', under.closest('.hero') ? 'hero' : (under.closest('.night, .marquee') ? 'dark' : 'light'));
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    var requestHeader = function () { if (!ticking) { ticking = true; window.requestAnimationFrame(updateHeader); } };
+    updateHeader();
+    window.addEventListener('scroll', requestHeader, { passive: true });
+    window.addEventListener('resize', requestHeader);
   }
 
   // Reveal on scroll.
