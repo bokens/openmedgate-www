@@ -37,14 +37,14 @@
     </header>
     <div class="why-grid stagger">
       {{- range $d.why.items }}
-      <div class="why-item reveal">
-        {{ partial "icon.html" .icon }}
+      <div class="why-item reveal is-{{ .figure }}">
+        {{ partial "why-figure.html" (dict "key" .figure "labels" .labels) }}
+        <p class="why-kicker mono">{{ .kicker }}</p>
         <h3 class="why-title">{{ .title }}</h3>
         <p class="why-text">{{ .text }}</p>
       </div>
       {{- end }}
     </div>
-    <p class="why-note reveal">{{ $d.why.note }}</p>
   </div>
 </section>
 

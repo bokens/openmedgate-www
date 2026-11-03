@@ -17,20 +17,22 @@ marquee: ["HL7 FHIR", "DICOM", "profile IHE", "HL7 v2", "openEHR", "SNOMED CT", 
 
 why:
   label: "Punkt wyjścia"
-  title: "Trzy obserwacje, od których zaczynamy"
+  title: "Stan rzeczy"
   items:
-    - icon: people
+    - figure: data
+      kicker: "01 · Dane"
+      labels: { patient: "Pacjent", facility: "Placówka", record: "Dane pacjenta", supplier: "Dostawca systemu" }
       title: "Dane o pacjencie należą do pacjenta i do placówki, która go leczy."
       text: "Dostawca systemu, w którym te dane są przechowywane, przetwarza je na zlecenie placówki."
-    - icon: layers
+    - figure: standards
+      kicker: "02 · Standardy"
       title: "Standardy wymiany danych medycznych są dojrzałe i powszechnie dostępne."
-      text: "HL7, FHIR, DICOM i profile IHE od lat opisują, jak dane mają przepływać między systemami."
-    - icon: key
+      text: "HL7, DICOM, profile IHE i FHIR od lat opisują, jak dane mają przepływać między systemami."
+    - figure: access
+      kicker: "03 · Dostęp"
+      labels: { system: "System szpitalny", integrator: "Integrator" }
       title: "Dostęp do interfejsów konkretnej instalacji rzadko jest opisany publicznie."
       text: "Zakres udostępnianych danych i warunki połączenia zwykle zna wyłącznie producent systemu, a placówka i jej wykonawcy muszą o nie występować."
-  note: >-
-    Słowo „open” w nazwie inicjatywy oznacza otwarte interfejsy i otwarte standardy. OpenMedGate
-    nie publikuje własnego kodu i nie prowadzi sprzedaży.
 
 mechanism:
   label: "Mechanizm"
@@ -57,7 +59,7 @@ mechanism:
 postulates:
   label: "Postulaty"
   title: "Sześć postulatów"
-  intro: "Postulaty są sformułowane tak, aby mogła je podpisać placówka, firma albo osoba prywatna bez dodatkowych zastrzeżeń."
+  intro: "Zasady, które powinny znaleźć się w każdej umowie na system szpitalny i w każdym postępowaniu na jego zakup."
   items:
     - title: "Dane pacjenta należą do pacjenta i do placówki, która je gromadzi."
       text: "Dostawca oprogramowania, w którym są zapisane, nie nabywa do nich żadnych praw."
@@ -69,8 +71,8 @@ postulates:
       text: "Cenę i zasady dostępu ustala się przy zakupie systemu, zanim pojawi się pierwsza integracja."
     - title: "Każdy integrator otrzymuje środowisko testowe i dane testowe."
       text: "Publiczne platformy e-zdrowia udostępniają je każdemu dostawcy na wniosek i ten sam standard powinien obowiązywać systemy szpitalne."
-    - title: "Otwartość jest mierzona i publikowana."
-      text: "Liczbę ofert w postępowaniach i dostępność specyfikacji liczymy z dokumentów publicznych, z jawną metodą i podanym mianownikiem."
+    - title: "Zamawiający podaje w dokumentach postępowania, czy specyfikacja interfejsów posiadanego systemu jest dostępna i na jakich warunkach."
+      text: "Wykonawca może wtedy wycenić integrację przed złożeniem oferty, a dopuszczenie oferty równoważnej nabiera treści."
   outro: "Podpis pod postulatami oznacza poparcie dla tych sześciu zasad i do niczego więcej nie zobowiązuje. Sygnatariusz nie bierze udziału w sporach prowadzonych przez założycieli ani nie odpowiada za ich wypowiedzi."
   cta: "Podpisz postulaty"
 

@@ -1,0 +1,40 @@
+{{- /* Bespoke figures for the "Stan rzeczy" section. Labels come from data/site/<lang>.yaml; numbers are founding years of the standards. */ -}}
+{{- $k := .key -}}
+{{- $l := .labels | default dict -}}
+{{- if eq $k "data" -}}
+<svg class="why-fig" viewBox="0 0 320 150" aria-hidden="true">
+  <text x="160" y="10" class="fig-label fig-label-accent">{{ $l.record }}</text>
+  <g transform="translate(40 52)"><circle cx="0" cy="-14" r="11" class="fig-stroke"/><path d="M-20 22c0-13 9-20 20-20s20 7 20 20" class="fig-stroke"/></g>
+  <text x="40" y="98" class="fig-label">{{ $l.patient }}</text>
+  <g transform="translate(160 44)"><rect x="-22" y="-26" width="44" height="54" rx="4" class="fig-stroke fig-accent"/><path d="M-12 -10h24M-12 2h24M-12 14h14" class="fig-stroke fig-accent"/></g>
+  <g transform="translate(280 52)"><path d="M-22 22V-6l22-14 22 14v28z" class="fig-stroke"/><path d="M-6 22v-14h12v14" class="fig-stroke"/></g>
+  <text x="280" y="98" class="fig-label">{{ $l.facility }}</text>
+  <path d="M66 52H132" class="fig-line draw d1" pathLength="1"/>
+  <path d="M188 52h64" class="fig-line draw d2" pathLength="1"/>
+  <path d="M160 78V110" class="fig-line fig-dashed"/>
+  <g transform="translate(160 128)"><rect x="-34" y="-12" width="68" height="24" rx="4" class="fig-stroke fig-muted"/><path d="M-22 -2h44M-22 4h30" class="fig-stroke fig-muted"/></g>
+  <text x="204" y="132" class="fig-label fig-label-muted fig-label-start">{{ $l.supplier }}</text>
+</svg>
+{{- else if eq $k "standards" -}}
+<svg class="why-fig" viewBox="0 0 320 150" aria-hidden="true">
+  <path d="M20 108H300" class="fig-line draw d1" pathLength="1"/>
+  <path d="M44 74V106" class="fig-stroke fig-muted"/><path d="M106 42V106" class="fig-stroke fig-muted"/><path d="M157 74V106" class="fig-stroke fig-muted"/><path d="M290 42V106" class="fig-stroke fig-muted"/>
+  <rect x="18" y="50" width="52" height="24" rx="12" class="fig-pill"/><text x="44" y="66" class="fig-text">HL7</text>
+  <rect x="76" y="18" width="60" height="24" rx="12" class="fig-pill"/><text x="106" y="34" class="fig-text">DICOM</text>
+  <rect x="135" y="50" width="44" height="24" rx="12" class="fig-pill"/><text x="157" y="66" class="fig-text">IHE</text>
+  <rect x="262" y="18" width="56" height="24" rx="12" class="fig-pill fig-pill-accent"/><text x="290" y="34" class="fig-text fig-text-accent">FHIR</text>
+  <circle cx="44" cy="108" r="4" class="fig-dot"/><circle cx="106" cy="108" r="4" class="fig-dot"/><circle cx="157" cy="108" r="4" class="fig-dot"/><circle cx="290" cy="108" r="4" class="fig-dot"/>
+  <text x="44" y="132" class="fig-year">1987</text><text x="106" y="132" class="fig-year">1993</text><text x="157" y="132" class="fig-year">1998</text><text x="290" y="132" class="fig-year">2011</text>
+</svg>
+{{- else if eq $k "access" -}}
+<svg class="why-fig" viewBox="0 0 320 150" aria-hidden="true">
+  <rect x="24" y="30" width="120" height="84" rx="8" class="fig-stroke"/>
+  <path d="M44 54h60M44 72h48M44 90h56" class="fig-stroke fig-muted"/>
+  <text x="84" y="134" class="fig-label">{{ $l.system }}</text>
+  <path d="M160 54H152V90h8M180 54h8v36h-8" class="fig-stroke fig-accent" stroke-width="2.5"/>
+  <g transform="translate(170 72)"><rect x="-8" y="-2" width="16" height="13" rx="2" class="fig-fill-alert"/><path d="M-5 -2v-5a5 5 0 0 1 10 0v5" class="fig-stroke fig-alert"/></g>
+  <path d="M194 72H246" class="fig-line fig-dashed"/>
+  <circle cx="268" cy="72" r="16" class="fig-stroke"/><circle cx="268" cy="72" r="4" class="fig-dot"/>
+  <text x="268" y="108" class="fig-label">{{ $l.integrator }}</text>
+</svg>
+{{- end -}}

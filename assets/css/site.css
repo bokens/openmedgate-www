@@ -175,13 +175,42 @@ button { font: inherit; color: inherit; }
 
 .section { padding-block: var(--section); position: relative; }
 
-.why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-.why-item { padding: 2.25rem; border-radius: var(--radius-lg); background: var(--snow); transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
-.why-item:hover { transform: translateY(-4px); box-shadow: 0 30px 50px -30px rgba(11, 22, 32, 0.35); }
-.why-icon { width: 46px; height: 46px; fill: none; stroke: var(--mint-deep); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 1.5rem; }
-.why-title { font-size: 1.35rem; line-height: 1.25; letter-spacing: -0.02em; }
-.why-text { margin-top: 0.8rem; color: var(--ink-3); }
-.why-note { margin-top: 2rem; max-width: 64ch; color: var(--ink-3); font-size: 0.98rem; }
+/* "Stan rzeczy": three columns on one rail, each with a bespoke figure */
+.why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--line); }
+.why-item { position: relative; padding: 2.75rem 2.25rem 1rem 0; }
+.why-item + .why-item { padding-left: 2.25rem; border-left: 1px solid var(--line); }
+.why-item::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--mint-deep); box-shadow: 0 0 0 4px var(--white); }
+.why-item + .why-item::before { left: 2.25rem; }
+.why-item.is-access::before { background: var(--alert); }
+.why-fig { width: 100%; max-width: 320px; height: auto; margin-bottom: 1.5rem; overflow: visible; }
+.why-kicker { color: var(--mint-deep); margin-bottom: 0.85rem; }
+.why-item.is-access .why-kicker { color: var(--alert); }
+.why-title { font-size: 1.3rem; line-height: 1.25; letter-spacing: -0.02em; }
+.why-text { margin-top: 0.75rem; color: var(--ink-3); }
+.fig-stroke { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fig-accent { stroke: var(--mint-deep); }
+.fig-muted { stroke: var(--line-strong); }
+.fig-alert { stroke: var(--alert); }
+.fig-fill-alert { fill: var(--alert); }
+.fig-line { fill: none; stroke: var(--mint-deep); stroke-width: 2; stroke-linecap: round; }
+.fig-dashed { stroke: var(--ink-3); stroke-dasharray: 4 5; opacity: 0; transition: opacity 0.6s var(--ease) 0.9s; }
+.fig-dot { fill: var(--mint-deep); }
+.fig-pill { fill: var(--white); stroke: var(--ink); stroke-width: 1.5; }
+.fig-pill-accent { fill: var(--mint-soft); stroke: var(--mint-deep); }
+.fig-text { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; fill: var(--ink); text-anchor: middle; }
+.fig-text-accent { fill: var(--mint-deep); }
+.fig-year { font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; fill: var(--ink-3); text-anchor: middle; }
+.fig-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--ink-3); text-anchor: middle; }
+.fig-label-accent { fill: var(--mint-deep); }
+.fig-label-muted { fill: var(--ink-3); opacity: 0.7; }
+.fig-label-start { text-anchor: start; }
+.draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.why-item.is-in .draw { animation: draw 1s var(--ease) forwards; }
+.why-item.is-in .d2 { animation-delay: 0.35s; }
+.why-item.is-in .fig-dashed { opacity: 1; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+html:not(.js) .draw { stroke-dashoffset: 0; }
+html:not(.js) .fig-dashed { opacity: 1; }
 
 /* mechanism */
 .mech { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; }
@@ -399,7 +428,9 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   .reveal { transition: none; opacity: 1; transform: none; }
   .marquee-track, .scroll-cue .icon, .matrix.is-ph i { animation: none; }
-  .btn:hover, .why-item:hover, .signatory a:hover { transform: none; }
+  .draw { stroke-dashoffset: 0; animation: none !important; }
+  .fig-dashed { opacity: 1; transition: none; }
+  .btn:hover, .signatory a:hover { transform: none; }
 }
 
 /* ---------- responsive ---------- */
@@ -424,6 +455,9 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .display { max-width: none; }
   .scroll-cue { display: none; }
   .why-grid { grid-template-columns: 1fr; }
+  .why-item { padding: 2.25rem 0 1.5rem; }
+  .why-item + .why-item { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .why-item + .why-item::before { left: 0; }
   .section-head-row { flex-direction: column; align-items: flex-start; }
   .mech { grid-template-columns: 1fr; }
   .postulate { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.75rem 0; }

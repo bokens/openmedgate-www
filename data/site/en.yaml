@@ -17,20 +17,22 @@ marquee: ["HL7 FHIR", "DICOM", "IHE profiles", "HL7 v2", "openEHR", "SNOMED CT",
 
 why:
   label: "Starting point"
-  title: "Three observations we start from"
+  title: "Where things stand"
   items:
-    - icon: people
+    - figure: data
+      kicker: "01 · Data"
+      labels: { patient: "Patient", facility: "Facility", record: "Patient data", supplier: "System supplier" }
       title: "Patient data belong to the patient and to the facility that treats them."
       text: "The supplier of the system that stores them processes them on the facility's behalf."
-    - icon: layers
+    - figure: standards
+      kicker: "02 · Standards"
       title: "The standards for exchanging health data are mature and widely available."
-      text: "HL7, FHIR, DICOM and the IHE profiles have described for years how data should flow between systems."
-    - icon: key
+      text: "HL7, DICOM, the IHE profiles and FHIR have described for years how data should flow between systems."
+    - figure: access
+      kicker: "03 · Access"
+      labels: { system: "Hospital system", integrator: "Integrator" }
       title: "Access to the interfaces of a specific installation is rarely described publicly."
       text: "The scope of the data exposed and the conditions of connecting are usually known to the producer alone, and the facility and its contractors have to ask for them."
-  note: >-
-    The word “open” in the name refers to open interfaces and open standards. OpenMedGate
-    publishes no code of its own and sells nothing.
 
 mechanism:
   label: "The mechanism"
@@ -57,7 +59,7 @@ mechanism:
 postulates:
   label: "Postulates"
   title: "Six postulates"
-  intro: "The postulates are written so that a facility, a company or a person can sign them without reservations."
+  intro: "Principles that belong in every contract for a hospital system and in every procedure to buy one."
   items:
     - title: "Patient data belong to the patient and to the facility that collects them."
       text: "The supplier of the software in which they are stored acquires no rights to them."
@@ -69,8 +71,8 @@ postulates:
       text: "The price and the rules of access are settled when the system is bought, before the first integration appears."
     - title: "Every integrator receives a test environment and test data."
       text: "Public e-health platforms provide them to any supplier on request, and the same standard should apply to hospital systems."
-    - title: "Openness is measured and published."
-      text: "We count the number of bids in procurement procedures and the availability of specifications from public documents, with a stated method and denominator."
+    - title: "A buyer states in the procurement documents whether the interface specification of the system it already runs is available, and on what terms."
+      text: "A bidder can then price the integration before submitting an offer, and the admission of equivalent offers gains substance."
   outro: "A signature under the postulates expresses support for these six principles and creates no further obligation. A signatory takes no part in disputes conducted by the founders and bears no responsibility for their statements."
   cta: "Sign the postulates"
 
