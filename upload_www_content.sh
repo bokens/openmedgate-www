@@ -61,6 +61,15 @@ if [[ ! "$DISTRIBUTION_ID" =~ ^[A-Z0-9]+$ ]]; then
   exit 1
 fi
 
+# The live distribution serves exact S3 keys: it has no index rewrite and no custom error
+# pages (terraform/main.tf describes them, but they were never applied). Until the
+# infrastructure owner applies that, every directory also gets a copy of its index.html
+# under the keys "dir/" and "dir", so /pl/ and /pl answer like /pl/index.html.
+DIR_KEYS=()
+while IFS= read -r dir; do
+  DIR_KEYS+=("$dir/" "$dir")
+done < <(cd "$PROJECT_DIR/public" && find . -mindepth 2 -name index.html -type f | sed 's#^\./##; s#/index\.html$##' | sort)
+
 SYNC_OPTIONS=(
   --delete
   --no-follow-symlinks
@@ -68,6 +77,9 @@ SYNC_OPTIONS=(
   --exclude ".DS_Store" --exclude "*/.DS_Store"
   --region "$REGION"
 )
+for key in "${DIR_KEYS[@]}"; do
+  SYNC_OPTIONS+=(--exclude "$key")
+done
 if [[ "$DRY_RUN" == true ]]; then
   SYNC_OPTIONS+=(--dryrun)
 fi
@@ -76,9 +88,16 @@ printf 'Source: %s/public/\nDestination: s3://%s/\nCloudFront: %s\nProfile: %s\n
 aws s3 sync "$PROJECT_DIR/public/" "s3://$BUCKET_NAME/" "${SYNC_OPTIONS[@]}"
 
 if [[ "$DRY_RUN" == true ]]; then
-  printf 'Dry run complete. Nothing uploaded, no invalidation requested.\n'
+  printf 'Dry run complete. Nothing uploaded, no invalidation requested. Directory index keys (%d) would be refreshed.\n' "${#DIR_KEYS[@]}"
   exit 0
 fi
+
+printf 'Publishing directory index keys (%d)...\n' "${#DIR_KEYS[@]}"
+for key in "${DIR_KEYS[@]}"; do
+  dir="${key%/}"
+  aws s3api put-object --bucket "$BUCKET_NAME" --key "$key" --body "$PROJECT_DIR/public/$dir/index.html" \
+    --content-type "text/html; charset=utf-8" --cache-control "public,max-age=300" --region "$REGION" >/dev/null
+done
 
 INVALIDATION_ID="$(aws cloudfront create-invalidation \
   --distribution-id "$DISTRIBUTION_ID" --paths '/*' \

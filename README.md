@@ -42,7 +42,7 @@ Run `./upload_www_content.sh --dry-run` first to see what would change in the bu
 
 Pushing to GitHub does not deploy anything.
 
-The CloudFront distribution answers missing addresses with the start page and status 200 (a custom error response in `terraform/main.tf`), so the generated `404.html` is not shown; changing that is an infrastructure change.
+The live CloudFront distribution serves exact S3 keys: it has neither the index rewrite function nor the custom error responses that `terraform/main.tf` describes, because that configuration was never applied. Two consequences. First, the upload script publishes a copy of every `index.html` under the keys `dir/` and `dir` (for example `pl/` and `pl`), so clean addresses work; these keys are excluded from the mirror's deletions. Second, an unknown address returns S3's own 403 page instead of the generated `404.html`. Both go away once the infrastructure owner applies the Terraform configuration; the extra keys can then be removed from the bucket.
 
 ## Languages
 
