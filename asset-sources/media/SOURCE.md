@@ -4,7 +4,8 @@ Both loops in `static/media/` are rendered by scripts in this folder. They are s
 
 | File | Script | What it shows | Size | Loop |
 | --- | --- | --- | --- | --- |
-| `static/media/hero/open-flow.mp4` | `render_hero_pulse.py` | a dark field of luminous particles flowing along a slowly turning current; an ECG trace sweeps across the lower part of the frame and every QRS complex sends out a wave that brightens and accelerates the currents | 1920×1080, 24 fps, 16 s, H.264 | the current and the trace are periodic by construction; the particle layer is made seamless with a two-second crossfade at the seam |
+| `static/media/hero/open-flow.mp4` | `render_hero_tunnel.py` | a flight along a corridor of luminous data particles; ahead, a glowing ECG ribbon runs into the distance below eye level and passes through gates shaped like the OpenMedGate mark; light packets travel along the ribbon towards the viewer; every crossing of a gate gives a flash and a wave | 1920×1080, 24 fps, 12 s, H.264 | the scene is periodic along the flight axis (three gates per loop), so the loop is seamless by construction |
+| earlier hero: `render_hero_pulse.py` | kept for reference | a flat field of particles with an ECG trace sweeping across | 1920×1080, 16 s | crossfade at the seam |
 | `static/media/pulse/pulse-loop.mp4` | `render_media.py pulse` | slow luminous waves over a grid, behind the signatories band | 1280×720, 24 fps, 8 s, H.264 | seamless |
 
 `render_media.py hero` renders the earlier hero loop (a network of care systems) and is kept for reference.
