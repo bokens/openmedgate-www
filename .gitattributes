@@ -1,0 +1,3 @@
+# Line endings: keep shell scripts runnable from Git Bash on Windows.
+*.sh text eol=lf
+*.py text eol=lf
