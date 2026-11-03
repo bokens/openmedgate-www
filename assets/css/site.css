@@ -145,8 +145,8 @@ button { font: inherit; color: inherit; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .hero-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    radial-gradient(60% 85% at 16% 72%, rgba(6, 17, 27, 0.72), transparent 66%),
-    linear-gradient(180deg, rgba(6, 17, 27, 0.3) 0%, rgba(6, 17, 27, 0) 35%, rgba(6, 17, 27, 0.72) 100%);
+    radial-gradient(64% 95% at 18% 68%, rgba(6, 17, 27, 0.9), rgba(6, 17, 27, 0.35) 55%, transparent 72%),
+    linear-gradient(180deg, rgba(6, 17, 27, 0.5) 0%, rgba(6, 17, 27, 0.18) 40%, rgba(6, 17, 27, 0.85) 100%);
 }
 .video-toggle { position: absolute; left: var(--gutter); bottom: 1.5rem; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(6, 17, 27, 0.35); color: var(--on-night); cursor: pointer; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease); }
 .video-toggle:hover { border-color: var(--on-night); background: rgba(6, 17, 27, 0.55); }
