@@ -2,7 +2,7 @@
 {{- $cat := $p.Params.category | default "evidence" -}}
 <article class="post-card reveal">
   <a class="post-card-cover cover-{{ $cat }}" href="{{ $p.RelPermalink }}" aria-hidden="true" tabindex="-1">
-    {{- with $p.Params.cover }}{{ with $p.Resources.GetMatch . }}{{ $img := .Fill "960x540 Center webp q80" }}<img src="{{ $img.RelPermalink }}" width="960" height="540" alt="" loading="lazy">{{ end }}{{ else }}
+    {{- with $p.Params.cover }}{{ with $p.Resources.GetMatch . }}{{ $img := .Fill (printf "960x540 %s webp q80" ($p.Params.coverAnchor | default "Smart")) }}<img src="{{ $img.RelPermalink }}" width="960" height="540" alt="" loading="lazy">{{ end }}{{ else }}
     <span class="cover-pattern"></span>
     <span class="cover-mark">{{ partial "logo.html" (dict "class" "cover-logo") }}</span>
     {{- end }}

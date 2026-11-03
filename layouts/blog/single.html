@@ -26,7 +26,7 @@
   {{- with .Params.cover }}
   {{- with $.Resources.GetMatch . }}
   <figure class="post-cover">
-    {{- $img := .Fill "1600x900 Center webp q82" }}
+    {{- $img := .Fill (printf "1600x900 %s webp q82" ($.Params.coverAnchor | default "Smart")) }}
     <img src="{{ $img.RelPermalink }}" width="1600" height="900" alt="{{ $.Params.coverAlt | default "" }}" decoding="async">
     {{- with $.Params.coverCaption }}<figcaption class="mono">{{ . }}</figcaption>{{ end }}
   </figure>

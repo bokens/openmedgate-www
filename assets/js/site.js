@@ -107,28 +107,6 @@
     }
   }
 
-  // Dot matrix: fills to data-filled when a number exists; shimmers as a placeholder otherwise.
-  var matrix = document.querySelector('[data-matrix]');
-  if (matrix) {
-    var filled = parseInt(matrix.getAttribute('data-filled'), 10);
-    var dots = matrix.querySelectorAll('i');
-    if (isNaN(filled)) {
-      matrix.classList.add('is-ph');
-    } else {
-      var fill = function () {
-        for (var i = 0; i < Math.min(filled, dots.length); i++) {
-          (function (dot, n) { setTimeout(function () { dot.classList.add('on'); }, reduced ? 0 : n * 18); })(dots[i], i);
-        }
-      };
-      if ('IntersectionObserver' in window) {
-        var dio = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) { if (entry.isIntersecting) { fill(); dio.disconnect(); } });
-        }, { threshold: 0.3 });
-        dio.observe(matrix);
-      } else { fill(); }
-    }
-  }
-
   // Copy link on posts.
   document.querySelectorAll('[data-copy-link]').forEach(function (btn) {
     btn.addEventListener('click', function () {

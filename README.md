@@ -53,15 +53,15 @@ English is the default language and lives at the root; Polish lives under `/pl/`
 
 ## Start page
 
-Hero with a video loop, a marquee of standards, three observations, the interactive mechanism diagram (today and with open interfaces; it cycles on its own until the visitor takes over), six postulates, evidence (dot matrix of the current review, three numbers, the registry, the method), founders, signatories on a second video loop and the latest findings.
+Hero with a video loop, a marquee of standards, three observations with drawn figures, the interactive mechanism diagram (today and with open interfaces; it cycles on its own until the visitor takes over), six postulates, founders, signatories on a second video loop and the latest posts.
 
 The copy follows the owner's writing rules: full sentences, no "not X but Y" contrasts, no triads, no closing aphorisms, no sentence fragments as headlines.
 
-Items in `data/site/*.yaml` flagged `placeholder: true` carry a visible badge while `showPlaceholderBadges` is on in `params.toml`. The dot matrix fills to `data-filled` on the `[data-matrix]` element once a number exists; without it, it shimmers as a placeholder.
+Items in `data/site/*.yaml` flagged `placeholder: true` carry a visible badge while `showPlaceholderBadges` is on in `params.toml`.
 
 ## Blog
 
-Posts are page bundles: `content/pl/blog/<slug>/index.md` with its photos, and `content/en/blog/<slug>/index.md` for the English version, both with the same `translationKey`. The English URL can differ through `slug` in the English front matter. Front matter fields: `title`, `lead`, `date`, `draft`, `authors` (keys of `data/authors.yaml`), `category` (`method`, `mechanism`, `evidence`, `standards`, `procedures`), optional `cover` and `coverAlt`, optional `sources`, optional `updated`. A post without a cover gets a generated one, coloured by category.
+Posts are page bundles: `content/pl/blog/<slug>/index.md` with its photos, and `content/en/blog/<slug>/index.md` for the English version, both with the same `translationKey`. The English URL can differ through `slug` in the English front matter. Front matter fields: `title`, `lead`, `date`, `draft`, `authors` (keys of `data/authors.yaml`), `category` (`method`, `mechanism`, `evidence`, `standards`, `procedures`, `series`), optional `cover`, `coverAlt`, `coverCaption` and `coverAnchor` (crop anchor of the 16:9 cover, `Smart` by default; `Top`, `Center` and the other Hugo anchors are accepted), optional `sources`, optional `updated`. A post without a cover gets a generated one, coloured by category.
 
 Posts arrive in `blog-inbox/`; [blog-inbox/README.md](blog-inbox/README.md) is the procedure and `scripts/blog/ingest.py` does the mechanical part. Drafts (`draft: true`) appear only with `hugo server -D`.
 

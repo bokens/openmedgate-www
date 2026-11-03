@@ -76,85 +76,27 @@ postulates:
   outro: "Podpis pod postulatami oznacza poparcie dla tych sześciu zasad i do niczego więcej nie zobowiązuje. Sygnatariusz nie bierze udziału w sporach prowadzonych przez założycieli ani nie odpowiada za ich wypowiedzi."
   cta: "Podpisz postulaty"
 
-evidence:
-  label: "Dowody"
-  title: "Rejestr dowodów"
-  intro: >-
-    Postępowanie zakończone jedną ofertą traktujemy jako objaw wymagający wyjaśnienia. Liczymy
-    takie przypadki na podstawie dokumentów publicznych i publikujemy wyniki wraz z metodą
-    i mianownikiem.
-  matrix:
-    label: "postępowań w bieżącym przeglądzie"
-    status: "Liczby są w trakcie audytu i zostaną opublikowane po jego zakończeniu."
-    placeholder: true
-  stats:
-    - value: "—"
-      unit: "%"
-      label: "części zamówień rozstrzygniętych przy jednej ofercie"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "przejrzanych części zamówień"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "zamawiających, którzy po pytaniach zmienili dokumenty"
-      placeholder: true
-  columns:
-    ref: "Sygn."
-    date: "Data"
-    finding: "Ustalenie"
-    source: "Źródło"
-  rows:
-    - ref: "OMG-2026-001"
-      date: "2026-09-22"
-      finding: >-
-        Zapytany o dokumentację interfejsów swojego systemu szpitalnego zamawiający odpowiedział,
-        że jej nie posiada, ponieważ „dokumentacja ta stanowi dokumentację własnościową
-        producenta”. W postępowaniu wpłynęła jedna oferta.
-      source: "Postępowanie ZP-1559-2026, wyjaśnienia z 22.09.2026"
-      placeholder: true
-    - ref: "OMG-2026-002"
-      date: "[data]"
-      finding: "Udział części zamówień rozstrzygniętych przy jednej ofercie, według segmentu i roku."
-      source: "[populacja, okres, źródło, metoda]"
-      placeholder: true
-    - ref: "OMG-2026-003"
-      date: "[data]"
-      finding: "Porównanie dokumentacji integracyjnej udostępnianej przez publicznego operatora e-zdrowia z dokumentacją producentów systemów szpitalnych."
-      source: "[wykaz dokumentów]"
-      placeholder: true
-  method:
-    title: "Metoda"
-    items:
-      - "Jednostką obliczeń jest część zamówienia."
-      - "Źródłem są ogłoszenia o wyniku postępowania z ostatnich dwudziestu czterech miesięcy, z Biuletynu Zamówień Publicznych i z TED."
-      - "Wartość zamówienia pochodzi wyłącznie z oficjalnego dokumentu. Gdy dokument jej nie podaje, zapisujemy brak informacji."
-      - "Każdy dokument jest zabezpieczany skrótem kryptograficznym w chwili pobrania i czytany dwukrotnie, za drugim razem przez niezależnego recenzenta."
-      - "Rozbieżności między odczytami są opisane w rejestrze."
-
 founders:
   label: "Założyciele"
-  title: "Założyciele"
-  intro: "Inicjatywę prowadzą dwie osoby, które odpowiadają za jej treść. Wypowiedzi dotyczące konkretnych firm publikują wyłącznie na własnych profilach."
+  title: "Sylwester Cyrwus i Krzysztof Bokiej"
+  intro: "Obaj zawodowo zajmują się systemami informatycznymi dla ochrony zdrowia."
   people:
     - id: sylwester-cyrwus
       name: "Sylwester Cyrwus"
       role: "Współzałożyciel"
-      line: "Zajmuje się postępowaniami przetargowymi i ich analizą liczbową."
+      line: "Analizuje postępowania przetargowe i pisze o tym, co wynika z ich dokumentów."
       bio: "[Dwa zdania biografii, do uzgodnienia.]"
       placeholder: true
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Współzałożyciel"
-      line: "Zajmuje się standardami wymiany danych i architekturą interfejsów."
+      line: "Odpowiada za standardy wymiany danych i architekturę interfejsów."
       bio: "[Dwa zdania biografii, do uzgodnienia.]"
       placeholder: true
 
 signatories:
   label: "Sygnatariusze"
   title: "Sygnatariusze postulatów"
-  intro: "Poniżej publikujemy podmioty, które podpisały postulaty."
   items:
     - name: "QuantumMed"
       logo: quantummed
@@ -167,7 +109,7 @@ signatories:
       url: "https://safemedai.eu"
   relation: "Pierwszym sygnatariuszem jest QuantumMed, spółka założona przez autorów inicjatywy. Inicjatywa pozostaje od niej niezależna i nie prowadzi działalności handlowej."
   cta_title: "Podpisz postulaty"
-  cta_text: "Postulaty może podpisać placówka, firma, integrator albo osoba prywatna. Wystarczy wiadomość na poniższy adres."
+  cta_text: "Postulaty może podpisać placówka, firma, integrator albo osoba prywatna."
 
 blog:
   label: "Blog"

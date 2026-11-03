@@ -76,85 +76,27 @@ postulates:
   outro: "A signature under the postulates expresses support for these six principles and creates no further obligation. A signatory takes no part in disputes conducted by the founders and bears no responsibility for their statements."
   cta: "Sign the postulates"
 
-evidence:
-  label: "Evidence"
-  title: "Registry of evidence"
-  intro: >-
-    We treat a procedure that ends with a single bid as a symptom that calls for an explanation.
-    We count such cases from public documents and publish the results together with the method
-    and the denominator.
-  matrix:
-    label: "procedures in the current review"
-    status: "The numbers are being audited and will be published when the audit is complete."
-    placeholder: true
-  stats:
-    - value: "—"
-      unit: "%"
-      label: "lots decided with a single bid"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "lots reviewed"
-      placeholder: true
-    - value: "—"
-      unit: ""
-      label: "buyers that changed their documents after questions"
-      placeholder: true
-  columns:
-    ref: "Ref."
-    date: "Date"
-    finding: "Finding"
-    source: "Source"
-  rows:
-    - ref: "OMG-2026-001"
-      date: "2026-09-22"
-      finding: >-
-        Asked for the interface documentation of its hospital system, a buyer answered that it does
-        not hold it, because “this documentation is the proprietary documentation of the producer”.
-        One bid was submitted in the procedure.
-      source: "Procedure ZP-1559-2026, clarification of 22 September 2026"
-      placeholder: true
-    - ref: "OMG-2026-002"
-      date: "[date]"
-      finding: "Share of lots decided with a single bid, by segment and year."
-      source: "[population, period, source, method]"
-      placeholder: true
-    - ref: "OMG-2026-003"
-      date: "[date]"
-      finding: "A comparison of the integration documentation published by a public e-health operator with the documentation of hospital-system producers."
-      source: "[list of documents]"
-      placeholder: true
-  method:
-    title: "Method"
-    items:
-      - "The unit of calculation is a lot of a contract."
-      - "The source is the contract award notices of the last twenty-four months, from the national procurement bulletin and from TED."
-      - "The value of a contract comes only from the official document. Where the document does not state it, we record that the information is missing."
-      - "Every document is secured with a cryptographic hash when it is captured and read twice, the second time by an independent reviewer."
-      - "Discrepancies between the readings are described in the registry."
-
 founders:
   label: "Founders"
-  title: "Founders"
-  intro: "The initiative is run by two people, who are responsible for its content. Statements about specific companies are published only on their own profiles."
+  title: "Sylwester Cyrwus and Krzysztof Bokiej"
+  intro: "Both work professionally on information systems for healthcare."
   people:
     - id: sylwester-cyrwus
       name: "Sylwester Cyrwus"
       role: "Co-founder"
-      line: "Works on procurement procedures and their numerical analysis."
+      line: "Analyses procurement procedures and writes about what their documents show."
       bio: "[Two sentences of biography, to be agreed.]"
       placeholder: true
     - id: krzysztof-bokiej
       name: "Krzysztof Bokiej"
       role: "Co-founder"
-      line: "Works on data exchange standards and interface architecture."
+      line: "Responsible for data exchange standards and interface architecture."
       bio: "[Two sentences of biography, to be agreed.]"
       placeholder: true
 
 signatories:
   label: "Signatories"
   title: "Signatories of the postulates"
-  intro: "Below we publish the organisations that have signed the postulates."
   items:
     - name: "QuantumMed"
       logo: quantummed
@@ -167,7 +109,7 @@ signatories:
       url: "https://safemedai.eu"
   relation: "The first signatory is QuantumMed, a company founded by the authors of the initiative. The initiative remains independent of it and conducts no commercial activity."
   cta_title: "Sign the postulates"
-  cta_text: "The postulates can be signed by a facility, a company, an integrator or a private person. A message to the address below is enough."
+  cta_text: "A facility, a company, an integrator or a private person can sign the postulates."
 
 blog:
   label: "Blog"

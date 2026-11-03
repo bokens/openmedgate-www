@@ -13,13 +13,6 @@
     anchor = "mechanism"
 
 [[main]]
-  identifier = "evidence"
-  name = "Evidence"
-  weight = 30
-  [main.params]
-    anchor = "evidence"
-
-[[main]]
   identifier = "founders"
   name = "Founders"
   weight = 40

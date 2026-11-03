@@ -18,7 +18,7 @@ import sys
 import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-CATEGORIES = {"method", "mechanism", "evidence", "standards", "procedures"}
+CATEGORIES = {"method", "mechanism", "evidence", "standards", "procedures", "series"}
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"}
 POLISH = str.maketrans("ąćęłńóśźżĄĆĘŁŃÓŚŹŻ", "acelnoszzACELNOSZZ")
 

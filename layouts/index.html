@@ -105,55 +105,6 @@
   </div>
 </section>
 
-<section class="section section-evidence snow" id="evidence">
-  <div class="container">
-    <header class="section-head reveal">
-      <span class="section-label mono">{{ $d.evidence.label }}</span>
-      <h2 class="section-title">{{ $d.evidence.title }}</h2>
-      <p class="section-intro">{{ $d.evidence.intro }}</p>
-    </header>
-    <div class="evidence-grid">
-      <div class="matrix-card reveal">
-        <div class="matrix" data-matrix aria-hidden="true">
-          {{- range seq 100 }}<i style="--i:{{ . }}"></i>{{ end }}
-        </div>
-        <div class="matrix-foot">
-          <span class="matrix-count"><strong data-matrix-value>100</strong> {{ $d.evidence.matrix.label }}</span>
-          <span class="matrix-status mono">{{ $d.evidence.matrix.status }} {{ partial "badge.html" (dict "flag" $d.evidence.matrix.placeholder) }}</span>
-        </div>
-      </div>
-      <div class="stats stagger">
-        {{- range $d.evidence.stats }}
-        <div class="stat reveal{{ if .placeholder }} is-ph{{ end }}">
-          <div class="stat-value">{{ .value }}<span class="stat-unit">{{ .unit }}</span></div>
-          <div class="stat-label">{{ .label }}</div>
-          {{ partial "badge.html" (dict "flag" .placeholder) }}
-        </div>
-        {{- end }}
-      </div>
-    </div>
-    <div class="registry reveal">
-      <div class="registry-head mono">
-        <span>{{ $d.evidence.columns.ref }}</span><span>{{ $d.evidence.columns.date }}</span><span>{{ $d.evidence.columns.finding }}</span><span>{{ $d.evidence.columns.source }}</span>
-      </div>
-      {{- range $d.evidence.rows }}
-      <div class="registry-row">
-        <span class="registry-ref mono">{{ .ref }}</span>
-        <span class="registry-date mono">{{ .date }}</span>
-        <span class="registry-finding">{{ .finding }} {{ partial "badge.html" (dict "flag" .placeholder) }}</span>
-        <span class="registry-source">{{ .source }}</span>
-      </div>
-      {{- end }}
-    </div>
-    <div class="method reveal">
-      <h3 class="method-title">{{ $d.evidence.method.title }}</h3>
-      <ol class="method-list">
-        {{- range $d.evidence.method.items }}<li>{{ . }}</li>{{ end }}
-      </ol>
-    </div>
-  </div>
-</section>
-
 <section class="section section-founders" id="founders">
   <div class="container">
     <header class="section-head reveal">
@@ -193,24 +144,18 @@
     <header class="section-head reveal">
       <span class="section-label mono">{{ $d.signatories.label }}</span>
       <h2 class="section-title">{{ $d.signatories.title }}</h2>
-      <p class="section-intro">{{ $d.signatories.intro }}</p>
     </header>
-    <ul class="signatories reveal">
+    <div class="sig-row reveal">
       {{- range $d.signatories.items }}
-      <li class="signatory">
-        <a href="{{ .url }}" rel="noopener" target="_blank" aria-label="{{ .name }}">
-          <img src="/images/signatories/{{ .logo }}-white.svg" alt="" loading="lazy">
-        </a>
-      </li>
+      <a class="sig" href="{{ .url }}" rel="noopener" target="_blank" aria-label="{{ .name }}">
+        <img src="/images/signatories/{{ .logo }}-white.svg" alt="" loading="lazy">
+      </a>
       {{- end }}
-    </ul>
-    <div class="signatories-foot reveal">
-      <p class="signatories-relation">{{ $d.signatories.relation }}</p>
-      <div class="sign-cta">
-        <h3 class="sign-cta-title">{{ $d.signatories.cta_title }}</h3>
-        <p>{{ $d.signatories.cta_text }}</p>
-        <a class="btn btn-mint" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
-      </div>
+    </div>
+    <p class="sig-relation reveal">{{ $d.signatories.relation }}</p>
+    <div class="sig-join reveal">
+      <p>{{ $d.signatories.cta_text }}</p>
+      <a class="btn btn-mint" href="mailto:{{ site.Params.email }}">{{ $d.signatories.cta_title }}{{ partial "icon.html" "arrow" }}</a>
     </div>
   </div>
 </section>

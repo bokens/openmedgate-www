@@ -13,7 +13,7 @@ blog-inbox/RRRR-MM-DD-<slug>/
 
 From `pl.md` the procedure reads `status`, the fields both languages share (`category`, `authors`, `cover`, `coverAlt`, `slug`, `sources`) and the Polish `title`, `lead` and body. From `en.md` it reads `status`, the English `title`, `lead`, `slug` and body. Other fields belong to the source repository and are never copied.
 
-Valid values: `category` is `method`, `mechanism`, `evidence`, `standards` or `procedures`; `authors` are the keys of `data/authors.yaml`. A new author needs a profile there first; ask the operator for it.
+Valid values: `category` is `method`, `mechanism`, `evidence`, `standards`, `procedures` or `series` (the “One bid” series); `authors` are the keys of `data/authors.yaml`. A new author needs a profile there first; ask the operator for it.
 
 ## Procedure
 
