@@ -3,12 +3,13 @@
 author = "OpenMedGate"
 ogImage = "/images/og/openmedgate-og.png"
 
-# Contact. Placeholders until the owners confirm the addresses.
-email = "contact@openmedgate.com"
-linkedinPage = "https://www.linkedin.com/company/openmedgate"
+# Contact. The footer and the sign-up buttons link to this address.
+email = "sylwester.cyrwus@openmedgate.com"
+# The initiative's LinkedIn page. Empty hides the LinkedIn link in the footer.
+linkedinPage = ""
 
 # When true, items flagged `placeholder: true` in data/site/*.yaml carry a visible badge.
-showPlaceholderBadges = true
+showPlaceholderBadges = false
 
 # Blog
 postsOnHome = 3

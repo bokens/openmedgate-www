@@ -1,6 +1,6 @@
 # AGENTS.md: openmedgate.com website
 
-Source and infrastructure of openmedgate.com, a static Hugo site. [README.md](README.md) describes the structure; its Cloudflare Pages section is outdated.
+Source and infrastructure of openmedgate.com, a static Hugo site. [README.md](README.md) describes the structure, the blog and the deployment.
 
 ## Hosting
 
@@ -11,7 +11,7 @@ Source and infrastructure of openmedgate.com, a static Hugo site. [README.md](RE
 
 - `hugo server -D`: local preview at http://localhost:1313, including drafts.
 - `hugo --minify`: production build in `public/` (generated, not committed).
-- Publishing: `upload_www_content.sh` builds, mirrors `public/` to S3 with `--delete` and invalidates CloudFront, using the AWS SSO profile `quantummed-www-editor`. Its `DISTRIBUTION_ID` is empty; look it up with `aws cloudfront list-distributions --profile quantummed-www-editor --query "DistributionList.Items[?Aliases.Items[?@=='openmedgate.com']].Id"` before the first upload.
+- Publishing: `./upload_www_content.sh --dry-run`, then `./upload_www_content.sh`. The script builds, mirrors `public/` to S3 with `--delete` and invalidates CloudFront, which it finds by the `openmedgate.com` alias. It uses the AWS SSO profile `quantummed-www-editor` and stops when the session has expired; the operator then runs `aws sso login --profile quantummed-www-editor`.
 
 ## Where things are
 

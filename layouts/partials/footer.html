@@ -26,7 +26,9 @@
           <p class="footer-text">{{ $d.contact.text }}</p>
           <ul class="footer-list">
             <li><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></li>
-            <li><a href="{{ site.Params.linkedinPage }}" rel="noopener" target="_blank">LinkedIn</a></li>
+            {{- with site.Params.linkedinPage }}
+            <li><a href="{{ . }}" rel="noopener" target="_blank">LinkedIn</a></li>
+            {{- end }}
           </ul>
         </div>
         <div class="footer-col">

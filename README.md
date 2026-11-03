@@ -38,14 +38,11 @@ hugo --minify           # production build in public/ (generated, not committed)
 ./upload_www_content.sh # build, mirror public/ to S3 with --delete, invalidate CloudFront
 ```
 
-The upload uses the AWS SSO profile `quantummed-www-editor`. When its session has expired, run `aws sso login --profile quantummed-www-editor`. The script's `DISTRIBUTION_ID` is empty; look it up once with:
-
-```bash
-aws cloudfront list-distributions --profile quantummed-www-editor \
-  --query "DistributionList.Items[?Aliases.Items[?@=='openmedgate.com']].Id" --output text
-```
+Run `./upload_www_content.sh --dry-run` first to see what would change in the bucket. The script uses the AWS SSO profile `quantummed-www-editor` and finds the CloudFront distribution by the `openmedgate.com` alias. When the session has expired, it stops; run `aws sso login --profile quantummed-www-editor` and start it again. Files are served with a five-minute browser cache; the invalidation clears CloudFront, not visitors' browsers.
 
 Pushing to GitHub does not deploy anything.
+
+The CloudFront distribution answers missing addresses with the start page and status 200 (a custom error response in `terraform/main.tf`), so the generated `404.html` is not shown; changing that is an infrastructure change.
 
 ## Languages
 

@@ -1,6 +1,6 @@
 # Polska treść strony głównej. Pozycje z `placeholder: true` mają plakietkę,
 # dopóki `showPlaceholderBadges` w params.toml jest włączone.
-# Rejestr: pełne zdania, bez kontrastów „nie X, tylko Y”, bez trójek i puent (Anti-LLM-Writing-Rules w vaulcie).
+# Rejestr: pełne zdania, bez kontrastów „nie X, tylko Y”, bez trójek i puent.
 
 hero:
   eyebrow: "Ruch na rzecz otwartych interfejsów w ochronie zdrowia"
